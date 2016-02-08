@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Echo Development App</title>
+  {% load static %}
+
+  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" type="text/css" rel="stylesheet">
+</head>
+
+<body>
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12">
+        <h1>Current Key, Value pairs</h1>
+        <p>{{ response }}</p>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-xs-12">
+        <h2>Input Key Value Pairs</h2>
+      </div>
+    </div>
+
+    <form class="row" id="key-value-inputs" method="post">
+      <div class="col-xs-6">
+        <button id="add-btn" class="btn btn-default">Add Key Value Pair</button>
+      </div>
+      <div class="col-xs-6">
+        <button id="submit-btn" class="btn btn-default">Submit</button>
+      </div>
+    </form>
+
+  </div>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.0/jquery.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+  <script src="{% static 'app.js' %}"></script>
+</body>
+
+</html>
