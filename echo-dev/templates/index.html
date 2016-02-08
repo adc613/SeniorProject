@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html ng-app="devApp">
 <head>
   <title>Echo Development App</title>
   {% load static %}
@@ -21,7 +21,7 @@
       </div>
     </div>
 
-    <form class="row" id="key-value-inputs" method="post">
+    <form ng-controller="DevController" class="row" id="key-value-inputs" method="post">
       <div class="col-xs-6">
         <button id="add-btn" class="btn btn-default">Add Key Value Pair</button>
       </div>
@@ -30,7 +30,9 @@
       </div>
     </form>
 
+    </div>
   </div>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.0-rc.2/angular.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.0/jquery.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
   <script src="{% static 'app.js' %}"></script>

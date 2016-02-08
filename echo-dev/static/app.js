@@ -46,3 +46,7 @@
     }
 })();
 
+(function(){
+    var app = angular.module('devApp', []);
+});
+
