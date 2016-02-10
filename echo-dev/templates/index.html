@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html ng-app="devApp">
+<html ng-app="developmentApp">
 <head>
   <title>Echo Development App</title>
   {% load static %}
@@ -8,25 +8,34 @@
 </head>
 
 <body>
-  <div class="container">
+  <div class="container" ng-controller="DevController">
     <div class="row">
       <div class="col-xs-12">
-        <h1>Current Key, Value pairs</h1>
-        <p>{{ response }}</p>
-      </div>
-    </div>
-    <div class="row">
-      <div class="col-xs-12">
-        <h2>Input Key Value Pairs</h2>
+        <h2>Development Area</h2>
       </div>
     </div>
 
-    <form ng-controller="DevController" class="row" id="key-value-inputs" method="post">
-      <div class="col-xs-6">
-        <button id="add-btn" class="btn btn-default">Add Key Value Pair</button>
+    <div class="row">
+      <div class="col-xs-12">
+        <p>Old Response:</p>
+        <p> {{ oldResponse }}</p>
+        <br/>
+        <p>Recently Received Request:</p>
+        <p> {{ recent_request }}</p>
+      </div>
+    </div>
+
+    <json></json>
+
+
+    <form action="" class="row" id="key-value-inputs" method="post">
+      <div class="col-xs-12">
+        <h2>Input new JSON response</h2>
+        <textarea name="newResponse" ng-model="newResponse"></textarea>
+        <input type="hidden" id="oldResponse" name="oldResponse" value="{{ oldResponse }}">
       </div>
       <div class="col-xs-6">
-        <button id="submit-btn" class="btn btn-default">Submit</button>
+        <button type="submit" id="submit-btn" class="btn btn-default">Submit</button>
       </div>
     </form>
 

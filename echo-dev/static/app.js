@@ -1,52 +1,46 @@
 (function(){
-    var inputs = document.getElementById('key-value-inputs');
-    var keyValuePairs = 0;
-    var addBtn = document.getElementById('add-btn');
-    var submitBtn = document.getElementById('submit-btn');
+    var clean = false;
+    var app = angular.module('developmentApp', []);
 
-    document.addEventListener("click", function(event){
-        if(event.target === addBtn){
-            event.preventDefault();
-            console.log('test');
-            createKeyValueInput();
+    app.controller('DevController', ['$scope', function($scope){
+        var oldResponse = document.getElementById('oldResponse').value;
+        $scope.newResponse = oldResponse;
+    }]);
+
+    app.directive('json', function(){
+        return {
+            restrict: 'E',
+            templateUrl: '/static/json.html',
+            controller: 'DevController',
+        };
+    });
+
+    app.filter('dictionaryFilter', function(){
+        return function(text){
+           if(typeof(text) !== typeof('string')) {
+               return '';
+           }
+           try {
+               response = JSON.parse(text);
+           } catch (err){
+               clean = false;
+               return 'INVALID FORMAT: ' + err.message;
+           }
+           clean = true;
+
+           return response;
+
         }
     });
 
-    createKeyValueInput();
-    
-    function createKeyValueInput(){
-        var keyContainer = document.createElement('div');
-        var valueContainer = document.createElement('div');
-        var keyInput = document.createElement('input');
-        var valueInput = document.createElement('input');
-        var keyLabel = document.createElement('label');
-        var valueLabel = document.createElement('label');
+    document.addEventListener("submit", function(event){
+        console.log('fire');
+        if(!clean){ 
+            alert('Invalid format check syntax');
+            event.preventDefault();
+        }
+    });
 
-        keyContainer.className = "col-xs-6";
-        valueContainer.className = "col-xs-6";
-
-        keyInput.name = 'key-' + keyValuePairs;
-        valueInput.name = 'value-' + keyValuePairs;
-
-        keyLabel.htmlFor = 'key-' + keyValuePairs;
-        valueLabel.htmlFor = 'value-' + keyValuePairs;
-
-        keyLabel.textContent = 'Key: '
-        valueLabel.textContent = 'Value: '
-
-        keyContainer.appendChild(keyLabel);
-        keyContainer.appendChild(keyInput);
-        valueContainer.appendChild(valueLabel);
-        valueContainer.appendChild(valueInput);
-
-        inputs.insertBefore(valueContainer, inputs.firstChild);
-        inputs.insertBefore(keyContainer, valueContainer);
-
-        keyValuePairs++;
-    }
 })();
 
-(function(){
-    var app = angular.module('devApp', []);
-});
-
+console.log(JSON.parse('{"foo": 1}'));
