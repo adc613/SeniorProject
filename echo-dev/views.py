@@ -27,7 +27,9 @@ class DevPageView(View):
 
     def post(self, request):
         db = shelve.open('dev.db')
+        print('new')
         db['response'] = request.POST['newResponse']
+        print(db['response'])
 
         return HttpResponseRedirect(reverse('dev:home'))
 
@@ -43,7 +45,6 @@ class ResponseView(View):
             file.write('\n')
         db = shelve.open('dev.db')
         response = db['response']
-        response = json.dumps(response)
 
         return HttpResponse(response, content_type="application/json")
 
@@ -55,6 +56,7 @@ class ResponseView(View):
             file.write('\n')
         db = shelve.open('dev.db')
         response = db['response']
-        response = json.dumps(response)
+        response = json.loads(response)
+        print(response['adam'])
 
         return HttpResponse(response, mimetype="application/json")
