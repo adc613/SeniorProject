@@ -15,15 +15,6 @@
       </div>
     </div>
 
-    <div class="row">
-      <div class="col-xs-12">
-        <p>Current Reponse:</p>
-        <p> {{ oldResponse }}</p>
-        <br/>
-        <p>Recently Received Request:</p>
-        <p> {{ recent_request }}</p>
-      </div>
-    </div>
 
     <json></json>
 
@@ -39,7 +30,18 @@
       </div>
     </form>
 
+    <div class="row">
+      <div class="col-xs-12">
+        <br/>
+        <br/>
+        <p>Current Reponse:</p>
+        <p> {{ oldResponse }}</p>
+        <br/>
+        <p>Recently Received Request:</p>
+        <p> {{ recent_request }}</p>
+      </div>
     </div>
+
   </div>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.0-rc.2/angular.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.0/jquery.js"></script>

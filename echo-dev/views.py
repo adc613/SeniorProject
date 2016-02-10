@@ -19,10 +19,14 @@ class DevPageView(View):
         return super(DevPageView, self).dispatch(request, *args, **kwargs)
 
     def get(self, request):
-        db = shelve.open('dev.db')
-        context = {'oldResponse': db['response']}
-        file = open('log', 'r')
-        context['recent_request'] = file.read()
+        context = {}
+        try:
+            db = shelve.open('dev.db')
+            context = {'oldResponse': db['response']}
+            file = open('log', 'r')
+            context['recent_request'] = file.read()
+        except: 
+            pass
         return render(request, self.template_name, context)
 
     def post(self, request):
