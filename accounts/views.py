@@ -7,6 +7,22 @@ from django.views.generic import View
 from .forms import UserCreationForm
 
 
+class HomePageView(View):
+    template_name = 'home.html'
+
+    def get(self, request):
+        context = {}
+        return render(request, self.template_name, context)
+
+
+class ItWorkedView(View):
+    template_name = 'itworked.html'
+
+    def get(self, request):
+        context = {}
+        return render(request, self.template_name, context)
+
+
 class CreateAccountView(View):
     template_name = 'create_account.html'
     form = UserCreationForm
@@ -20,6 +36,7 @@ class CreateAccountView(View):
         form = UserCreationForm(request.POST)
         if form.is_valid():
             form.save()
+            return HttpResponseRedirect(reverse('accounts:it_worked'))
 
         return HttpResponseRedirect(reverse('home'))
 
@@ -37,6 +54,7 @@ class LoginView(View):
         user = authenticate(username=username, password=password)
         if user is not None and user.is_active:
             login(request, user)
+            return HttpResponseRedirect(reverse('accounts:it_worked'))
 
         return HttpResponseRedirect(reverse('home'))
 
