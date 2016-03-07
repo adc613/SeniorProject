@@ -25,11 +25,25 @@ class Recipe(models.Model):
             action = GeneralAction.objects.get(recipe=self,
                                                instruction_number=i)
             action.instruction_number = action.instruction_number + 1
-            action.save()
 
             i = i - 1
 
         action.instruction_number = position
+
+        return action
+
+    def add_action(self, action):
+        return self.insert_action(action, -1)
+
+
+class BasicReturnText(models.Model):
+    return_statement = models.TextField()
+
+    def action(self, instruction_number):
+        next_instruction = instruction_number + 1
+        return_statement = self.return_statement
+
+        return (next_instruction, return_statement)
 
 
 class GeneralAction(models.Model):
@@ -39,23 +53,24 @@ class GeneralAction(models.Model):
         ('RT', 'Basic Return Text'),
         )
 
-    instruction_number = models.IntegerField()
+    instruction_number = models.IntegerField(unique=True)
     type = models.CharField(max_length=2, choices=choices)
 
-    return_statement = models.TextField()
-
-    def basic_return_text(self):
-        next_instruction = self.instruction_number + 1
-        return_statement = self.return_statement
-
-        return (next_instruction, return_statement)
+    basic_return_text = models.OneToOneField(BasicReturnText, null=True)
 
     def get_action(self):
         if self.choice == 'RT':
-            return self.basic_return_text()
+            action = self.basic_return_text
+        instruction = self.instruction_number
+        next_instruction, return_statement = action.action(instruction)
+        self.instruction_number = next_instruction
+
+        return return_statement
 
 
 class AppSession(models.Model):
+    user = models.ForeignKey('accounts.User')
+    amazon_echo = models.CharField(max_length=255, blank=True)
     last_modified = models.DateTimeField(auto_now=True)
     program_counter = models.IntegerField()
     user = models.ForeignKey('accounts.User')

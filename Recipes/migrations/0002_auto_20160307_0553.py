@@ -5,9 +5,11 @@ from __future__ import unicode_literals
 from django.conf import settings
 from django.db import migrations, models
 import django.db.models.deletion
+from accounts.models import User
 
 
 class Migration(migrations.Migration):
+    user = User.objects.get(pk=1)
 
     dependencies = [
         migrations.swappable_dependency(settings.AUTH_USER_MODEL),
@@ -40,19 +42,19 @@ class Migration(migrations.Migration):
         migrations.AddField(
             model_name='generalaction',
             name='instruction_number',
-            field=models.IntegerField(default='Invalid Text'),
+            field=models.IntegerField(default=-1),
             preserve_default=False,
         ),
         migrations.AddField(
             model_name='generalaction',
             name='recipe',
-            field=models.ForeignKey(default=1, on_delete=django.db.models.deletion.CASCADE, related_name='actions', to='Recipes.Recipe'),
+            field=models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, related_name='actions', to='Recipes.Recipe'),
             preserve_default=False,
         ),
         migrations.AddField(
             model_name='generalaction',
             name='type',
-            field=models.CharField(choices=[('RT', 'Basic Return Text')], default=1, max_length=2),
+            field=models.CharField(choices=[('RT', 'Basic Return Text')], default='RT', max_length=2),
             preserve_default=False,
         ),
         migrations.AddField(

@@ -1,0 +1,23 @@
+<html>
+  <head>
+    <title>Create Action</title>
+  </head>
+
+  <body>
+    <form method="post" action="">
+      {% csrf_token %}
+      {{ form.as_p }}
+      <input type="text" name="return_statement">
+      <button type="submit">submit</button>
+    </form>
+    {% for action in actions %}
+    <div>
+      <h1>{{ action.type }}</h1>
+      {% if action.type == 'RT' %}
+      <p>instruction number: {{ action.instruction_number }}</p>
+      <p>{{ action.basic_return_text.return_statement }}</p>
+      {% endif %}
+    </div>
+    {% endfor %}
+  </body>
+</html>

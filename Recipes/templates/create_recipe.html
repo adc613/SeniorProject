@@ -1,0 +1,13 @@
+<html>
+  <head>
+    <title>Create Recipe</title>
+  </head>
+
+  <body>
+    <form method="post" action="{% url 'Recipes:create_recipe' %}">
+      {% csrf_token %}
+      {{ form.as_p }}
+      <button type="submit">submit</button>
+    </form>
+  </body>
+</html>

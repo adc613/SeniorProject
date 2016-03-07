@@ -5,7 +5,8 @@ from django.utils.decorators import method_decorator
 from django.contrib.auth.decorators import login_required
 from django.views.generic import View
 
-from .forms import CreateActionForm, CreateRecipeForm
+from .forms import CreateActionForm, CreateRecipeForm,\
+    CreateBasicReturnTextForm
 from .models import Recipe
 
 
@@ -13,26 +14,38 @@ class CreateActionView(View):
     template_name = 'create_action.html'
     form = CreateActionForm
 
-    @method_decorator(login_required)
-    def get(self, request):
+    # @method_decorator(login_required)
+    def get(self, request, **kwargs):
         context = {}
         context['form'] = self.form
+        context['recipe'] = Recipe.objects.get(pk=kwargs['recipe_pk'])
+        context['actions'] = context['recipe'].actions.all().order_by(
+            'instruction_number')
 
         return render(request, self.template_name, context)
 
     @method_decorator(login_required)
-    def post(self, request, **kwargs):
+    def post(self, request, *args, **kwargs):
         form = self.form(request.POST)
         if form.is_valid():
             model = form.save(commit=False)
             recipe = Recipe.objects.get(pk=kwargs['recipe_pk'])
+
             if recipe.creator == request.user:
                 model.recipe = recipe
-                model.save()
             else:
                 return HttpResponseRedirect(reverse('accounts:login'))
 
-        return HttpResponseRedirect(reverse('Recipes:create_action'))
+            if model.type == 'RT':
+                form = CreateBasicReturnTextForm(request.POST)
+                if form.is_valid():
+                    action = form.save()
+                    model.basic_return_text = action
+                    model = recipe.add_action(model)
+                    model.save()
+
+        return HttpResponseRedirect(reverse('Recipes:create_action',
+                                            kwargs=kwargs))
 
 
 class CreateRecipeView(View):
@@ -50,6 +63,8 @@ class CreateRecipeView(View):
     def post(self, request):
         form = self.form(request.POST)
         if form.is_valid():
-            form.save()
+            model = form.save(commit=False)
+            model.creator = request.user
+            model.save()
 
         return HttpResponseRedirect(reverse('Recipes:create_recipe'))

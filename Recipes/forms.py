@@ -1,6 +1,6 @@
 from django import forms
 
-from .models import GeneralAction, Recipe
+from .models import GeneralAction, Recipe, BasicReturnText
 
 
 class CreateRecipeForm(forms.ModelForm):
@@ -12,4 +12,10 @@ class CreateRecipeForm(forms.ModelForm):
 class CreateActionForm(forms.ModelForm):
     class Meta:
         model = GeneralAction
-        fields = ['return_statement', 'type']
+        fields = ['type']
+
+
+class CreateBasicReturnTextForm(forms.ModelForm):
+    class Meta:
+        model = BasicReturnText
+        fields = ['return_statement']
