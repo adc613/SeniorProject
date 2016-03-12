@@ -5,6 +5,8 @@ from django.contrib.auth.models import BaseUserManager
 from django.contrib.auth.models import PermissionsMixin
 from django.db import models
 
+import random
+
 
 class UserManager(BaseUserManager):
     def create_user(self, email, password, first_name='Jane', last_name='Doe'):
@@ -40,6 +42,7 @@ class UserManager(BaseUserManager):
 class User(AbstractBaseUser, PermissionsMixin):
     creation_date = models.DateTimeField(auto_now_add=True, editable=False)
     email = models.EmailField(unique=True)
+    echo = models.CharField(max_length=255, blank=True)
     first_name = models.CharField(max_length=32)
     last_name = models.CharField(max_length=32)
     is_active = models.BooleanField(default=True)
@@ -55,3 +58,14 @@ class User(AbstractBaseUser, PermissionsMixin):
 
     def get_short_name(self):
         return self.first_name
+
+
+def passcode_init():
+    return random.randrange(1000, 9999)
+
+
+class LinkAccountToEcho(models.Model):
+    creation_date = models.DateTimeField(auto_now_add=True, editable=False)
+    passcode = models.IntegerField(default=passcode_init)
+    user = models.ForeignKey(User)
+    active = models.BooleanField(default=True)

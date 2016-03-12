@@ -9,11 +9,11 @@ from accounts.models import User
 
 
 class Migration(migrations.Migration):
-    user = User.objects.get(pk=1)
 
     dependencies = [
         migrations.swappable_dependency(settings.AUTH_USER_MODEL),
         ('Recipes', '0001_initial'),
+        ('accounts', '0002_user_is_staff'),
     ]
 
     operations = [

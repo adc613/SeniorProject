@@ -14,7 +14,7 @@ class CreateActionView(View):
     template_name = 'create_action.html'
     form = CreateActionForm
 
-    # @method_decorator(login_required)
+    @method_decorator(login_required)
     def get(self, request, **kwargs):
         context = {}
         context['form'] = self.form

@@ -66,22 +66,3 @@ class GeneralAction(models.Model):
         self.instruction_number = next_instruction
 
         return return_statement
-
-
-class AppSession(models.Model):
-    user = models.ForeignKey('accounts.User')
-    amazon_echo = models.CharField(max_length=255, blank=True)
-    last_modified = models.DateTimeField(auto_now=True)
-    program_counter = models.IntegerField()
-    user = models.ForeignKey('accounts.User')
-    current_app = models.ForeignKey(Recipe)
-    end = models.BooleanField(default=False)
-
-    def next_action(self):
-        action = self.current_app.actions.get(
-            instruction_number=self.program_counter)
-        (next_instruction, return_statement) = action.get_action()
-        self.program_counter = next_instruction
-        self.save()
-
-        return return_statement

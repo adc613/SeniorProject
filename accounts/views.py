@@ -1,10 +1,13 @@
 from django.contrib.auth import authenticate, login, logout
+from django.contrib.auth.decorators import login_required
 from django.core.urlresolvers import reverse
 from django.http import HttpResponseRedirect
 from django.shortcuts import render
+from django.utils.decorators import method_decorator
 from django.views.generic import View
 
 from .forms import UserCreationForm
+from .models import LinkAccountToEcho
 
 
 class HomePageView(View):
@@ -38,7 +41,9 @@ class CreateAccountView(View):
             form.save()
             return HttpResponseRedirect(reverse('accounts:it_worked'))
 
-        return HttpResponseRedirect(reverse('home'))
+        context = {}
+        context['form'] = self.form
+        return render(request, self.template_name, context)
 
 
 class LoginView(View):
@@ -56,7 +61,19 @@ class LoginView(View):
             login(request, user)
             return HttpResponseRedirect(reverse('accounts:it_worked'))
 
-        return HttpResponseRedirect(reverse('home'))
+        return render(request, self.template_name, {})
+
+
+class LinkEchoToUserView(View):
+    template_name = 'link_account.html'
+
+    @method_decorator(login_required)
+    def get(self, request):
+        link = LinkAccountToEcho.objects.create(user=request.user)
+        context = {}
+        context['passcode'] = link.passcode
+        return render(request, self.template_name, context)
+
 
 
 def logout_view(request):
