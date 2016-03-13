@@ -10,6 +10,11 @@ from .forms import UserCreationForm
 from .models import LinkAccountToEcho
 
 
+def logout_view(request):
+    logout(request)
+    return HttpResponseRedirect(reverse('home'))
+
+
 class HomePageView(View):
     template_name = 'home.html'
 
@@ -73,9 +78,3 @@ class LinkEchoToUserView(View):
         context = {}
         context['passcode'] = link.passcode
         return render(request, self.template_name, context)
-
-
-
-def logout_view(request):
-    logout(request)
-    return HttpResponseRedirect(reverse('home'))

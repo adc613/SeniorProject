@@ -2,7 +2,7 @@ from django.core.urlresolvers import reverse
 from django.test import TestCase
 from django.test.client import Client
 
-from accounts.models import User
+from accounts.models import User, LinkAccountToEcho
 
 
 class AccountsViewsTestCases(TestCase):
@@ -67,6 +67,16 @@ class AccountsViewsTestCases(TestCase):
 
     def test_link_echo_to_user_view(self):
         c = Client()
+        resp = c.get(reverse('accounts:link_echo_to_user'))
+        self.assertEqual(resp.status_code, 302)
+
+        email = 'adc82@case.edu'
+        password = '$tr0ngPa$$worD'
+        user = User.objects.create_user(email=email, password=password)
+        c.login(username=email, password=password)
 
         resp = c.get(reverse('accounts:link_echo_to_user'))
         self.assertEqual(resp.status_code, 200)
+
+        link = LinkAccountToEcho.objects.get(pk=1)
+        self.assertEqual(user, link.user)
