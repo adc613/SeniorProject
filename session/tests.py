@@ -1,7 +1,7 @@
 from django.test import TestCase
 
 from Recipes.models import Recipe, GeneralAction, BasicReturnText
-from accounts.models import User
+from accounts.models import User, LinkAccountToEcho
 from .models import AppSession
 
 
@@ -82,7 +82,7 @@ class ResponseTestCases(TestCase):
             self.assertEqual(return_statement, action.get_action()[1])
 
     def test_registering_echo(self):
-        pass
+        link = LinkAccountToEcho.objects.create(user=self.user)
 
     def test_session_has_not_started(self):
         pass
