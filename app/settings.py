@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     'echo-dev',
     'Recipes',
     'accounts',
+    'session',
 ]
 
 MIDDLEWARE_CLASSES = [

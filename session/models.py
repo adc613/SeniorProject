@@ -7,8 +7,7 @@ class AppSession(models.Model):
     user = models.ForeignKey('accounts.User')
     amazon_echo = models.CharField(max_length=255, unique=True)
     last_modified = models.DateTimeField(auto_now=True)
-    program_counter = models.IntegerField()
-    user = models.ForeignKey('accounts.User')
+    program_counter = models.IntegerField(default=1)
     current_app = models.ForeignKey('Recipes.Recipe')
     end = models.BooleanField(default=False)
 
