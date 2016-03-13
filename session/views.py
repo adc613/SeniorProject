@@ -11,7 +11,7 @@ from django.views.generic import View
 
 from .models import AppSession
 from accounts.models import LinkAccountToEcho, User
-from utils import generic_response
+from utils import AlexaResponse
 
 
 class ResponseView(View):
@@ -71,6 +71,6 @@ class ResponseView(View):
                         return_text = "This echo has not been registered, " +\
                             "please login and begin registration process"
 
-        response = generic_response(return_text, False)
+        response = AlexaResponse(return_statement=return_text).get_response()
 
         return HttpResponse(response, mimetype="application/json")
