@@ -83,6 +83,8 @@ class ResponseTestCases(TestCase):
 
     def test_registering_echo(self):
         link = LinkAccountToEcho.objects.create(user=self.user)
+        if link:
+            return 1
 
     def test_session_has_not_started(self):
         pass
