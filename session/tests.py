@@ -133,11 +133,8 @@ class ResponseTestCases(TestCase):
                              name='passcode',
                              value=link.passcode)
         c = Client()
-        print(request.get_params())
-        json_str = json.dumps(request.get_params())
-        print(json_str)
         resp = c.post(reverse('session:echo_request'),
-                      data=request.get_params(),
+                      data=json.dumps(request.get_params()),
                       content_type='application/json',
                       HTTP_X_REQUESTED_WITH='XMLHttpRequest'
                       )

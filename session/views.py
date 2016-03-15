@@ -5,7 +5,7 @@ from django.views.decorators.csrf import csrf_exempt
 from django.views.generic import View
 
 # import datetime
-# import json
+import json
 
 from .models import AppSession
 from accounts.models import LinkAccountToEcho, User
@@ -35,9 +35,7 @@ class ResponseView(View):
 
     @method_decorator(csrf_exempt)
     def post(self, request):
-        print('-----view------')
-        print(request.POST)
-        echo_request = AlexaRequest(request.POST)
+        echo_request = AlexaRequest(json.loads(request.body))
 
         session = echo_request.get_session()
 

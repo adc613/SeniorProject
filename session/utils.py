@@ -115,13 +115,8 @@ class AlexaRequest():
         return user is not None
 
     def get_user(self):
-        print('-----hey-----')
-        print(self._request)
-        print(self._request['session'])
-        print(self._request['session']['user'])
-        print(self._request['session']['user']['userId'])
-        print('-----hey-----')
-        return User.objects.get(echo=self._request['session']['user']['userId'])
+        return User.objects.get(
+            echo=self._request['session']['user']['userId'])
 
     def get_user_id(self):
         return self._request['session']['user']['userId']
