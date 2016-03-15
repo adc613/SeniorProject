@@ -1,8 +1,52 @@
+from django.core.urlresolvers import reverse
 from django.test import TestCase
+from django.test.client import Client
 
 from Recipes.models import Recipe, GeneralAction, BasicReturnText
 from accounts.models import User, LinkAccountToEcho
 from .models import AppSession
+
+import json
+
+
+class CreateAlexaRequest():
+
+    def __init__(self, **kwargs):
+        self._response = {}
+        self._response['version'] = kwargs.get('version', '1.0')
+        self._response['session'] = {
+            'new': False,
+            'sessionId': 'amzn1.echo-api.session.000000-0000-0000-0000000000',
+            'application': {
+                'applicationId': 'amzn1.echo-sdk-ams.app.0000-000-000',
+                },
+            'attributes': {},
+            'user': {
+                'userId': 'amzn1.account.AM3B000000000000000000000000000'
+                },
+            }
+
+        self._response['request'] = {
+            'type': kwargs.get('type', 'IntentRequest'),
+            'requestId': 'amzn1.echo-api.request.0000-00000-000-00000-00000',
+            'timestamp': '2015-05-13T12:34:56Z',
+            'intent': {
+                'name': kwargs.get('intent_name', 'passcode'),
+                'slots': []
+                }
+            }
+
+    def create_param(self, **kwargs):
+        param = {
+            kwargs.get('type', 'AMAZON.STRING'): {
+                'name': kwargs['name'],
+                'value': kwargs['value']
+                }
+            }
+        self._response['request']['intent']['slots'].append(param)
+
+    def get_params(self):
+        return self._response 
 
 
 class ResponseTestCases(TestCase):
@@ -83,8 +127,19 @@ class ResponseTestCases(TestCase):
 
     def test_registering_echo(self):
         link = LinkAccountToEcho.objects.create(user=self.user)
-        if link:
-            return 1
+        request = CreateAlexaRequest(type='IntentRequest', intent_name='register')
+        request.create_param(type='AMAZON.FOUR_DIGIT_NUMBER',
+                             name='passcode',
+                             value=link.passcode)
+        c = Client()
+        print(request.get_params())
+        json_str = json.dumps(request.get_params())
+        print(json_str)
+        resp = c.post(reverse('session:echo_request'),
+                      data=request.get_params(),
+                      content_type='application/json',
+                      HTTP_X_REQUESTED_WITH='XMLHttpRequest'
+                      )
 
     def test_session_has_not_started(self):
         pass

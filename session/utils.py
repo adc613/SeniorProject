@@ -1,3 +1,4 @@
+from .models import AppSession
 from accounts.models import User
 
 import datetime
@@ -114,7 +115,19 @@ class AlexaRequest():
         return user is not None
 
     def get_user(self):
-        return User.objects.get(echo=self._request['user']['userId'])
+        print('-----hey-----')
+        print(self._request)
+        print(self._request['session'])
+        print(self._request['session']['user'])
+        print(self._request['session']['user']['userId'])
+        print('-----hey-----')
+        return User.objects.get(echo=self._request['session']['user']['userId'])
+
+    def get_user_id(self):
+        return self._request['session']['user']['userId']
+
+    def get_session(self):
+        return AppSession.objects.get(user=self.get_user(), end=False)
 
     def is_launch_request(self):
         return self._request['request']['type'] == 'LaunchRequest'

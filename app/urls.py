@@ -24,6 +24,7 @@ urlpatterns = [
     url(r'^dev/', include('echo-dev.urls', namespace='dev')),
     url(r'^accounts/', include('accounts.urls', namespace='accounts')),
     url(r'^recipes/', include('Recipes.urls', namespace='Recipes')),
+    url(r'^session/', include('session.urls', namespace='session')),
 
     url(r'^admin/', admin.site.urls),
 ]
