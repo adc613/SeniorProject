@@ -16,7 +16,7 @@ class AppSession(models.Model):
         if length < self.program_counter:
             self.end = True
             self.save()
-            return 'Application is over'
+            return 'You have reached the end of this application'
 
         action = self.current_app.actions.get(
             instruction_number=self.program_counter)

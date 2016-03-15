@@ -1,3 +1,5 @@
+from django.core.exceptions import ObjectDoesNotExist
+
 from .models import AppSession
 from accounts.models import User
 
@@ -21,18 +23,18 @@ class AlexaResponse():
 
         self.init_outputSpeech(kwargs)
 
-    def outputSpeech_dict(self, **kwargs):
+    def outputSpeech_dict(self, kwargs):
         try:
             return_statement = kwargs['return_statement']
         except KeyError:
             raise ValueError('return_statement value is absent')
         return_statement_type = kwargs.get('return_statement_type',
-                                           'PlaintText')
+                                           'PlainText')
 
         output = {}
 
         if return_statement_type in self.output_speech_types:
-            output['type'] = type
+            output['type'] = return_statement_type
         else:
             raise ValueError('Return type {} is not valid'.format(type))
 
@@ -43,13 +45,13 @@ class AlexaResponse():
 
         return output
 
-    def init_outputSpeech(self, **kwargs):
+    def init_outputSpeech(self, kwargs):
         self._response['outputSpeech'] = self.outputSpeech_dict(kwargs)
 
-    def init_reprompt(self, **kwargs):
+    def init_reprompt(self, kwargs):
         self._response['reprompt'] = self.outputSpeech_dict(kwargs)
 
-    def init_card(self, **kwargs):
+    def init_card(self, kwargs):
         type = kwargs.get('type', 'simple')
         content = kwargs.get('content', None)
         title = kwargs.get('title', None)
@@ -111,18 +113,27 @@ class AlexaRequest():
         # Change everyting to accessToken. Right now we use userId which can
         # change in unique circumstances. accessToken is the proper way to link
         # an account
-        user = User.objects.get(echo=self._request['user']['userId'])
+        try:
+            user = User.objects.get(echo=self._request['user']['userId'])
+        except ObjectDoesNotExist:
+            user = None
         return user is not None
 
     def get_user(self):
-        return User.objects.get(
-            echo=self._request['session']['user']['userId'])
+        try:
+            return User.objects.get(
+                echo=self._request['session']['user']['userId'])
+        except ObjectDoesNotExist:
+            return None
 
     def get_user_id(self):
         return self._request['session']['user']['userId']
 
     def get_session(self):
-        return AppSession.objects.get(user=self.get_user(), end=False)
+        try:
+            return AppSession.objects.get(user=self.get_user(), end=False)
+        except ObjectDoesNotExist:
+            return None
 
     def is_launch_request(self):
         return self._request['request']['type'] == 'LaunchRequest'
@@ -154,13 +165,15 @@ class AlexaRequest():
         if not self.is_intent_request():
             return None
         params = {}
+
         for item in self._request['request']['intent']['slots']:
             dummy_type = object()
             for type in self.item_types:
                 param = item.get(type, dummy_type)
-                if param is dummy_type:
+                if param is not dummy_type:
                     params[param['name']] = param['value']
                     break
+        return params
 
     def get_session_ended_reason(self):
         if self.is_session_ended_request():

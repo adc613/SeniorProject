@@ -41,24 +41,24 @@ class ResponseView(View):
 
         if session is not None:
             # Echo is in a session
-            return_text = session.get_next_action()
-        else:
-            user = echo_request.get_user()
-            if user:
-                # There not in an app, but echo has been registered
-                return_text = 'Which application would you like?'
-            else:
+            return_text = session.next_action()
+        elif echo_request.get_intent_type() == 'register':
+            return_text = self.register_echo(echo_request)
 
-                if not echo_request.is_intent_request():
-                    return_text = 'There seems to have been an error. ' +\
-                                  'Please try again'
-                elif echo_request.get_intent_type() == 'register':
-                    return_text = self.register_echo(echo_request)
-                else:
-                    # Echo has not been registered
-                    return_text = "This echo has not been registered, " +\
-                        "please login and begin registration process"
+        elif echo_request.get_user():
+            # There not in an app, but echo has been registered
+            return_text = 'Please go online and chose your application'
+
+        elif not echo_request.is_intent_request():
+            return_text = 'There seems to have been an error. ' +\
+                          'Please try again'
+
+        else:
+            # Echo has not been registered
+            return_text = "This echo has not been registered, " +\
+                "please login and begin registration process"
 
         response = AlexaResponse(return_statement=return_text).get_response()
 
-        return HttpResponse(response, mimetype="application/json")
+        return HttpResponse(json.dumps(response),
+                            content_type="application/json")

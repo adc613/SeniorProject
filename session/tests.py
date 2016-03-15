@@ -9,6 +9,9 @@ from .models import AppSession
 import json
 
 
+USER_ID = 'amzn1.account.AM3B000000000000000000000000000'
+
+
 class CreateAlexaRequest():
 
     def __init__(self, **kwargs):
@@ -22,7 +25,7 @@ class CreateAlexaRequest():
                 },
             'attributes': {},
             'user': {
-                'userId': 'amzn1.account.AM3B000000000000000000000000000'
+                'userId': USER_ID
                 },
             }
 
@@ -67,7 +70,7 @@ class ResponseTestCases(TestCase):
             )
 
         self.basic_return_text = BasicReturnText.objects.create(
-            return_statement='Hello World!'
+            return_statement='Hello World!1'
             )
         self.general_action = GeneralAction.objects.create(
             type='RT',
@@ -117,7 +120,7 @@ class ResponseTestCases(TestCase):
     def test_app_session_model_next_action(self):
         session = AppSession.objects.create(
             user=self.user,
-            amazon_echo='1lkjh342k41j4kl1j34',
+            amazon_echo=USER_ID,
             current_app=self.recipe
             )
 
@@ -138,13 +141,39 @@ class ResponseTestCases(TestCase):
                       content_type='application/json',
                       HTTP_X_REQUESTED_WITH='XMLHttpRequest'
                       )
+        link = LinkAccountToEcho.objects.get(pk=link.pk)
         self.assertEqual(resp.status_code, 200)
+        self.assertFalse(link.active)
+        self.assertEqual(link.user.echo, USER_ID)
 
     def test_session_has_not_started(self):
-        pass
-
-    def test_echo_is_in_session(self):
-        pass
-
-    def test_echo_sessions_has_ended(self):
-        pass
+        # link echo
+        link = LinkAccountToEcho.objects.create(user=self.user)
+        request = CreateAlexaRequest(type='IntentRequest',
+                                     intent_name='register')
+        request.create_param(type='AMAZON.FOUR_DIGIT_NUMBER',
+                             name='passcode',
+                             value=link.passcode)
+        c = Client()
+        resp = c.post(reverse('session:echo_request'),
+                      data=json.dumps(request.get_params()),
+                      content_type='application/json',
+                      HTTP_X_REQUESTED_WITH='XMLHttpRequest'
+                      )
+        # create session
+        AppSession.objects.create(
+            user=self.user,
+            amazon_echo=USER_ID,
+            current_app=self.recipe
+            )
+        request = CreateAlexaRequest(type='IntentRequest',
+                                     intent_name='not registering')
+        for i in range(1, 6):
+            resp = c.post(reverse('session:echo_request'),
+                          data=json.dumps(request.get_params()),
+                          content_type='application/json',
+                          HTTP_X_REQUESTED_WITH='XMLHttpRequest'
+                          )
+            return_text = resp.json()['outputSpeech']['text']
+            hacked_instruction_number = int(return_text[len(return_text) - 1])
+            self.assertEqual(hacked_instruction_number, i)
