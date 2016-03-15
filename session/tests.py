@@ -46,7 +46,7 @@ class CreateAlexaRequest():
         self._response['request']['intent']['slots'].append(param)
 
     def get_params(self):
-        return self._response 
+        return self._response
 
 
 class ResponseTestCases(TestCase):
@@ -127,7 +127,8 @@ class ResponseTestCases(TestCase):
 
     def test_registering_echo(self):
         link = LinkAccountToEcho.objects.create(user=self.user)
-        request = CreateAlexaRequest(type='IntentRequest', intent_name='register')
+        request = CreateAlexaRequest(type='IntentRequest',
+                                     intent_name='register')
         request.create_param(type='AMAZON.FOUR_DIGIT_NUMBER',
                              name='passcode',
                              value=link.passcode)
@@ -140,6 +141,7 @@ class ResponseTestCases(TestCase):
                       content_type='application/json',
                       HTTP_X_REQUESTED_WITH='XMLHttpRequest'
                       )
+        self.assertEqual(resp.status_code, 200)
 
     def test_session_has_not_started(self):
         pass
