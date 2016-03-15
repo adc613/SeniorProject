@@ -15,12 +15,6 @@ from utils import AlexaResponse, AlexaRequest
 class ResponseView(View):
     template_name = 'response.html'
 
-    def does_echo_have_current_session(self, echo_id):
-        return AppSession.objects.get(amazon_echo=echo_id)
-
-    def has_echo_been_registered(self, echo_id):
-        return User.objects.get(echo=echo_id)
-
     def register_echo(self, request):
         passcode = request.get_intent_params()['passcode']
         link = LinkAccountToEcho.objects.get(passcode=passcode)
@@ -48,10 +42,6 @@ class ResponseView(View):
         elif echo_request.get_user():
             # There not in an app, but echo has been registered
             return_text = 'Please go online and chose your application'
-
-        elif not echo_request.is_intent_request():
-            return_text = 'There seems to have been an error. ' +\
-                          'Please try again'
 
         else:
             # Echo has not been registered
