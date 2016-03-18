@@ -1,0 +1,15 @@
+<html>
+  <head>
+    <title>Select App</title>
+  </head>
+
+  <body>
+    <div class="container">
+      <ul> 
+        {% for app in apps %}
+        <li><a href="{% url 'session:load_app' pk=app.pk %}">{{ app.name }}</a></li>
+        {% endfor %}
+      </ul>
+    </div>
+  </body>
+</html>

@@ -177,3 +177,15 @@ class ResponseTestCases(TestCase):
             return_text = resp.json()['outputSpeech']['text']
             hacked_instruction_number = int(return_text[len(return_text) - 1])
             self.assertEqual(hacked_instruction_number, i)
+
+    def test_load_application_view(self):
+        c = Client()
+        c.login(username=self.user.email, password=self.password)
+        resp = c.get(reverse('session:load_app'))
+        self.assertEqual(resp.status_code, 200)
+
+        resp = c.post(reverse('session:load_app', kwargs={'pk': 1}))
+        session = AppSession.objects.get(user=self.user)
+        self.assertEqual(resp.status_code, 200)
+        self.assertEqual(session.current_app, self.recipe)
+        print(resp.templates)

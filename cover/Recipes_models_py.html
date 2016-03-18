@@ -137,7 +137,6 @@
 <p id="n68" class="stm run hide_run"><a href="#n68">68</a></p>
 <p id="n69" class="stm run hide_run"><a href="#n69">69</a></p>
 <p id="n70" class="stm run hide_run"><a href="#n70">70</a></p>
-<p id="n71" class="pln"><a href="#n71">71</a></p>
                 
             </td>
             <td class="text">
@@ -154,7 +153,7 @@
 <p id="t11" class="stm mis">&nbsp; &nbsp; <span class="nam">description</span> <span class="op">=</span> <span class="nam">models</span><span class="op">.</span><span class="nam">TextField</span><span class="op">(</span><span class="op">)</span><span class="strut">&nbsp;</span></p>
 <p id="t12" class="pln"><span class="strut">&nbsp;</span></p>
 <p id="t13" class="stm mis">&nbsp; &nbsp; <span class="key">def</span> <span class="nam">insert_action</span><span class="op">(</span><span class="nam">self</span><span class="op">,</span> <span class="nam">action</span><span class="op">,</span> <span class="nam">position</span><span class="op">)</span><span class="op">:</span><span class="strut">&nbsp;</span></p>
-<p id="t14" class="stm run hide_run">&nbsp; &nbsp; &nbsp; &nbsp; <span class="key">if</span> <span class="nam">action</span><span class="op">.</span><span class="nam">recipe</span> <span class="op">!=</span> <span class="nam">self</span> <span class="key">and</span> <span class="nam">action</span><span class="op">.</span><span class="nam">recipe</span> <span class="op">!=</span> <span class="nam">None</span><span class="op">:</span><span class="strut">&nbsp;</span></p>
+<p id="t14" class="stm run hide_run">&nbsp; &nbsp; &nbsp; &nbsp; <span class="key">if</span> <span class="nam">action</span><span class="op">.</span><span class="nam">recipe</span> <span class="op">!=</span> <span class="nam">self</span> <span class="key">and</span> <span class="nam">action</span><span class="op">.</span><span class="nam">recipe</span> <span class="key">is</span> <span class="key">not</span> <span class="nam">None</span><span class="op">:</span><span class="strut">&nbsp;</span></p>
 <p id="t15" class="stm mis">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span class="key">return</span> <span class="nam">None</span><span class="strut">&nbsp;</span></p>
 <p id="t16" class="stm run hide_run">&nbsp; &nbsp; &nbsp; &nbsp; <span class="key">from</span> <span class="nam">Recipes</span><span class="op">.</span><span class="nam">models</span> <span class="key">import</span> <span class="nam">GeneralAction</span><span class="strut">&nbsp;</span></p>
 <p id="t17" class="stm run hide_run">&nbsp; &nbsp; &nbsp; &nbsp; <span class="key">if</span> <span class="nam">position</span> <span class="op">&lt;=</span> <span class="num">0</span><span class="op">:</span><span class="strut">&nbsp;</span></p>
@@ -211,7 +210,6 @@
 <p id="t68" class="stm run hide_run">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span class="nam">action</span> <span class="op">=</span> <span class="nam">self</span><span class="op">.</span><span class="nam">basic_return_text</span><span class="strut">&nbsp;</span></p>
 <p id="t69" class="stm run hide_run">&nbsp; &nbsp; &nbsp; &nbsp; <span class="nam">instruction</span> <span class="op">=</span> <span class="nam">self</span><span class="op">.</span><span class="nam">instruction_number</span><span class="strut">&nbsp;</span></p>
 <p id="t70" class="stm run hide_run">&nbsp; &nbsp; &nbsp; &nbsp; <span class="key">return</span> <span class="nam">action</span><span class="op">.</span><span class="nam">action</span><span class="op">(</span><span class="nam">instruction</span><span class="op">)</span><span class="strut">&nbsp;</span></p>
-<p id="t71" class="pln"><span class="strut">&nbsp;</span></p>
                 
             </td>
         </tr>
@@ -222,7 +220,7 @@
     <div class="content">
         <p>
             <a class="nav" href="index.html">&#xab; index</a> &nbsp; &nbsp; <a class="nav" href="https://coverage.readthedocs.org">coverage.py v4.0.3</a>,
-            created at 2016-03-15 18:08
+            created at 2016-03-15 22:08
         </p>
     </div>
 </div>

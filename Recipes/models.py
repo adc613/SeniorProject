@@ -11,7 +11,7 @@ class Recipe(models.Model):
     description = models.TextField()
 
     def insert_action(self, action, position):
-        if action.recipe != self and action.recipe != None:
+        if action.recipe != self and action.recipe is not None:
             return None
         from Recipes.models import GeneralAction
         if position <= 0:
@@ -68,4 +68,3 @@ class GeneralAction(models.Model):
             action = self.basic_return_text
         instruction = self.instruction_number
         return action.action(instruction)
-

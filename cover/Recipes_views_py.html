@@ -137,6 +137,7 @@
 <p id="n68" class="stm run hide_run"><a href="#n68">68</a></p>
 <p id="n69" class="pln"><a href="#n69">69</a></p>
 <p id="n70" class="stm run hide_run"><a href="#n70">70</a></p>
+<p id="n71" class="pln"><a href="#n71">71</a></p>
                 
             </td>
             <td class="text">
@@ -209,7 +210,8 @@
 <p id="t67" class="stm run hide_run">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span class="nam">model</span><span class="op">.</span><span class="nam">creator</span> <span class="op">=</span> <span class="nam">request</span><span class="op">.</span><span class="nam">user</span><span class="strut">&nbsp;</span></p>
 <p id="t68" class="stm run hide_run">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span class="nam">model</span><span class="op">.</span><span class="nam">save</span><span class="op">(</span><span class="op">)</span><span class="strut">&nbsp;</span></p>
 <p id="t69" class="pln"><span class="strut">&nbsp;</span></p>
-<p id="t70" class="stm run hide_run">&nbsp; &nbsp; &nbsp; &nbsp; <span class="key">return</span> <span class="nam">HttpResponseRedirect</span><span class="op">(</span><span class="nam">reverse</span><span class="op">(</span><span class="str">&#39;Recipes:create_recipe&#39;</span><span class="op">)</span><span class="op">)</span><span class="strut">&nbsp;</span></p>
+<p id="t70" class="stm run hide_run">&nbsp; &nbsp; &nbsp; &nbsp; <span class="key">return</span> <span class="nam">HttpResponseRedirect</span><span class="op">(</span><span class="nam">reverse</span><span class="op">(</span><span class="str">&#39;Recipes:create_action&#39;</span><span class="op">,</span><span class="strut">&nbsp;</span></p>
+<p id="t71" class="pln">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span class="nam">kwargs</span><span class="op">=</span><span class="op">{</span><span class="str">&#39;recipe_pk&#39;</span><span class="op">:</span> <span class="nam">model</span><span class="op">.</span><span class="nam">pk</span><span class="op">}</span><span class="op">)</span><span class="op">)</span><span class="strut">&nbsp;</span></p>
                 
             </td>
         </tr>
@@ -220,7 +222,7 @@
     <div class="content">
         <p>
             <a class="nav" href="index.html">&#xab; index</a> &nbsp; &nbsp; <a class="nav" href="https://coverage.readthedocs.org">coverage.py v4.0.3</a>,
-            created at 2016-03-15 18:08
+            created at 2016-03-17 00:30
         </p>
     </div>
 </div>

@@ -74,7 +74,8 @@ class LinkEchoToUserView(View):
 
     @method_decorator(login_required)
     def get(self, request):
-        link = LinkAccountToEcho.objects.create(user=request.user)
+        link = LinkAccountToEcho.objects.get_or_create(user=request.user)[0]
         context = {}
+        context['active'] = link.active
         context['passcode'] = link.passcode
         return render(request, self.template_name, context)

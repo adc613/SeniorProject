@@ -210,7 +210,7 @@
 <p id="t67" class="stm mis"><span class="key">class</span> <span class="nam">LinkAccountToEcho</span><span class="op">(</span><span class="nam">models</span><span class="op">.</span><span class="nam">Model</span><span class="op">)</span><span class="op">:</span><span class="strut">&nbsp;</span></p>
 <p id="t68" class="stm mis">&nbsp; &nbsp; <span class="nam">creation_date</span> <span class="op">=</span> <span class="nam">models</span><span class="op">.</span><span class="nam">DateTimeField</span><span class="op">(</span><span class="nam">auto_now_add</span><span class="op">=</span><span class="nam">True</span><span class="op">,</span> <span class="nam">editable</span><span class="op">=</span><span class="nam">False</span><span class="op">)</span><span class="strut">&nbsp;</span></p>
 <p id="t69" class="stm mis">&nbsp; &nbsp; <span class="nam">passcode</span> <span class="op">=</span> <span class="nam">models</span><span class="op">.</span><span class="nam">IntegerField</span><span class="op">(</span><span class="nam">default</span><span class="op">=</span><span class="nam">passcode_init</span><span class="op">)</span><span class="strut">&nbsp;</span></p>
-<p id="t70" class="stm mis">&nbsp; &nbsp; <span class="nam">user</span> <span class="op">=</span> <span class="nam">models</span><span class="op">.</span><span class="nam">ForeignKey</span><span class="op">(</span><span class="nam">User</span><span class="op">)</span><span class="strut">&nbsp;</span></p>
+<p id="t70" class="stm mis">&nbsp; &nbsp; <span class="nam">user</span> <span class="op">=</span> <span class="nam">models</span><span class="op">.</span><span class="nam">OneToOneField</span><span class="op">(</span><span class="nam">User</span><span class="op">)</span><span class="strut">&nbsp;</span></p>
 <p id="t71" class="stm mis">&nbsp; &nbsp; <span class="nam">active</span> <span class="op">=</span> <span class="nam">models</span><span class="op">.</span><span class="nam">BooleanField</span><span class="op">(</span><span class="nam">default</span><span class="op">=</span><span class="nam">True</span><span class="op">)</span><span class="strut">&nbsp;</span></p>
                 
             </td>
@@ -222,7 +222,7 @@
     <div class="content">
         <p>
             <a class="nav" href="index.html">&#xab; index</a> &nbsp; &nbsp; <a class="nav" href="https://coverage.readthedocs.org">coverage.py v4.0.3</a>,
-            created at 2016-03-15 18:08
+            created at 2016-03-16 23:43
         </p>
     </div>
 </div>

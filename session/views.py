@@ -1,5 +1,6 @@
+from django.contrib.auth.decorators import login_required
 from django.http import HttpResponse
-# from django.shortcuts import render
+from django.shortcuts import render
 from django.utils.decorators import method_decorator
 from django.views.decorators.csrf import csrf_exempt
 from django.views.generic import View
@@ -8,7 +9,8 @@ from django.views.generic import View
 import json
 
 from .models import AppSession
-from accounts.models import LinkAccountToEcho, User
+from Recipes.models import Recipe
+from accounts.models import LinkAccountToEcho
 from utils import AlexaResponse, AlexaRequest
 
 
@@ -52,3 +54,24 @@ class ResponseView(View):
 
         return HttpResponse(json.dumps(response),
                             content_type="application/json")
+
+
+class LoadApplicationView(View):
+    template_name = 'load_app.html'
+    post_template_name = 'app_is_loaded.html'
+
+    @method_decorator(login_required)
+    def get(self, request):
+        context = {}
+        context['apps'] = Recipe.objects.all()
+        return render(request, self.template_name, context)
+
+    @method_decorator(login_required)
+    def post(self, request, **kwargs):
+        app = Recipe.objects.get(pk=kwargs['pk'])
+        session = AppSession.objects.get_or_create(user=request.user,
+                                                   current_app=app)[0]
+        session.end = False
+        session.save()
+
+        return render(request, self.post_template_name, {})

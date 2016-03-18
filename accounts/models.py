@@ -67,5 +67,5 @@ def passcode_init():
 class LinkAccountToEcho(models.Model):
     creation_date = models.DateTimeField(auto_now_add=True, editable=False)
     passcode = models.IntegerField(default=passcode_init)
-    user = models.ForeignKey(User)
+    user = models.OneToOneField(User)
     active = models.BooleanField(default=True)

@@ -5,6 +5,14 @@
 
   <body>
     <h1>Hello World!</h1>
+    <ul>
+      <a href="{% url 'accounts:login' %}">Login</a>
+      {% if user.is_authenticated %}
+      <a href="{% url 'accounts:link_echo_to_user' %}">Link</a>
+      <a href="{% url 'Recipes:create_recipe' %}">Create App</a>
+      <a href="{% url 'session:load_app' %}">Open App</a>
+      {% endif %}
+    </ul>
   </body>
 
 </html>

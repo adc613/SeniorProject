@@ -67,4 +67,5 @@ class CreateRecipeView(View):
             model.creator = request.user
             model.save()
 
-        return HttpResponseRedirect(reverse('Recipes:create_recipe'))
+        return HttpResponseRedirect(reverse('Recipes:create_action',
+                                            kwargs={'recipe_pk': model.pk}))
