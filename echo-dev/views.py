@@ -27,6 +27,8 @@ class DevPageView(View):
             context['recent_request'] = file.read()
         except: 
             pass
+
+        print(str(request.GET))
         return render(request, self.template_name, context)
 
     def post(self, request):
@@ -40,6 +42,10 @@ class DevPageView(View):
 
 class ResponseView(View):
     template_name = 'response.html'
+
+    @method_decorator(csrf_exempt)
+    def dispatch(self, request, *args, **kwargs):
+        return super(ResponseView, self).dispatch(request, *args, **kwargs)
 
     def get(self, request):
         now = datetime.datetime.now()
@@ -60,7 +66,5 @@ class ResponseView(View):
             file.write('\n')
         db = shelve.open('dev.db')
         response = db['response']
-        response = json.loads(response)
-        print(response['adam'])
 
-        return HttpResponse(response, mimetype="application/json")
+        return HttpResponse(response, content_type="application/json")
