@@ -16,7 +16,15 @@ Including another URLconf
 from django.conf.urls import url, include
 from django.contrib import admin
 
+from accounts.views import HomePageView
+
 urlpatterns = [
-    url(r'^admin/', admin.site.urls),
+    url(r'^$', HomePageView.as_view(), name='home'),
+
     url(r'^dev/', include('echo-dev.urls', namespace='dev')),
+    url(r'^accounts/', include('accounts.urls', namespace='accounts')),
+    url(r'^recipes/', include('Recipes.urls', namespace='Recipes')),
+    url(r'^session/', include('session.urls', namespace='session')),
+
+    url(r'^admin/', admin.site.urls),
 ]

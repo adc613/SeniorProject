@@ -1,0 +1,23 @@
+<html>
+  <head>
+    <title>Select App</title>
+  </head>
+
+  <body>
+    <div class="container">
+        <h1>load app</h1>
+      <ul> 
+        {% for app in apps %}
+        <li><a href="{% url 'session:load_app' pk=app.pk %}">{{ app.name }}</a></li>
+        {% endfor %}
+      </ul>
+
+      <form method="post" action="/session/response/">
+          <button type="submit">submit</button>
+      </form>
+          
+
+
+    </div>
+  </body>
+</html>

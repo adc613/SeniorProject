@@ -1,0 +1,14 @@
+<html>
+  <head>
+    <title>Create Account</title>
+  </head>
+
+  <body>
+    <h1>Create an Account</h1>
+    <form method="post" action="{% url 'accounts:create_account' %}">
+      {% csrf_token %}
+      {{ form.as_p }}
+      <button type="submit">Submit</button>
+    </form>
+  </body>
+</head>

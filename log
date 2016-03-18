@@ -1,158 +1,165 @@
----2016-02-05 02:06:14.333814-------2016-02-05 02:06:31.956918----<WSGIRequest: GET '/'>---2016-02-05 02:07:22.241050----<WSGIRequest: GET '/'>---2016-02-05 02:08:59.104003----
-<WSGIRequest: GET '/'>
----2016-02-05 02:09:11.055797----
-<WSGIRequest: GET '/'>
----2016-02-10 01:26:22.655758----
-<QueryDict: {}>
----2016-02-10 01:26:43.978062----
-<QueryDict: {}>
----2016-02-10 01:29:11.680131----
-<QueryDict: {}>
----2016-02-10 01:29:13.935639----
-<QueryDict: {}>
----2016-02-10 01:29:15.821737----
-<QueryDict: {}>
----2016-02-10 01:31:33.487275----
-<QueryDict: {}>
----2016-02-10 01:31:51.709516----
-<QueryDict: {}>
----2016-02-10 01:31:56.456313----
-<QueryDict: {}>
----2016-02-10 01:32:11.480669----
-<QueryDict: {}>
----2016-02-10 01:32:21.116605----
-<QueryDict: {}>
----2016-02-10 01:32:37.609157----
-<QueryDict: {}>
----2016-02-10 01:32:52.664907----
-<QueryDict: {}>
----2016-02-10 01:33:38.303819----
-<QueryDict: {}>
----2016-02-10 01:33:40.144411----
-<QueryDict: {}>
----2016-02-10 01:34:09.786563----
-<QueryDict: {}>
----2016-02-10 01:34:16.922481----
-<QueryDict: {}>
----2016-02-10 01:40:47.598425----
-<QueryDict: {}>
----2016-02-10 01:44:32.576940----
-<QueryDict: {}>
----2016-02-10 01:44:41.533115----
-<QueryDict: {}>
----2016-02-10 01:44:43.503864----
-<QueryDict: {}>
----2016-02-10 01:46:09.475553----
-<QueryDict: {}>
----2016-02-10 01:47:31.936909----
-<QueryDict: {}>
----2016-02-10 01:53:14.444971----
-<QueryDict: {}>
----2016-02-10 02:52:09.883484----
-<QueryDict: {}>
----2016-02-10 16:41:12.904307----
-<QueryDict: {}>
----2016-02-10 16:41:59.280310----
-<QueryDict: {}>
----2016-02-10 17:03:08.673261----
-<QueryDict: {}>
----2016-02-15 21:13:40.170411----
-<QueryDict: {}>
----2016-02-15 21:13:49.226426----
-<QueryDict: {}>
----2016-02-15 21:44:25.466056----
-<QueryDict: {}>
----2016-02-15 21:44:28.654717----
-<QueryDict: {}>
----2016-02-15 21:50:49.588851----
-<QueryDict: {}>
----2016-02-15 21:50:57.403333----
-<QueryDict: {}>
----2016-02-15 21:51:49.674796----
-<QueryDict: {}>
----2016-02-15 21:53:40.439337----
-<QueryDict: {}>
----2016-02-15 21:53:57.324473----
-<QueryDict: {}>
----2016-02-15 21:54:06.465056----
-<QueryDict: {}>
----2016-02-15 21:57:14.374293----
-<QueryDict: {}>
----2016-02-15 21:57:21.363041----
-<QueryDict: {}>
----2016-02-15 21:58:50.811224----
-<QueryDict: {}>
----2016-02-15 21:59:05.252936----
-<QueryDict: {}>
----2016-02-15 22:02:53.247517----
-<QueryDict: {}>
----2016-02-15 22:03:08.667425----
-<QueryDict: {}>
----2016-02-15 22:05:54.543793----
-<QueryDict: {}>
----2016-02-15 22:06:04.351699----
-<QueryDict: {}>
----2016-02-15 22:06:20.139047----
-<QueryDict: {}>
----2016-02-15 22:24:54.315943----
-<QueryDict: {}>
----2016-02-15 22:26:33.969414----
-<QueryDict: {}>
----2016-02-15 22:26:52.145572----
-<QueryDict: {}>
----2016-02-15 22:27:20.253101----
-<QueryDict: {}>
----2016-02-15 22:27:26.109582----
-<QueryDict: {}>
----2016-02-15 22:27:32.932111----
-<QueryDict: {}>
----2016-02-15 22:27:47.156331----
-<QueryDict: {}>
----2016-02-15 22:27:50.923265----
-<QueryDict: {}>
----2016-02-15 22:27:54.597382----
-<QueryDict: {}>
----2016-02-15 22:27:59.265764----
-<QueryDict: {}>
----2016-02-15 22:28:04.051737----
-<QueryDict: {}>
----2016-02-15 22:28:15.283991----
-<QueryDict: {}>
----2016-02-15 22:28:19.284388----
-<QueryDict: {}>
----2016-02-17 16:33:22.068300----
-<QueryDict: {}>
----2016-02-17 16:38:51.472485----
-<QueryDict: {}>
----2016-02-17 16:39:00.996859----
-<QueryDict: {}>
----2016-02-17 16:52:42.596439----
-<QueryDict: {}>
----2016-02-18 15:27:07.197835----
-<QueryDict: {}>
----2016-02-18 15:28:16.269820----
-<QueryDict: {}>
----2016-02-18 15:29:07.475104----
-<QueryDict: {}>
----2016-02-18 15:29:48.712101----
-<QueryDict: {}>
----2016-02-24 21:32:37.269935----
-<QueryDict: {}>
----2016-02-24 21:33:02.042719----
-<QueryDict: {}>
----2016-02-24 21:33:56.373387----
-<QueryDict: {}>
----2016-02-24 21:34:09.680753----
-<QueryDict: {}>
----2016-02-24 21:34:22.051305----
-<QueryDict: {}>
----2016-02-24 21:36:57.417152----
-<QueryDict: {}>
----2016-03-08 02:29:59.277351----
-<QueryDict: {}>
----2016-03-10 16:15:14.023891----
-<QueryDict: {}>
----2016-03-10 16:30:04.826077----
-<QueryDict: {}>
----2016-03-11 01:12:49.888451----
-<QueryDict: {}>
+<WSGIRequest: POST '/session/response/'>
+<WSGIRequest: POST '/session/response/'>
+<WSGIRequest: POST '/session/response/'>
+<WSGIRequest: POST '/session/response/'>
+{"version":"1.0","session":{"new":true,"sessionId":"SessionId.dea08039-24a3-4be0-9395-35cf93a8022d","application":{"applicationId":"amzn1.echo-sdk-ams.app.1c76ebe6-0788-4290-b12a-d9272876ed4a"},"attributes":null,"user":{"userId":"amzn1.echo-sdk-account.AHG2BTSFTT7ZHO3SRCY3V4IA6BDGTLKIRBJHXMB7YJ3NX7FJYG3L4"}},"request":{"type":"IntentRequest","requestId":"EdwRequestId.6e561419-d2de-4597-a66d-15f500a458b8","timestamp":"2016-03-18T04:06:49Z","intent":{"name":"Adam"}}}
+
+
+{"version":"1.0","session":{"new":true,"sessionId":"SessionId.c90a3233-0a6d-4744-bdb6-220e31c49480","application":{"applicationId":"amzn1.echo-sdk-ams.app.1c76ebe6-0788-4290-b12a-d9272876ed4a"},"attributes":null,"user":{"userId":"amzn1.echo-sdk-account.AHG2BTSFTT7ZHO3SRCY3V4IA6BDGTLKIRBJHXMB7YJ3NX7FJYG3L4"}},"request":{"type":"IntentRequest","requestId":"EdwRequestId.9c1e4cd2-142a-498d-bec1-aa0195c12841","timestamp":"2016-03-18T04:08:09Z","intent":{"name":"Adam"}}}
+{"version":"1.0","session":{"new":true,"sessionId":"amzn1.echo-api.session.bb6b6975-e31a-4be0-a8ca-b248431eedd3","application":{"applicationId":"amzn1.echo-sdk-ams.app.1c76ebe6-0788-4290-b12a-d9272876ed4a"},"user":{"userId":"amzn1.echo-sdk-account.AHG2BTSFTT7ZHO3SRCY3V4IA6BDGTLKIRBJHXMB7YJ3NX7FJYG3L4"}},"request":{"type":"IntentRequest","requestId":"amzn1.echo-api.request.6051d5a6-a025-490d-a5ad-8ad3bb72d1cf","timestamp":"2016-03-18T04:08:33Z","locale":"en-US","intent":{"name":"Adam"}}}
+{"version":"1.0","session":{"new":true,"sessionId":"SessionId.25316e17-f09d-4f18-ae52-438b40da3f87","application":{"applicationId":"amzn1.echo-sdk-ams.app.1c76ebe6-0788-4290-b12a-d9272876ed4a"},"attributes":null,"user":{"userId":"amzn1.echo-sdk-account.AHG2BTSFTT7ZHO3SRCY3V4IA6BDGTLKIRBJHXMB7YJ3NX7FJYG3L4"}},"request":{"type":"IntentRequest","requestId":"EdwRequestId.3ff166d7-f16e-4e12-ad77-ba39bfecd80e","timestamp":"2016-03-18T04:10:26Z","intent":{"name":"register","slots":{"Number":{"name":"Number","value":"7073"}}}}}
+{"version":"1.0","session":{"new":true,"sessionId":"SessionId.fbac808a-7add-41f6-b47e-8b318a62e8ec","application":{"applicationId":"amzn1.echo-sdk-ams.app.1c76ebe6-0788-4290-b12a-d9272876ed4a"},"attributes":null,"user":{"userId":"amzn1.echo-sdk-account.AHG2BTSFTT7ZHO3SRCY3V4IA6BDGTLKIRBJHXMB7YJ3NX7FJYG3L4"}},"request":{"type":"IntentRequest","requestId":"EdwRequestId.da305209-b98c-4eff-90c0-7f7e1841af73","timestamp":"2016-03-18T04:11:28Z","intent":{"name":"register","slots":{"Number":{"name":"Number","value":"7073"}}}}}
+{"version":"1.0","session":{"new":true,"sessionId":"SessionId.fd7f3a9e-3a86-4bed-a9db-0f37742bc8aa","application":{"applicationId":"amzn1.echo-sdk-ams.app.1c76ebe6-0788-4290-b12a-d9272876ed4a"},"attributes":null,"user":{"userId":"amzn1.echo-sdk-account.AHG2BTSFTT7ZHO3SRCY3V4IA6BDGTLKIRBJHXMB7YJ3NX7FJYG3L4"}},"request":{"type":"IntentRequest","requestId":"EdwRequestId.a219486d-6cad-4113-863b-b66fa700770a","timestamp":"2016-03-18T04:12:10Z","intent":{"name":"register","slots":{"Number":{"name":"Number","value":"7073"}}}}}
+loaded------
+{"version":"1.0","session":{"new":true,"sessionId":"SessionId.01ec744e-de09-4edb-a6df-b402d9e581df","application":{"applicationId":"amzn1.echo-sdk-ams.app.1c76ebe6-0788-4290-b12a-d9272876ed4a"},"attributes":null,"user":{"userId":"amzn1.echo-sdk-account.AHG2BTSFTT7ZHO3SRCY3V4IA6BDGTLKIRBJHXMB7YJ3NX7FJYG3L4"}},"request":{"type":"IntentRequest","requestId":"EdwRequestId.a175feea-3f36-4a93-b37f-0c2994a36e11","timestamp":"2016-03-18T04:13:37Z","intent":{"name":"register","slots":{"Number":{"name":"Number","value":"7073"}}}}}
+loaded------
+found session------
+{"version":"1.0","session":{"new":true,"sessionId":"SessionId.896e45e1-7058-4209-8ac1-4b3c6681f379","application":{"applicationId":"amzn1.echo-sdk-ams.app.1c76ebe6-0788-4290-b12a-d9272876ed4a"},"attributes":null,"user":{"userId":"amzn1.echo-sdk-account.AHG2BTSFTT7ZHO3SRCY3V4IA6BDGTLKIRBJHXMB7YJ3NX7FJYG3L4"}},"request":{"type":"IntentRequest","requestId":"EdwRequestId.7fad6e22-0410-4185-9494-84a0a6a0f961","timestamp":"2016-03-18T04:14:34Z","intent":{"name":"register","slots":{"Number":{"name":"Number","value":"7073"}}}}}
+loaded------
+found session------
+register ing echo------
+{"version":"1.0","session":{"new":true,"sessionId":"SessionId.ac0e54ef-f39f-43fd-a373-675e8d4622e2","application":{"applicationId":"amzn1.echo-sdk-ams.app.1c76ebe6-0788-4290-b12a-d9272876ed4a"},"attributes":null,"user":{"userId":"amzn1.echo-sdk-account.AHG2BTSFTT7ZHO3SRCY3V4IA6BDGTLKIRBJHXMB7YJ3NX7FJYG3L4"}},"request":{"type":"IntentRequest","requestId":"EdwRequestId.265fb417-3f5e-4315-ab69-bacdf7f4d36f","timestamp":"2016-03-18T04:15:22Z","intent":{"name":"register","slots":{"Number":{"name":"Number","value":"7073"}}}}}
+loaded------
+found session------
+register ing echo------
+{"version":"1.0","session":{"new":true,"sessionId":"SessionId.db3eb174-fe01-4594-a316-bae9a7d5f258","application":{"applicationId":"amzn1.echo-sdk-ams.app.1c76ebe6-0788-4290-b12a-d9272876ed4a"},"attributes":null,"user":{"userId":"amzn1.echo-sdk-account.AHG2BTSFTT7ZHO3SRCY3V4IA6BDGTLKIRBJHXMB7YJ3NX7FJYG3L4"}},"request":{"type":"IntentRequest","requestId":"EdwRequestId.2fe68920-6ff1-4a47-9d76-a6d71797aeac","timestamp":"2016-03-18T04:17:06Z","intent":{"name":"register","slots":{"Number":{"name":"Number","value":"7073"}}}}}
+loaded------
+found session------
+register ing echo------
+{"version":"1.0","session":{"new":true,"sessionId":"SessionId.2fc5ee60-7a6f-45c3-bfd8-39d33635ad37","application":{"applicationId":"amzn1.echo-sdk-ams.app.1c76ebe6-0788-4290-b12a-d9272876ed4a"},"attributes":null,"user":{"userId":"amzn1.echo-sdk-account.AHG2BTSFTT7ZHO3SRCY3V4IA6BDGTLKIRBJHXMB7YJ3NX7FJYG3L4"}},"request":{"type":"IntentRequest","requestId":"EdwRequestId.e3ffb92c-1996-48e6-aba8-0e4400b3958f","timestamp":"2016-03-18T04:17:33Z","intent":{"name":"register","slots":{"Number":{"name":"Number","value":"7073"}}}}}
+loaded------
+found session------
+register ing echo------
+{"version":"1.0","session":{"new":true,"sessionId":"SessionId.b146bf0a-d43f-41f5-b387-c0085fe2328f","application":{"applicationId":"amzn1.echo-sdk-ams.app.1c76ebe6-0788-4290-b12a-d9272876ed4a"},"attributes":null,"user":{"userId":"amzn1.echo-sdk-account.AHG2BTSFTT7ZHO3SRCY3V4IA6BDGTLKIRBJHXMB7YJ3NX7FJYG3L4"}},"request":{"type":"IntentRequest","requestId":"EdwRequestId.159af0fe-721a-4bc0-bfed-d11511867792","timestamp":"2016-03-18T04:19:20Z","intent":{"name":"register","slots":{"Number":{"name":"Number","value":"7073"}}}}}
+loaded------
+found session------
+register ing echo------
+{"version":"1.0","session":{"new":true,"sessionId":"SessionId.248d2c09-af46-4ed3-b9d2-c4d449a732b4","application":{"applicationId":"amzn1.echo-sdk-ams.app.1c76ebe6-0788-4290-b12a-d9272876ed4a"},"attributes":null,"user":{"userId":"amzn1.echo-sdk-account.AHG2BTSFTT7ZHO3SRCY3V4IA6BDGTLKIRBJHXMB7YJ3NX7FJYG3L4"}},"request":{"type":"IntentRequest","requestId":"EdwRequestId.57b52d10-c326-41e0-ac3b-d6fd58816aa4","timestamp":"2016-03-18T04:19:24Z","intent":{"name":"register","slots":{"Number":{"name":"Number","value":"7073"}}}}}
+loaded------
+found session------
+register ing echo------
+{"version":"1.0","session":{"new":true,"sessionId":"SessionId.9fb107ad-7b10-442d-8faf-ef2dbd1ab95d","application":{"applicationId":"amzn1.echo-sdk-ams.app.1c76ebe6-0788-4290-b12a-d9272876ed4a"},"attributes":null,"user":{"userId":"amzn1.echo-sdk-account.AHG2BTSFTT7ZHO3SRCY3V4IA6BDGTLKIRBJHXMB7YJ3NX7FJYG3L4"}},"request":{"type":"IntentRequest","requestId":"EdwRequestId.3fe6eaa9-aa34-478a-84ac-fe02b5c8210d","timestamp":"2016-03-18T04:22:36Z","intent":{"name":"register","slots":{"Number":{"name":"Number","value":"7073"}}}}}
+loaded------
+found session------
+register ing echo------
+hi------
+{"version":"1.0","session":{"new":true,"sessionId":"SessionId.be9ff97c-3faf-4e0d-9c2e-3e32f332dc8c","application":{"applicationId":"amzn1.echo-sdk-ams.app.1c76ebe6-0788-4290-b12a-d9272876ed4a"},"attributes":null,"user":{"userId":"amzn1.echo-sdk-account.AHG2BTSFTT7ZHO3SRCY3V4IA6BDGTLKIRBJHXMB7YJ3NX7FJYG3L4"}},"request":{"type":"IntentRequest","requestId":"EdwRequestId.f54509ac-bb4d-4d46-bbe4-296b5e8a9db8","timestamp":"2016-03-18T04:23:21Z","intent":{"name":"register","slots":{"Number":{"name":"Number","value":"7073"}}}}}
+loaded------
+found session------
+register ing echo------
+hi------{u'session': {u'new': True, u'sessionId': u'SessionId.be9ff97c-3faf-4e0d-9c2e-3e32f332dc8c', u'attributes': None, u'user': {u'userId': u'amzn1.echo-sdk-account.AHG2BTSFTT7ZHO3SRCY3V4IA6BDGTLKIRBJHXMB7YJ3NX7FJYG3L4'}, u'application': {u'applicationId': u'amzn1.echo-sdk-ams.app.1c76ebe6-0788-4290-b12a-d9272876ed4a'}}, u'version': u'1.0', u'request': {u'timestamp': u'2016-03-18T04:23:21Z', u'type': u'IntentRequest', u'requestId': u'EdwRequestId.f54509ac-bb4d-4d46-bbe4-296b5e8a9db8', u'intent': {u'slots': {u'Number': {u'name': u'Number', u'value': u'7073'}}, u'name': u'register'}}}
+{"version":"1.0","session":{"new":true,"sessionId":"SessionId.74665405-e44f-4567-814d-f48b41fecfc2","application":{"applicationId":"amzn1.echo-sdk-ams.app.1c76ebe6-0788-4290-b12a-d9272876ed4a"},"attributes":null,"user":{"userId":"amzn1.echo-sdk-account.AHG2BTSFTT7ZHO3SRCY3V4IA6BDGTLKIRBJHXMB7YJ3NX7FJYG3L4"}},"request":{"type":"IntentRequest","requestId":"EdwRequestId.e201077d-fc74-4a83-9475-e982da300ae7","timestamp":"2016-03-18T04:26:49Z","intent":{"name":"register","slots":{"Number":{"name":"Number","value":"7073"}}}}}
+loaded------
+found session------
+register ing echo------
+hi------{u'Number': {u'name': u'Number', u'value': u'7073'}}
+loop------
+{"version":"1.0","session":{"new":true,"sessionId":"SessionId.fa39e69f-b061-4f98-a011-481a0872f21f","application":{"applicationId":"amzn1.echo-sdk-ams.app.1c76ebe6-0788-4290-b12a-d9272876ed4a"},"attributes":null,"user":{"userId":"amzn1.echo-sdk-account.AHG2BTSFTT7ZHO3SRCY3V4IA6BDGTLKIRBJHXMB7YJ3NX7FJYG3L4"}},"request":{"type":"IntentRequest","requestId":"EdwRequestId.39f7e15a-ac67-4ec7-810b-5594240f9513","timestamp":"2016-03-18T04:31:04Z","intent":{"name":"register","slots":{"Number":{"name":"Number","value":"7073"}}}}}
+loaded------
+found session------
+register ing echo------
+hi------{u'Number': {u'name': u'Number', u'value': u'7073'}}
+loop------
+{"version":"1.0","session":{"new":true,"sessionId":"SessionId.671871d3-2c0e-4285-93ef-042c954e5b6e","application":{"applicationId":"amzn1.echo-sdk-ams.app.1c76ebe6-0788-4290-b12a-d9272876ed4a"},"attributes":null,"user":{"userId":"amzn1.echo-sdk-account.AHG2BTSFTT7ZHO3SRCY3V4IA6BDGTLKIRBJHXMB7YJ3NX7FJYG3L4"}},"request":{"type":"IntentRequest","requestId":"EdwRequestId.d66da045-cca0-4b6b-a9fd-c7d21d875d1c","timestamp":"2016-03-18T04:32:24Z","intent":{"name":"register","slots":{"Number":{"name":"Number","value":"7073"}}}}}
+loaded------
+found session------
+register ing echo------
+hi------{u'Number': {u'name': u'Number', u'value': u'7073'}}
+loop------
+loop2------AMAZON.DATE
+{"version":"1.0","session":{"new":true,"sessionId":"SessionId.3c4f1628-e1e7-42ce-8aaf-6eeed9db9d8f","application":{"applicationId":"amzn1.echo-sdk-ams.app.1c76ebe6-0788-4290-b12a-d9272876ed4a"},"attributes":null,"user":{"userId":"amzn1.echo-sdk-account.AHG2BTSFTT7ZHO3SRCY3V4IA6BDGTLKIRBJHXMB7YJ3NX7FJYG3L4"}},"request":{"type":"IntentRequest","requestId":"EdwRequestId.d3e66d0d-9d75-4a9d-a741-fa622921ec6f","timestamp":"2016-03-18T04:33:32Z","intent":{"name":"register","slots":{"Number":{"name":"Number","value":"7073"}}}}}
+loaded------
+found session------
+register ing echo------
+hi------{u'Number': {u'name': u'Number', u'value': u'7073'}}
+loop------
+loop2------AMAZON.DATE
+{"version":"1.0","session":{"new":true,"sessionId":"SessionId.69788f68-bd64-4219-afb4-988f634482d7","application":{"applicationId":"amzn1.echo-sdk-ams.app.1c76ebe6-0788-4290-b12a-d9272876ed4a"},"attributes":null,"user":{"userId":"amzn1.echo-sdk-account.AHG2BTSFTT7ZHO3SRCY3V4IA6BDGTLKIRBJHXMB7YJ3NX7FJYG3L4"}},"request":{"type":"IntentRequest","requestId":"EdwRequestId.2afcb12b-35c3-4c62-b3fc-9f30ec3866ab","timestamp":"2016-03-18T04:33:35Z","intent":{"name":"register","slots":{"Number":{"name":"Number","value":"7073"}}}}}
+loaded------
+found session------
+register ing echo------
+hi------{u'Number': {u'name': u'Number', u'value': u'7073'}}
+loop------
+loop2------AMAZON.DATE
+{"version":"1.0","session":{"new":true,"sessionId":"SessionId.bc94131e-ba16-4776-b36f-6bfcba02ab12","application":{"applicationId":"amzn1.echo-sdk-ams.app.1c76ebe6-0788-4290-b12a-d9272876ed4a"},"attributes":null,"user":{"userId":"amzn1.echo-sdk-account.AHG2BTSFTT7ZHO3SRCY3V4IA6BDGTLKIRBJHXMB7YJ3NX7FJYG3L4"}},"request":{"type":"IntentRequest","requestId":"EdwRequestId.a0dfb53f-5075-4880-85c4-82229e81475b","timestamp":"2016-03-18T04:37:13Z","intent":{"name":"register","slots":{"Number":{"name":"Number","value":"7073"}}}}}
+loaded------
+found session------
+register ing echo------
+hi------{u'Number': {u'name': u'Number', u'value': u'7073'}}
+loop------
+loop2a------AMAZON.DATE
+{"version":"1.0","session":{"new":true,"sessionId":"SessionId.f0032712-1ffe-4cbe-98ca-f579be2b7442","application":{"applicationId":"amzn1.echo-sdk-ams.app.1c76ebe6-0788-4290-b12a-d9272876ed4a"},"attributes":null,"user":{"userId":"amzn1.echo-sdk-account.AHG2BTSFTT7ZHO3SRCY3V4IA6BDGTLKIRBJHXMB7YJ3NX7FJYG3L4"}},"request":{"type":"IntentRequest","requestId":"EdwRequestId.9d463e38-73cf-442b-b589-fdf6ee88262c","timestamp":"2016-03-18T04:37:19Z","intent":{"name":"register","slots":{"Number":{"name":"Number","value":"7073"}}}}}
+loaded------
+found session------
+register ing echo------
+hi------{u'Number': {u'name': u'Number', u'value': u'7073'}}
+loop------
+loop2a------AMAZON.DATE
+{"version":"1.0","session":{"new":true,"sessionId":"SessionId.df1636d0-ba0a-403e-962a-e2bb125bd016","application":{"applicationId":"amzn1.echo-sdk-ams.app.1c76ebe6-0788-4290-b12a-d9272876ed4a"},"attributes":null,"user":{"userId":"amzn1.echo-sdk-account.AHG2BTSFTT7ZHO3SRCY3V4IA6BDGTLKIRBJHXMB7YJ3NX7FJYG3L4"}},"request":{"type":"IntentRequest","requestId":"EdwRequestId.f281d024-9483-4b3d-897a-6b2beb841cf8","timestamp":"2016-03-18T04:39:12Z","intent":{"name":"register","slots":{"Number":{"name":"Number","value":"7073"}}}}}
+loaded------
+found session------
+register ing echo------
+hi------{u'Number': {u'name': u'Number', u'value': u'7073'}}
+loop------Number
+loop2a------AMAZON.DATE
+{"version":"1.0","session":{"new":true,"sessionId":"SessionId.1beb880b-80bd-4245-94c3-381346f783f2","application":{"applicationId":"amzn1.echo-sdk-ams.app.1c76ebe6-0788-4290-b12a-d9272876ed4a"},"attributes":null,"user":{"userId":"amzn1.echo-sdk-account.AHG2BTSFTT7ZHO3SRCY3V4IA6BDGTLKIRBJHXMB7YJ3NX7FJYG3L4"}},"request":{"type":"IntentRequest","requestId":"EdwRequestId.3b8c8760-7441-4c65-95a1-c863482c0884","timestamp":"2016-03-18T04:41:57Z","intent":{"name":"register","slots":{"Number":{"name":"Number","value":"7073"},"Date":{"name":"Date","value":"2016-03-18"}}}}}
+loaded------
+found session------
+register ing echo------
+hi------{u'Date': {u'name': u'Date', u'value': u'2016-03-18'}, u'Number': {u'name': u'Number', u'value': u'7073'}}
+loop------Date
+loop2a------AMAZON.DATE
+{"version":"1.0","session":{"new":true,"sessionId":"SessionId.38267ec9-cae1-423f-b0fa-a253a29f9721","application":{"applicationId":"amzn1.echo-sdk-ams.app.1c76ebe6-0788-4290-b12a-d9272876ed4a"},"attributes":null,"user":{"userId":"amzn1.echo-sdk-account.AHG2BTSFTT7ZHO3SRCY3V4IA6BDGTLKIRBJHXMB7YJ3NX7FJYG3L4"}},"request":{"type":"IntentRequest","requestId":"EdwRequestId.5a3a8de9-5615-4157-a003-0e9401e22a23","timestamp":"2016-03-18T04:44:45Z","intent":{"name":"register","slots":{"Number":{"name":"Number","value":"7073"},"Date":{"name":"Date","value":"2016-03-18"}}}}}
+loaded------
+found session------
+register ing echo------
+hi------{u'Date': {u'name': u'Date', u'value': u'2016-03-18'}, u'Number': {u'name': u'Number', u'value': u'7073'}}
+loop------{"version":"1.0","session":{"new":true,"sessionId":"SessionId.2378d3fc-f6db-4e1a-8730-7f164efb906b","application":{"applicationId":"amzn1.echo-sdk-ams.app.1c76ebe6-0788-4290-b12a-d9272876ed4a"},"attributes":null,"user":{"userId":"amzn1.echo-sdk-account.AHG2BTSFTT7ZHO3SRCY3V4IA6BDGTLKIRBJHXMB7YJ3NX7FJYG3L4"}},"request":{"type":"IntentRequest","requestId":"EdwRequestId.16cedcfa-3ceb-4151-8095-9da97ba3a158","timestamp":"2016-03-18T04:46:05Z","intent":{"name":"register","slots":{"Number":{"name":"Number","value":"7073"},"Date":{"name":"Date","value":"2016-03-18"}}}}}
+loaded------
+found session------
+register ing echo------
+hi------{u'Date': {u'name': u'Date', u'value': u'2016-03-18'}, u'Number': {u'name': u'Number', u'value': u'7073'}}
+loop------Date
+{u'name': u'Date', u'value': u'2016-03-18'}
+loop------Number
+{u'name': u'Number', u'value': u'7073'}
+{"version":"1.0","session":{"new":true,"sessionId":"SessionId.8413bcf9-7337-41a9-b0d9-e691ff6ef284","application":{"applicationId":"amzn1.echo-sdk-ams.app.1c76ebe6-0788-4290-b12a-d9272876ed4a"},"attributes":null,"user":{"userId":"amzn1.echo-sdk-account.AHG2BTSFTT7ZHO3SRCY3V4IA6BDGTLKIRBJHXMB7YJ3NX7FJYG3L4"}},"request":{"type":"IntentRequest","requestId":"EdwRequestId.5095c313-1cf2-42bc-b73d-401dc29e9475","timestamp":"2016-03-18T04:47:32Z","intent":{"name":"register","slots":{"Number":{"name":"Number","value":"7073"},"Date":{"name":"Date","value":"2016-03-18"}}}}}
+loaded------
+found session------
+register ing echo------
+hi------{u'Date': {u'name': u'Date', u'value': u'2016-03-18'}, u'Number': {u'name': u'Number', u'value': u'7073'}}
+loop------Date
+{u'name': u'Date', u'value': u'2016-03-18'}
+loop------Number
+{u'name': u'Number', u'value': u'7073'}
+loop------{u'Date': u'2016-03-18', u'Number': u'7073'}
+{"version":"1.0","session":{"new":true,"sessionId":"SessionId.78eb0bf8-2fea-4ef5-b495-089291d1def4","application":{"applicationId":"amzn1.echo-sdk-ams.app.1c76ebe6-0788-4290-b12a-d9272876ed4a"},"attributes":null,"user":{"userId":"amzn1.echo-sdk-account.AHG2BTSFTT7ZHO3SRCY3V4IA6BDGTLKIRBJHXMB7YJ3NX7FJYG3L4"}},"request":{"type":"IntentRequest","requestId":"EdwRequestId.dbe271e9-581c-4716-8cf2-f0cf2480d3d4","timestamp":"2016-03-18T04:48:44Z","intent":{"name":"register","slots":{"Number":{"name":"Number","value":"7073"},"Date":{"name":"Date","value":"2016-03-18"}}}}}
+loaded------
+found session------
+register ing echo------
+hi------{u'Date': {u'name': u'Date', u'value': u'2016-03-18'}, u'Number': {u'name': u'Number', u'value': u'7073'}}
+loop------Date
+{u'name': u'Date', u'value': u'2016-03-18'}
+loop------Number
+{u'name': u'Number', u'value': u'7073'}
+loop------{u'Date': u'2016-03-18', u'Number': u'7073'}
+found echo------
+got link------
+registered echo echo------
+loaded------
+{"version":"1.0","session":{"new":true,"sessionId":"SessionId.ca3aec7b-d8ac-493c-8bdc-9cee5ed5dee0","application":{"applicationId":"amzn1.echo-sdk-ams.app.1c76ebe6-0788-4290-b12a-d9272876ed4a"},"attributes":null,"user":{"userId":"amzn1.echo-sdk-account.AHG2BTSFTT7ZHO3SRCY3V4IA6BDGTLKIRBJHXMB7YJ3NX7FJYG3L4"}},"request":{"type":"IntentRequest","requestId":"EdwRequestId.a66dcdb4-6798-4058-b4e8-0a7654f83f9f","timestamp":"2016-03-18T04:49:31Z","intent":{"name":"Adam"}}}
+loaded------
+found session------
+loaded------
+{"version":"1.0","session":{"new":true,"sessionId":"SessionId.94eeb74c-d3d0-4b0b-a3f4-0f0bb7705a2d","application":{"applicationId":"amzn1.echo-sdk-ams.app.1c76ebe6-0788-4290-b12a-d9272876ed4a"},"attributes":null,"user":{"userId":"amzn1.echo-sdk-account.AHG2BTSFTT7ZHO3SRCY3V4IA6BDGTLKIRBJHXMB7YJ3NX7FJYG3L4"}},"request":{"type":"IntentRequest","requestId":"EdwRequestId.bc709952-d0d0-4d0f-9d4d-e169122216b1","timestamp":"2016-03-18T04:49:36Z","intent":{"name":"Adam"}}}
+loaded------
+found session------
+loaded------
+{"version":"1.0","session":{"new":true,"sessionId":"SessionId.c7a74585-b172-47ff-b084-60af81768a66","application":{"applicationId":"amzn1.echo-sdk-ams.app.1c76ebe6-0788-4290-b12a-d9272876ed4a"},"attributes":null,"user":{"userId":"amzn1.echo-sdk-account.AHG2BTSFTT7ZHO3SRCY3V4IA6BDGTLKIRBJHXMB7YJ3NX7FJYG3L4"}},"request":{"type":"IntentRequest","requestId":"EdwRequestId.595c4fde-0633-4105-9c4e-35c66f97751b","timestamp":"2016-03-18T04:54:50Z","intent":{"name":"Adam"}}}
+loaded------
+found session------
+loaded------
+{"version":"1.0","session":{"new":true,"sessionId":"SessionId.f615b379-a486-454a-a257-6b945da46fc1","application":{"applicationId":"amzn1.echo-sdk-ams.app.1c76ebe6-0788-4290-b12a-d9272876ed4a"},"attributes":null,"user":{"userId":"amzn1.echo-sdk-account.AHG2BTSFTT7ZHO3SRCY3V4IA6BDGTLKIRBJHXMB7YJ3NX7FJYG3L4"}},"request":{"type":"IntentRequest","requestId":"EdwRequestId.21732477-9f5f-47bb-a064-4ad0767254de","timestamp":"2016-03-18T04:54:55Z","intent":{"name":"Adam"}}}
+loaded------
+found session------
+loaded------
