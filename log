@@ -163,3 +163,267 @@ loaded------
 loaded------
 found session------
 loaded------
+{"version":"1.0","session":{"new":true,"sessionId":"SessionId.4aa2f3a6-32ae-4201-bf4a-b261bf29e6b8","application":{"applicationId":"amzn1.echo-sdk-ams.app.1c76ebe6-0788-4290-b12a-d9272876ed4a"},"attributes":null,"user":{"userId":"amzn1.echo-sdk-account.AHG2BTSFTT7ZHO3SRCY3V4IA6BDGTLKIRBJHXMB7YJ3NX7FJYG3L4"}},"request":{"type":"IntentRequest","requestId":"EdwRequestId.7f12fee8-166f-4048-b31d-d8875f08c769","timestamp":"2016-03-18T13:05:58Z","intent":{"name":"register","slots":{"Number":{"name":"Number","value":"8391"},"Date":{"name":"Date"}}}}}
+loaded------
+found session------
+register ing echo------
+hi------{u'Date': {u'name': u'Date'}, u'Number': {u'name': u'Number', u'value': u'8391'}}
+loop------Date
+{u'name': u'Date'}
+{"version":"1.0","session":{"new":true,"sessionId":"SessionId.cdb2e043-7e0a-4f95-851e-8a7032e286de","application":{"applicationId":"amzn1.echo-sdk-ams.app.1c76ebe6-0788-4290-b12a-d9272876ed4a"},"attributes":null,"user":{"userId":"amzn1.echo-sdk-account.AHG2BTSFTT7ZHO3SRCY3V4IA6BDGTLKIRBJHXMB7YJ3NX7FJYG3L4"}},"request":{"type":"IntentRequest","requestId":"EdwRequestId.2e44ef00-e08f-43c0-a293-b676ce6b110f","timestamp":"2016-03-18T13:06:33Z","intent":{"name":"register","slots":{"Number":{"name":"Number","value":"8391"},"Date":{"name":"Date","value":"2016-03-18"}}}}}
+loaded------
+found session------
+register ing echo------
+hi------{u'Date': {u'name': u'Date', u'value': u'2016-03-18'}, u'Number': {u'name': u'Number', u'value': u'8391'}}
+loop------Date
+{u'name': u'Date', u'value': u'2016-03-18'}
+loop------Number
+{u'name': u'Number', u'value': u'8391'}
+loop------{u'Date': u'2016-03-18', u'Number': u'8391'}
+found echo------
+got link------
+registered echo echo------
+loaded------
+{"version":"1.0","session":{"new":true,"sessionId":"amzn1.echo-api.session.22371654-5138-41ce-9395-387984b0967a","application":{"applicationId":"amzn1.echo-sdk-ams.app.1c76ebe6-0788-4290-b12a-d9272876ed4a"},"user":{"userId":"amzn1.echo-sdk-account.AHG2BTSFTT7ZHO3SRCY3V4IA6BDGTLKIRBJHXMB7YJ3NX7FJYG3L4"}},"request":{"type":"IntentRequest","requestId":"amzn1.echo-api.request.f3dc9087-5a7d-4fa7-8eda-92d8a2cb608f","timestamp":"2016-03-18T13:10:34Z","intent":{"name":"Adam"}}}
+loaded------
+found session------
+loaded------
+{"version":"1.0","session":{"new":true,"sessionId":"amzn1.echo-api.session.176a7942-ad07-4f5b-93c5-e6407d6297a8","application":{"applicationId":"amzn1.echo-sdk-ams.app.1c76ebe6-0788-4290-b12a-d9272876ed4a"},"user":{"userId":"amzn1.echo-sdk-account.AHG2BTSFTT7ZHO3SRCY3V4IA6BDGTLKIRBJHXMB7YJ3NX7FJYG3L4"}},"request":{"type":"IntentRequest","requestId":"amzn1.echo-api.request.5b36d924-1b78-464a-983a-3d1cdeb35d2a","timestamp":"2016-03-18T13:11:30Z","intent":{"name":"Adam"}}}
+loaded------
+found session------
+loaded------
+{"version":"1.0","session":{"new":true,"sessionId":"amzn1.echo-api.session.cb25f2ef-02ee-4045-84c8-5bbbf9c22ca5","application":{"applicationId":"amzn1.echo-sdk-ams.app.1c76ebe6-0788-4290-b12a-d9272876ed4a"},"user":{"userId":"amzn1.echo-sdk-account.AHG2BTSFTT7ZHO3SRCY3V4IA6BDGTLKIRBJHXMB7YJ3NX7FJYG3L4"}},"request":{"type":"IntentRequest","requestId":"amzn1.echo-api.request.cf8c9cc3-8c01-401d-ad62-a6d0e5276e73","timestamp":"2016-03-18T13:13:31Z","intent":{"name":"Adam"}}}
+loaded------
+found session------
+loaded------
+{"version":"1.0","session":{"new":true,"sessionId":"amzn1.echo-api.session.cf3482f5-fba5-4304-8a2d-11566208c022","application":{"applicationId":"amzn1.echo-sdk-ams.app.1c76ebe6-0788-4290-b12a-d9272876ed4a"},"user":{"userId":"amzn1.echo-sdk-account.AHG2BTSFTT7ZHO3SRCY3V4IA6BDGTLKIRBJHXMB7YJ3NX7FJYG3L4"}},"request":{"type":"LaunchRequest","requestId":"amzn1.echo-api.request.f2e72d27-918d-47b9-b4c2-9ece0e7d5773","timestamp":"2016-03-18T13:14:01Z"}}
+loaded------
+found session------
+loaded------
+{"version":"1.0","session":{"new":true,"sessionId":"amzn1.echo-api.session.533a7439-af36-42e7-81b0-306b38b3cef1","application":{"applicationId":"amzn1.echo-sdk-ams.app.1c76ebe6-0788-4290-b12a-d9272876ed4a"},"user":{"userId":"amzn1.echo-sdk-account.AHG2BTSFTT7ZHO3SRCY3V4IA6BDGTLKIRBJHXMB7YJ3NX7FJYG3L4"}},"request":{"type":"LaunchRequest","requestId":"amzn1.echo-api.request.4f811cf4-504d-42a6-bdf6-e1382b772afb","timestamp":"2016-03-18T13:15:10Z"}}
+loaded------
+found session------
+loaded------
+{"version":"1.0","session":{"new":true,"sessionId":"amzn1.echo-api.session.37677679-f818-40e6-b79c-bbd8edb60562","application":{"applicationId":"amzn1.echo-sdk-ams.app.1c76ebe6-0788-4290-b12a-d9272876ed4a"},"user":{"userId":"amzn1.ask.account.AFP3ZWPOS2BGJR7OWJZ3DHPKMOMNWY4AY66FUR7ILBWANIHQN73QGCBF3ELPC5SVRNVH347TII3FLICDKUUVLU6GSUA6TKGERGVZOHSI7NJKAEMLVAHFITFW2GZZQGFEJHQXWLC4DLKGBQBPMT5MMOMW6E2U2DP6D7SIHEA3OZX2COIQZCFUBESEVL5S4EEPDCPUHB3RU5344PI"}},"request":{"type":"LaunchRequest","requestId":"amzn1.echo-api.request.a7a55db4-f84c-42fc-b618-a6c86b5f6f32","timestamp":"2016-03-18T13:17:33Z"}}
+loaded------
+found session------
+loaded------
+{"version":"1.0","session":{"new":true,"sessionId":"amzn1.echo-api.session.3077f935-beea-4286-93f0-4a896455141d","application":{"applicationId":"amzn1.echo-sdk-ams.app.1c76ebe6-0788-4290-b12a-d9272876ed4a"},"user":{"userId":"amzn1.ask.account.AFP3ZWPOS2BGJR7OWJZ3DHPKMOMNWY4AY66FUR7ILBWANIHQN73QGCBF3ELPC5SVRNVH347TII3FLICDKUUVLU6GSUA6TKGERGVZOHSI7NJKAEMLVAHFITFW2GZZQGFEJHQXWLC4DLKGBQBPMT5MMOMW6E2U2DP6D7SIHEA3OZX2COIQZCFUBESEVL5S4EEPDCPUHB3RU5344PI"}},"request":{"type":"IntentRequest","requestId":"amzn1.echo-api.request.5072a013-13cc-4673-aef5-37906f6f8aa7","timestamp":"2016-03-18T13:19:46Z","intent":{"name":"Adam"}}}
+loaded------
+found session------
+loaded------
+{"version":"1.0","session":{"new":true,"sessionId":"amzn1.echo-api.session.7c6d43fa-df3f-4424-88cf-7233e958aefd","application":{"applicationId":"amzn1.echo-sdk-ams.app.1c76ebe6-0788-4290-b12a-d9272876ed4a"},"user":{"userId":"amzn1.ask.account.AFP3ZWPOS2BGJR7OWJZ3DHPKMOMNWY4AY66FUR7ILBWANIHQN73QGCBF3ELPC5SVRNVH347TII3FLICDKUUVLU6GSUA6TKGERGVZOHSI7NJKAEMLVAHFITFW2GZZQGFEJHQXWLC4DLKGBQBPMT5MMOMW6E2U2DP6D7SIHEA3OZX2COIQZCFUBESEVL5S4EEPDCPUHB3RU5344PI"}},"request":{"type":"IntentRequest","requestId":"amzn1.echo-api.request.525605f1-4ae4-4db4-8952-35d34056ac03","timestamp":"2016-03-18T13:21:59Z","intent":{"name":"Adam"}}}
+loaded------
+found session------
+loaded------
+{"version":"1.0","session":{"new":true,"sessionId":"amzn1.echo-api.session.892db8f5-49ed-4287-a6b2-b3ba059be541","application":{"applicationId":"amzn1.echo-sdk-ams.app.1c76ebe6-0788-4290-b12a-d9272876ed4a"},"user":{"userId":"amzn1.ask.account.AFP3ZWPOS2BGJR7OWJZ3DHPKMOMNWY4AY66FUR7ILBWANIHQN73QGCBF3ELPC5SVRNVH347TII3FLICDKUUVLU6GSUA6TKGERGVZOHSI7NJKAEMLVAHFITFW2GZZQGFEJHQXWLC4DLKGBQBPMT5MMOMW6E2U2DP6D7SIHEA3OZX2COIQZCFUBESEVL5S4EEPDCPUHB3RU5344PI"}},"request":{"type":"IntentRequest","requestId":"amzn1.echo-api.request.c8f206e7-6949-40a5-98cd-95fee786a184","timestamp":"2016-03-18T13:22:18Z","intent":{"name":"Adam"}}}
+loaded------
+found session------
+loaded------
+{"version":"1.0","session":{"new":true,"sessionId":"amzn1.echo-api.session.bbd52c81-85c8-47fc-9201-3571dd73ca15","application":{"applicationId":"amzn1.echo-sdk-ams.app.1c76ebe6-0788-4290-b12a-d9272876ed4a"},"user":{"userId":"amzn1.ask.account.AFP3ZWPOS2BGJR7OWJZ3DHPKMOMNWY4AY66FUR7ILBWANIHQN73QGCBF3ELPC5SVRNVH347TII3FLICDKUUVLU6GSUA6TKGERGVZOHSI7NJKAEMLVAHFITFW2GZZQGFEJHQXWLC4DLKGBQBPMT5MMOMW6E2U2DP6D7SIHEA3OZX2COIQZCFUBESEVL5S4EEPDCPUHB3RU5344PI"}},"request":{"type":"IntentRequest","requestId":"amzn1.echo-api.request.cc3a79a6-234f-4ed5-ba7f-fbba9809c89f","timestamp":"2016-03-18T13:23:42Z","intent":{"name":"Adam"}}}
+loaded------
+found session------
+loaded------
+{"version":"1.0","session":{"new":true,"sessionId":"SessionId.53e561df-5fcc-4cb0-9cff-4dacad9e8741","application":{"applicationId":"amzn1.echo-sdk-ams.app.1c76ebe6-0788-4290-b12a-d9272876ed4a"},"attributes":null,"user":{"userId":"amzn1.ask.account.AFP3ZWPOS2BGJR7OWJZ3DHPKMOMNWY4AY66FUR7ILBWANIHQN73QGCBF3ELPC5SVRNVH347TII3FLICDKUUVLU6GSUA6TKGERGVZOHSI7NJKAEMLVAHFITFW2GZZQGFEJHQXWLC4DLKGBQBPMT5MMOMW6E2U2DP6D7SIHEA3OZX2COIQZCFUBESEVL5S4EEPDCPUHB3RU5344PI"}},"request":{"type":"IntentRequest","requestId":"EdwRequestId.458cfe36-a19f-41a0-9f28-b841ad6878a0","timestamp":"2016-03-18T13:24:22Z","intent":{"name":"Adam"}}}
+loaded------
+found session------
+loaded------
+{"version":"1.0","session":{"new":true,"sessionId":"amzn1.echo-api.session.d1ffaf04-b888-4758-a638-7d6bcef98d8d","application":{"applicationId":"amzn1.echo-sdk-ams.app.1c76ebe6-0788-4290-b12a-d9272876ed4a"},"user":{"userId":"amzn1.ask.account.AFP3ZWPOS2BGJR7OWJZ3DHPKMOMNWY4AY66FUR7ILBWANIHQN73QGCBF3ELPC5SVRNVH347TII3FLICDKUUVLU6GSUA6TKGERGVZOHSI7NJKAEMLVAHFITFW2GZZQGFEJHQXWLC4DLKGBQBPMT5MMOMW6E2U2DP6D7SIHEA3OZX2COIQZCFUBESEVL5S4EEPDCPUHB3RU5344PI"}},"request":{"type":"IntentRequest","requestId":"amzn1.echo-api.request.6e468536-42ea-448f-8546-e1e9c1ed0823","timestamp":"2016-03-18T13:25:06Z","intent":{"name":"Adam"}}}
+loaded------
+found session------
+loaded------
+{"version":"1.0","session":{"new":true,"sessionId":"amzn1.echo-api.session.5a55cfa2-6b50-4db1-b4f4-d20f749f1703","application":{"applicationId":"amzn1.echo-sdk-ams.app.1c76ebe6-0788-4290-b12a-d9272876ed4a"},"user":{"userId":"amzn1.ask.account.AFP3ZWPOS2BGJR7OWJZ3DHPKMOMNWY4AY66FUR7ILBWANIHQN73QGCBF3ELPC5SVRNVH347TII3FLICDKUUVLU6GSUA6TKGERGVZOHSI7NJKAEMLVAHFITFW2GZZQGFEJHQXWLC4DLKGBQBPMT5MMOMW6E2U2DP6D7SIHEA3OZX2COIQZCFUBESEVL5S4EEPDCPUHB3RU5344PI"}},"request":{"type":"IntentRequest","requestId":"amzn1.echo-api.request.8899b5bd-4dc1-49c9-85e8-05f074ca65fd","timestamp":"2016-03-18T13:25:18Z","intent":{"name":"StartApp","slots":{"Number":{"name":"Number","value":"?"},"Date":{"name":"Date"}}}}}
+loaded------
+found session------
+loaded------
+{"version":"1.0","session":{"new":true,"sessionId":"amzn1.echo-api.session.b3e3fc33-7b49-427a-b91f-f1c84ab51b05","application":{"applicationId":"amzn1.echo-sdk-ams.app.1c76ebe6-0788-4290-b12a-d9272876ed4a"},"user":{"userId":"amzn1.ask.account.AFP3ZWPOS2BGJR7OWJZ3DHPKMOMNWY4AY66FUR7ILBWANIHQN73QGCBF3ELPC5SVRNVH347TII3FLICDKUUVLU6GSUA6TKGERGVZOHSI7NJKAEMLVAHFITFW2GZZQGFEJHQXWLC4DLKGBQBPMT5MMOMW6E2U2DP6D7SIHEA3OZX2COIQZCFUBESEVL5S4EEPDCPUHB3RU5344PI"}},"request":{"type":"IntentRequest","requestId":"amzn1.echo-api.request.36ba901c-5cec-4bf3-addf-44dbf52e71d1","timestamp":"2016-03-18T13:25:56Z","intent":{"name":"register","slots":{"Number":{"name":"Number","value":"?"}}}}}
+loaded------
+found session------
+register ing echo------
+hi------{u'Number': {u'name': u'Number', u'value': u'?'}}
+loop------Number
+{u'name': u'Number', u'value': u'?'}
+loop------{u'Number': u'?'}
+found echo------
+{"version":"1.0","session":{"new":false,"sessionId":"amzn1.echo-api.session.b3e3fc33-7b49-427a-b91f-f1c84ab51b05","application":{"applicationId":"amzn1.echo-sdk-ams.app.1c76ebe6-0788-4290-b12a-d9272876ed4a"},"user":{"userId":"amzn1.ask.account.AFP3ZWPOS2BGJR7OWJZ3DHPKMOMNWY4AY66FUR7ILBWANIHQN73QGCBF3ELPC5SVRNVH347TII3FLICDKUUVLU6GSUA6TKGERGVZOHSI7NJKAEMLVAHFITFW2GZZQGFEJHQXWLC4DLKGBQBPMT5MMOMW6E2U2DP6D7SIHEA3OZX2COIQZCFUBESEVL5S4EEPDCPUHB3RU5344PI"}},"request":{"type":"SessionEndedRequest","requestId":"amzn1.echo-api.request.ee5994aa-f22d-48ec-ba8d-34c81df5a599","timestamp":"2016-03-18T13:25:56Z","reason":"ERROR"}}
+loaded------
+found session------
+loaded------
+{"version":"1.0","session":{"new":true,"sessionId":"amzn1.echo-api.session.cb0687a6-e2af-4b7e-957c-d747a5f29ea2","application":{"applicationId":"amzn1.echo-sdk-ams.app.1c76ebe6-0788-4290-b12a-d9272876ed4a"},"user":{"userId":"amzn1.ask.account.AFP3ZWPOS2BGJR7OWJZ3DHPKMOMNWY4AY66FUR7ILBWANIHQN73QGCBF3ELPC5SVRNVH347TII3FLICDKUUVLU6GSUA6TKGERGVZOHSI7NJKAEMLVAHFITFW2GZZQGFEJHQXWLC4DLKGBQBPMT5MMOMW6E2U2DP6D7SIHEA3OZX2COIQZCFUBESEVL5S4EEPDCPUHB3RU5344PI"}},"request":{"type":"IntentRequest","requestId":"amzn1.echo-api.request.fb9ccd44-cef2-41b8-b866-21579481ff59","timestamp":"2016-03-18T13:26:13Z","intent":{"name":"Adam"}}}
+loaded------
+found session------
+loaded------
+{"version":"1.0","session":{"new":true,"sessionId":"amzn1.echo-api.session.1f1271fd-a291-49ba-b57f-3184784d4a5e","application":{"applicationId":"amzn1.echo-sdk-ams.app.1c76ebe6-0788-4290-b12a-d9272876ed4a"},"user":{"userId":"amzn1.ask.account.AFP3ZWPOS2BGJR7OWJZ3DHPKMOMNWY4AY66FUR7ILBWANIHQN73QGCBF3ELPC5SVRNVH347TII3FLICDKUUVLU6GSUA6TKGERGVZOHSI7NJKAEMLVAHFITFW2GZZQGFEJHQXWLC4DLKGBQBPMT5MMOMW6E2U2DP6D7SIHEA3OZX2COIQZCFUBESEVL5S4EEPDCPUHB3RU5344PI"}},"request":{"type":"IntentRequest","requestId":"amzn1.echo-api.request.b3eba5b1-4d12-4b93-a3fd-c475efdcce8c","timestamp":"2016-03-18T13:26:36Z","intent":{"name":"register","slots":{"Number":{"name":"Number","value":"?"}}}}}
+loaded------
+found session------
+register ing echo------
+hi------{u'Number': {u'name': u'Number', u'value': u'?'}}
+loop------Number
+{u'name': u'Number', u'value': u'?'}
+loop------{u'Number': u'?'}
+found echo------
+{"version":"1.0","session":{"new":false,"sessionId":"amzn1.echo-api.session.1f1271fd-a291-49ba-b57f-3184784d4a5e","application":{"applicationId":"amzn1.echo-sdk-ams.app.1c76ebe6-0788-4290-b12a-d9272876ed4a"},"user":{"userId":"amzn1.ask.account.AFP3ZWPOS2BGJR7OWJZ3DHPKMOMNWY4AY66FUR7ILBWANIHQN73QGCBF3ELPC5SVRNVH347TII3FLICDKUUVLU6GSUA6TKGERGVZOHSI7NJKAEMLVAHFITFW2GZZQGFEJHQXWLC4DLKGBQBPMT5MMOMW6E2U2DP6D7SIHEA3OZX2COIQZCFUBESEVL5S4EEPDCPUHB3RU5344PI"}},"request":{"type":"SessionEndedRequest","requestId":"amzn1.echo-api.request.c455bde6-729f-4a82-8d0d-b8f885ee5b13","timestamp":"2016-03-18T13:26:37Z","reason":"ERROR"}}
+loaded------
+found session------
+loaded------
+{"version":"1.0","session":{"new":true,"sessionId":"amzn1.echo-api.session.ef0b8864-3667-45cc-aa8c-bef9ae3ae5bf","application":{"applicationId":"amzn1.echo-sdk-ams.app.1c76ebe6-0788-4290-b12a-d9272876ed4a"},"user":{"userId":"amzn1.ask.account.AFP3ZWPOS2BGJR7OWJZ3DHPKMOMNWY4AY66FUR7ILBWANIHQN73QGCBF3ELPC5SVRNVH347TII3FLICDKUUVLU6GSUA6TKGERGVZOHSI7NJKAEMLVAHFITFW2GZZQGFEJHQXWLC4DLKGBQBPMT5MMOMW6E2U2DP6D7SIHEA3OZX2COIQZCFUBESEVL5S4EEPDCPUHB3RU5344PI"}},"request":{"type":"IntentRequest","requestId":"amzn1.echo-api.request.6ebeddac-a01a-410c-97e1-24da85ee91c5","timestamp":"2016-03-18T13:27:09Z","intent":{"name":"Adam"}}}
+loaded------
+found session------
+loaded------
+{"version":"1.0","session":{"new":true,"sessionId":"amzn1.echo-api.session.b3b5b7ad-3f93-4cf0-bff9-e3596e3aec0d","application":{"applicationId":"amzn1.echo-sdk-ams.app.1c76ebe6-0788-4290-b12a-d9272876ed4a"},"user":{"userId":"amzn1.ask.account.AFP3ZWPOS2BGJR7OWJZ3DHPKMOMNWY4AY66FUR7ILBWANIHQN73QGCBF3ELPC5SVRNVH347TII3FLICDKUUVLU6GSUA6TKGERGVZOHSI7NJKAEMLVAHFITFW2GZZQGFEJHQXWLC4DLKGBQBPMT5MMOMW6E2U2DP6D7SIHEA3OZX2COIQZCFUBESEVL5S4EEPDCPUHB3RU5344PI"}},"request":{"type":"IntentRequest","requestId":"amzn1.echo-api.request.e854b34e-39b3-4b21-9ed9-f87f3c8f3e65","timestamp":"2016-03-18T13:33:27Z","intent":{"name":"Adam"}}}
+loaded------
+found session------
+loaded------
+{"version":"1.0","session":{"new":true,"sessionId":"amzn1.echo-api.session.6d17b1a2-ca67-4881-9083-e803cdbf0dc2","application":{"applicationId":"amzn1.echo-sdk-ams.app.1c76ebe6-0788-4290-b12a-d9272876ed4a"},"user":{"userId":"amzn1.ask.account.AFP3ZWPOS2BGJR7OWJZ3DHPKMOMNWY4AY66FUR7ILBWANIHQN73QGCBF3ELPC5SVRNVH347TII3FLICDKUUVLU6GSUA6TKGERGVZOHSI7NJKAEMLVAHFITFW2GZZQGFEJHQXWLC4DLKGBQBPMT5MMOMW6E2U2DP6D7SIHEA3OZX2COIQZCFUBESEVL5S4EEPDCPUHB3RU5344PI"}},"request":{"type":"IntentRequest","requestId":"amzn1.echo-api.request.947a2dc1-8cc6-42ef-ad6d-3c9cdb4e59e4","timestamp":"2016-03-18T13:34:10Z","intent":{"name":"Adam"}}}
+loaded------
+found session------
+loaded------
+{"version":"1.0","session":{"new":true,"sessionId":"amzn1.echo-api.session.b55d3654-b98a-46a9-919f-77ac40c0514d","application":{"applicationId":"amzn1.echo-sdk-ams.app.1c76ebe6-0788-4290-b12a-d9272876ed4a"},"user":{"userId":"amzn1.ask.account.AFP3ZWPOS2BGJR7OWJZ3DHPKMOMNWY4AY66FUR7ILBWANIHQN73QGCBF3ELPC5SVRNVH347TII3FLICDKUUVLU6GSUA6TKGERGVZOHSI7NJKAEMLVAHFITFW2GZZQGFEJHQXWLC4DLKGBQBPMT5MMOMW6E2U2DP6D7SIHEA3OZX2COIQZCFUBESEVL5S4EEPDCPUHB3RU5344PI"}},"request":{"type":"IntentRequest","requestId":"amzn1.echo-api.request.75c36ac6-5c84-4256-b184-bee497f5288b","timestamp":"2016-03-18T13:36:17Z","intent":{"name":"Adam"}}}
+loaded------
+found session------
+loaded------
+{"version":"1.0","session":{"new":true,"sessionId":"amzn1.echo-api.session.507573dd-4b6b-43da-92d5-62cf4916aa46","application":{"applicationId":"amzn1.echo-sdk-ams.app.1c76ebe6-0788-4290-b12a-d9272876ed4a"},"user":{"userId":"amzn1.ask.account.AFP3ZWPOS2BGJR7OWJZ3DHPKMOMNWY4AY66FUR7ILBWANIHQN73QGCBF3ELPC5SVRNVH347TII3FLICDKUUVLU6GSUA6TKGERGVZOHSI7NJKAEMLVAHFITFW2GZZQGFEJHQXWLC4DLKGBQBPMT5MMOMW6E2U2DP6D7SIHEA3OZX2COIQZCFUBESEVL5S4EEPDCPUHB3RU5344PI"}},"request":{"type":"IntentRequest","requestId":"amzn1.echo-api.request.58625f90-5c54-49dd-82d5-35f82d4b1599","timestamp":"2016-03-18T13:40:34Z","intent":{"name":"Adam"}}}
+loaded------
+found session------
+loaded------
+{"version":"1.0","session":{"new":true,"sessionId":"amzn1.echo-api.session.c62177b4-7478-471a-a2c6-23be303b8e89","application":{"applicationId":"amzn1.echo-sdk-ams.app.1c76ebe6-0788-4290-b12a-d9272876ed4a"},"user":{"userId":"amzn1.ask.account.AFP3ZWPOS2BGJR7OWJZ3DHPKMOMNWY4AY66FUR7ILBWANIHQN73QGCBF3ELPC5SVRNVH347TII3FLICDKUUVLU6GSUA6TKGERGVZOHSI7NJKAEMLVAHFITFW2GZZQGFEJHQXWLC4DLKGBQBPMT5MMOMW6E2U2DP6D7SIHEA3OZX2COIQZCFUBESEVL5S4EEPDCPUHB3RU5344PI"}},"request":{"type":"IntentRequest","requestId":"amzn1.echo-api.request.eb638170-eb7c-46fe-b376-6ae5374701fb","timestamp":"2016-03-18T13:40:40Z","intent":{"name":"AMAZON.HelpIntent"}}}
+loaded------
+found session------
+loaded------
+{"version":"1.0","session":{"new":true,"sessionId":"amzn1.echo-api.session.31d69281-1436-4465-8723-ef8639bb8001","application":{"applicationId":"amzn1.echo-sdk-ams.app.1c76ebe6-0788-4290-b12a-d9272876ed4a"},"user":{"userId":"amzn1.ask.account.AFP3ZWPOS2BGJR7OWJZ3DHPKMOMNWY4AY66FUR7ILBWANIHQN73QGCBF3ELPC5SVRNVH347TII3FLICDKUUVLU6GSUA6TKGERGVZOHSI7NJKAEMLVAHFITFW2GZZQGFEJHQXWLC4DLKGBQBPMT5MMOMW6E2U2DP6D7SIHEA3OZX2COIQZCFUBESEVL5S4EEPDCPUHB3RU5344PI"}},"request":{"type":"LaunchRequest","requestId":"amzn1.echo-api.request.5d43cb93-7be8-47c5-908b-a2bbbadb8397","timestamp":"2016-03-18T13:40:51Z"}}
+loaded------
+found session------
+loaded------
+{"version":"1.0","session":{"new":true,"sessionId":"amzn1.echo-api.session.2178c08f-5a7b-401c-87a4-1113fd9629e0","application":{"applicationId":"amzn1.echo-sdk-ams.app.1c76ebe6-0788-4290-b12a-d9272876ed4a"},"user":{"userId":"amzn1.ask.account.AFP3ZWPOS2BGJR7OWJZ3DHPKMOMNWY4AY66FUR7ILBWANIHQN73QGCBF3ELPC5SVRNVH347TII3FLICDKUUVLU6GSUA6TKGERGVZOHSI7NJKAEMLVAHFITFW2GZZQGFEJHQXWLC4DLKGBQBPMT5MMOMW6E2U2DP6D7SIHEA3OZX2COIQZCFUBESEVL5S4EEPDCPUHB3RU5344PI"}},"request":{"type":"IntentRequest","requestId":"amzn1.echo-api.request.a103202d-4af5-463c-a8de-ca86712d2397","timestamp":"2016-03-18T13:41:09Z","intent":{"name":"AMAZON.HelpIntent"}}}
+loaded------
+found session------
+loaded------
+{"version":"1.0","session":{"new":true,"sessionId":"amzn1.echo-api.session.040c08a4-0508-48f8-8b90-8c020e65f3f0","application":{"applicationId":"amzn1.echo-sdk-ams.app.1c76ebe6-0788-4290-b12a-d9272876ed4a"},"user":{"userId":"amzn1.ask.account.AFP3ZWPOS2BGJR7OWJZ3DHPKMOMNWY4AY66FUR7ILBWANIHQN73QGCBF3ELPC5SVRNVH347TII3FLICDKUUVLU6GSUA6TKGERGVZOHSI7NJKAEMLVAHFITFW2GZZQGFEJHQXWLC4DLKGBQBPMT5MMOMW6E2U2DP6D7SIHEA3OZX2COIQZCFUBESEVL5S4EEPDCPUHB3RU5344PI"}},"request":{"type":"IntentRequest","requestId":"amzn1.echo-api.request.35c8eda9-57d9-4203-941d-1a8dc47768d8","timestamp":"2016-03-18T13:42:13Z","intent":{"name":"Adam"}}}
+loaded------
+found session------
+loaded------
+{"version":"1.0","session":{"new":true,"sessionId":"amzn1.echo-api.session.224e96e5-6a4d-44d4-a8c3-9a63fc2423ce","application":{"applicationId":"amzn1.echo-sdk-ams.app.1c76ebe6-0788-4290-b12a-d9272876ed4a"},"user":{"userId":"amzn1.ask.account.AFP3ZWPOS2BGJR7OWJZ3DHPKMOMNWY4AY66FUR7ILBWANIHQN73QGCBF3ELPC5SVRNVH347TII3FLICDKUUVLU6GSUA6TKGERGVZOHSI7NJKAEMLVAHFITFW2GZZQGFEJHQXWLC4DLKGBQBPMT5MMOMW6E2U2DP6D7SIHEA3OZX2COIQZCFUBESEVL5S4EEPDCPUHB3RU5344PI"}},"request":{"type":"IntentRequest","requestId":"amzn1.echo-api.request.868cf057-291a-45d0-83a4-6fdce0281e62","timestamp":"2016-03-18T13:42:39Z","intent":{"name":"StartApp","slots":{"Number":{"name":"Number","value":"1"},"Date":{"name":"Date"}}}}}
+loaded------
+found session------
+loaded------
+{"version":"1.0","session":{"new":true,"sessionId":"amzn1.echo-api.session.2439cc70-a93d-486a-add1-a7703fee8b39","application":{"applicationId":"amzn1.echo-sdk-ams.app.1c76ebe6-0788-4290-b12a-d9272876ed4a"},"user":{"userId":"amzn1.ask.account.AFP3ZWPOS2BGJR7OWJZ3DHPKMOMNWY4AY66FUR7ILBWANIHQN73QGCBF3ELPC5SVRNVH347TII3FLICDKUUVLU6GSUA6TKGERGVZOHSI7NJKAEMLVAHFITFW2GZZQGFEJHQXWLC4DLKGBQBPMT5MMOMW6E2U2DP6D7SIHEA3OZX2COIQZCFUBESEVL5S4EEPDCPUHB3RU5344PI"}},"request":{"type":"IntentRequest","requestId":"amzn1.echo-api.request.baa5257a-877e-4cfe-9fdb-1727e1063c4d","timestamp":"2016-03-18T13:43:22Z","intent":{"name":"StartApp","slots":{"Number":{"name":"Number","value":"?"},"Date":{"name":"Date"}}}}}
+loaded------
+found session------
+loaded------
+{"version":"1.0","session":{"new":true,"sessionId":"amzn1.echo-api.session.000fb4de-7f3c-4236-af2a-fb9c2577778f","application":{"applicationId":"amzn1.echo-sdk-ams.app.1c76ebe6-0788-4290-b12a-d9272876ed4a"},"user":{"userId":"amzn1.ask.account.AFP3ZWPOS2BGJR7OWJZ3DHPKMOMNWY4AY66FUR7ILBWANIHQN73QGCBF3ELPC5SVRNVH347TII3FLICDKUUVLU6GSUA6TKGERGVZOHSI7NJKAEMLVAHFITFW2GZZQGFEJHQXWLC4DLKGBQBPMT5MMOMW6E2U2DP6D7SIHEA3OZX2COIQZCFUBESEVL5S4EEPDCPUHB3RU5344PI"}},"request":{"type":"LaunchRequest","requestId":"amzn1.echo-api.request.3c33aa69-09b5-4c85-a49e-8b6e86bdf9fe","timestamp":"2016-03-18T13:43:44Z"}}
+loaded------
+found session------
+loaded------
+{"version":"1.0","session":{"new":true,"sessionId":"amzn1.echo-api.session.da725087-39a8-4adb-b244-fd9f6c7f65cd","application":{"applicationId":"amzn1.echo-sdk-ams.app.1c76ebe6-0788-4290-b12a-d9272876ed4a"},"user":{"userId":"amzn1.ask.account.AFP3ZWPOS2BGJR7OWJZ3DHPKMOMNWY4AY66FUR7ILBWANIHQN73QGCBF3ELPC5SVRNVH347TII3FLICDKUUVLU6GSUA6TKGERGVZOHSI7NJKAEMLVAHFITFW2GZZQGFEJHQXWLC4DLKGBQBPMT5MMOMW6E2U2DP6D7SIHEA3OZX2COIQZCFUBESEVL5S4EEPDCPUHB3RU5344PI"}},"request":{"type":"LaunchRequest","requestId":"amzn1.echo-api.request.59c69f57-64f7-4ceb-a814-a813fe4b86ce","timestamp":"2016-03-18T13:45:00Z"}}
+loaded------
+found session------
+loaded------
+{"version":"1.0","session":{"new":true,"sessionId":"amzn1.echo-api.session.4ebbeb6d-373c-48c1-a430-7ecaf3344858","application":{"applicationId":"amzn1.echo-sdk-ams.app.1c76ebe6-0788-4290-b12a-d9272876ed4a"},"user":{"userId":"amzn1.ask.account.AFP3ZWPOS2BGJR7OWJZ3DHPKMOMNWY4AY66FUR7ILBWANIHQN73QGCBF3ELPC5SVRNVH347TII3FLICDKUUVLU6GSUA6TKGERGVZOHSI7NJKAEMLVAHFITFW2GZZQGFEJHQXWLC4DLKGBQBPMT5MMOMW6E2U2DP6D7SIHEA3OZX2COIQZCFUBESEVL5S4EEPDCPUHB3RU5344PI"}},"request":{"type":"IntentRequest","requestId":"amzn1.echo-api.request.09bc4a3b-3324-4a27-813a-3b10f4997909","timestamp":"2016-03-18T13:45:09Z","intent":{"name":"register","slots":{"Number":{"name":"Number","value":"8255"}}}}}
+loaded------
+found session------
+register ing echo------
+hi------{u'Number': {u'name': u'Number', u'value': u'8255'}}
+loop------Number
+{u'name': u'Number', u'value': u'8255'}
+loop------{u'Number': u'8255'}
+found echo------
+got link------
+registered echo echo------
+loaded------
+{"version":"1.0","session":{"new":true,"sessionId":"amzn1.echo-api.session.9b0aeef8-2bd2-4a10-858f-b90023461eda","application":{"applicationId":"amzn1.echo-sdk-ams.app.1c76ebe6-0788-4290-b12a-d9272876ed4a"},"user":{"userId":"amzn1.ask.account.AFP3ZWPOS2BGJR7OWJZ3DHPKMOMNWY4AY66FUR7ILBWANIHQN73QGCBF3ELPC5SVRNVH347TII3FLICDKUUVLU6GSUA6TKGERGVZOHSI7NJKAEMLVAHFITFW2GZZQGFEJHQXWLC4DLKGBQBPMT5MMOMW6E2U2DP6D7SIHEA3OZX2COIQZCFUBESEVL5S4EEPDCPUHB3RU5344PI"}},"request":{"type":"IntentRequest","requestId":"amzn1.echo-api.request.3e1ff180-638e-4cda-a81b-e65dca24a9c4","timestamp":"2016-03-18T13:45:58Z","intent":{"name":"Adam"}}}
+loaded------
+found session------
+loaded------
+{"version":"1.0","session":{"new":true,"sessionId":"amzn1.echo-api.session.109feeee-d707-41a1-9106-84d394d352a0","application":{"applicationId":"amzn1.echo-sdk-ams.app.1c76ebe6-0788-4290-b12a-d9272876ed4a"},"user":{"userId":"amzn1.ask.account.AFP3ZWPOS2BGJR7OWJZ3DHPKMOMNWY4AY66FUR7ILBWANIHQN73QGCBF3ELPC5SVRNVH347TII3FLICDKUUVLU6GSUA6TKGERGVZOHSI7NJKAEMLVAHFITFW2GZZQGFEJHQXWLC4DLKGBQBPMT5MMOMW6E2U2DP6D7SIHEA3OZX2COIQZCFUBESEVL5S4EEPDCPUHB3RU5344PI"}},"request":{"type":"IntentRequest","requestId":"amzn1.echo-api.request.aae67eb2-81b2-419c-849e-21913288521e","timestamp":"2016-03-18T13:46:06Z","intent":{"name":"Adam"}}}
+loaded------
+found session------
+loaded------
+{"version":"1.0","session":{"new":true,"sessionId":"amzn1.echo-api.session.c9292277-1a85-4566-8cae-a5e4e5c02374","application":{"applicationId":"amzn1.echo-sdk-ams.app.1c76ebe6-0788-4290-b12a-d9272876ed4a"},"user":{"userId":"amzn1.ask.account.AFP3ZWPOS2BGJR7OWJZ3DHPKMOMNWY4AY66FUR7ILBWANIHQN73QGCBF3ELPC5SVRNVH347TII3FLICDKUUVLU6GSUA6TKGERGVZOHSI7NJKAEMLVAHFITFW2GZZQGFEJHQXWLC4DLKGBQBPMT5MMOMW6E2U2DP6D7SIHEA3OZX2COIQZCFUBESEVL5S4EEPDCPUHB3RU5344PI"}},"request":{"type":"IntentRequest","requestId":"amzn1.echo-api.request.941e92d1-d45a-4387-a6e1-5c7714e0bbce","timestamp":"2016-03-18T13:46:17Z","intent":{"name":"Adam"}}}
+loaded------
+found session------
+loaded------
+{"version":"1.0","session":{"new":true,"sessionId":"amzn1.echo-api.session.20f64ac2-9e64-4f2a-9973-5d4a463565d3","application":{"applicationId":"amzn1.echo-sdk-ams.app.1c76ebe6-0788-4290-b12a-d9272876ed4a"},"user":{"userId":"amzn1.ask.account.AFP3ZWPOS2BGJR7OWJZ3DHPKMOMNWY4AY66FUR7ILBWANIHQN73QGCBF3ELPC5SVRNVH347TII3FLICDKUUVLU6GSUA6TKGERGVZOHSI7NJKAEMLVAHFITFW2GZZQGFEJHQXWLC4DLKGBQBPMT5MMOMW6E2U2DP6D7SIHEA3OZX2COIQZCFUBESEVL5S4EEPDCPUHB3RU5344PI"}},"request":{"type":"IntentRequest","requestId":"amzn1.echo-api.request.ec5de479-9273-4cc8-8b8b-b3ee2c5f255e","timestamp":"2016-03-18T13:49:31Z","intent":{"name":"register","slots":{"Number":{"name":"Number","value":"8255"}}}}}
+loaded------
+found session------
+loaded------
+{"version":"1.0","session":{"new":true,"sessionId":"amzn1.echo-api.session.3ada3554-2554-499a-ba20-ff3b6a5e5a76","application":{"applicationId":"amzn1.echo-sdk-ams.app.1c76ebe6-0788-4290-b12a-d9272876ed4a"},"user":{"userId":"amzn1.ask.account.AFP3ZWPOS2BGJR7OWJZ3DHPKMOMNWY4AY66FUR7ILBWANIHQN73QGCBF3ELPC5SVRNVH347TII3FLICDKUUVLU6GSUA6TKGERGVZOHSI7NJKAEMLVAHFITFW2GZZQGFEJHQXWLC4DLKGBQBPMT5MMOMW6E2U2DP6D7SIHEA3OZX2COIQZCFUBESEVL5S4EEPDCPUHB3RU5344PI"}},"request":{"type":"IntentRequest","requestId":"amzn1.echo-api.request.c5de7e10-bbd7-4cac-9083-fcd4b655501b","timestamp":"2016-03-18T13:51:30Z","intent":{"name":"register","slots":{"Number":{"name":"Number","value":"8255"}}}}}
+loaded------
+found session------
+register ing echo------
+hi------{u'Number': {u'name': u'Number', u'value': u'8255'}}
+loop------Number
+{u'name': u'Number', u'value': u'8255'}
+loop------{u'Number': u'8255'}
+found echo------
+got link------
+registered echo echo------
+loaded------
+{"version":"1.0","session":{"new":true,"sessionId":"SessionId.de1ec7df-a97d-45de-b9cb-d7658391f601","application":{"applicationId":"amzn1.echo-sdk-ams.app.1c76ebe6-0788-4290-b12a-d9272876ed4a"},"attributes":null,"user":{"userId":"amzn1.ask.account.AFP3ZWPOS2BGJR7OWJZ3DHPKMOMNWY4AY66FUR7ILBWANIHQN73QGCBF3ELPC5SVRNVH347TII3FLICDKUUVLU6GSUA6TKGERGVZOHSI7NJKAEMLVAHFITFW2GZZQGFEJHQXWLC4DLKGBQBPMT5MMOMW6E2U2DP6D7SIHEA3OZX2COIQZCFUBESEVL5S4EEPDCPUHB3RU5344PI"}},"request":{"type":"IntentRequest","requestId":"EdwRequestId.9b410f07-5eb3-49bc-9ed8-b3ce0991544f","timestamp":"2016-03-18T14:00:33Z","intent":{"name":"register","slots":{"Number":{"name":"Number","value":"8255"}}}}}
+loaded------
+found session------
+register ing echo------
+hi------{u'Number': {u'name': u'Number', u'value': u'8255'}}
+loop------Number
+{u'name': u'Number', u'value': u'8255'}
+loop------{u'Number': u'8255'}
+found echo------
+got link------
+registered echo echo------
+loaded------
+{"version":"1.0","session":{"new":true,"sessionId":"amzn1.echo-api.session.923f189e-f9c5-44a8-af84-b2a96eeab2ac","application":{"applicationId":"amzn1.echo-sdk-ams.app.1c76ebe6-0788-4290-b12a-d9272876ed4a"},"user":{"userId":"amzn1.ask.account.AFP3ZWPOS2BGJR7OWJZ3DHPKMOMNWY4AY66FUR7ILBWANIHQN73QGCBF3ELPC5SVRNVH347TII3FLICDKUUVLU6GSUA6TKGERGVZOHSI7NJKAEMLVAHFITFW2GZZQGFEJHQXWLC4DLKGBQBPMT5MMOMW6E2U2DP6D7SIHEA3OZX2COIQZCFUBESEVL5S4EEPDCPUHB3RU5344PI"}},"request":{"type":"LaunchRequest","requestId":"amzn1.echo-api.request.1a584b25-0b92-445d-a167-5695dfe1ae87","timestamp":"2016-03-18T14:00:45Z"}}
+loaded------
+found session------
+loaded------
+{"version":"1.0","session":{"new":true,"sessionId":"amzn1.echo-api.session.f84201b6-70c9-4976-87a8-1f724eda4198","application":{"applicationId":"amzn1.echo-sdk-ams.app.1c76ebe6-0788-4290-b12a-d9272876ed4a"},"user":{"userId":"amzn1.ask.account.AFP3ZWPOS2BGJR7OWJZ3DHPKMOMNWY4AY66FUR7ILBWANIHQN73QGCBF3ELPC5SVRNVH347TII3FLICDKUUVLU6GSUA6TKGERGVZOHSI7NJKAEMLVAHFITFW2GZZQGFEJHQXWLC4DLKGBQBPMT5MMOMW6E2U2DP6D7SIHEA3OZX2COIQZCFUBESEVL5S4EEPDCPUHB3RU5344PI"}},"request":{"type":"IntentRequest","requestId":"amzn1.echo-api.request.dd75e4ce-29ac-4204-9b88-5df2f4fca389","timestamp":"2016-03-18T14:01:40Z","intent":{"name":"register","slots":{"Number":{"name":"Number","value":"8255"}}}}}
+loaded------
+found session------
+register ing echo------
+hi------{u'Number': {u'name': u'Number', u'value': u'8255'}}
+loop------Number
+{u'name': u'Number', u'value': u'8255'}
+loop------{u'Number': u'8255'}
+found echo------
+got link------
+registered echo echo------
+loaded------
+{"version":"1.0","session":{"new":true,"sessionId":"amzn1.echo-api.session.32f7ad98-cf32-45f8-8bd9-9e6e156df3c3","application":{"applicationId":"amzn1.echo-sdk-ams.app.1c76ebe6-0788-4290-b12a-d9272876ed4a"},"user":{"userId":"amzn1.ask.account.AFP3ZWPOS2BGJR7OWJZ3DHPKMOMNWY4AY66FUR7ILBWANIHQN73QGCBF3ELPC5SVRNVH347TII3FLICDKUUVLU6GSUA6TKGERGVZOHSI7NJKAEMLVAHFITFW2GZZQGFEJHQXWLC4DLKGBQBPMT5MMOMW6E2U2DP6D7SIHEA3OZX2COIQZCFUBESEVL5S4EEPDCPUHB3RU5344PI"}},"request":{"type":"IntentRequest","requestId":"amzn1.echo-api.request.e2264343-792f-4b56-b291-bdaa88fe1fcd","timestamp":"2016-03-18T15:54:04Z","intent":{"name":"register","slots":{"Number":{"name":"Number","value":"7756"}}}}}
+loaded------
+found session------
+register ing echo------
+hi------{u'Number': {u'name': u'Number', u'value': u'7756'}}
+loop------Number
+{u'name': u'Number', u'value': u'7756'}
+loop------{u'Number': u'7756'}
+found echo------
+got link------
+registered echo echo------
+loaded------
+{"version":"1.0","session":{"new":true,"sessionId":"amzn1.echo-api.session.c343a206-1965-4f0c-9d2f-c57568173046","application":{"applicationId":"amzn1.echo-sdk-ams.app.1c76ebe6-0788-4290-b12a-d9272876ed4a"},"user":{"userId":"amzn1.ask.account.AFP3ZWPOS2BGJR7OWJZ3DHPKMOMNWY4AY66FUR7ILBWANIHQN73QGCBF3ELPC5SVRNVH347TII3FLICDKUUVLU6GSUA6TKGERGVZOHSI7NJKAEMLVAHFITFW2GZZQGFEJHQXWLC4DLKGBQBPMT5MMOMW6E2U2DP6D7SIHEA3OZX2COIQZCFUBESEVL5S4EEPDCPUHB3RU5344PI"}},"request":{"type":"IntentRequest","requestId":"amzn1.echo-api.request.69e9e3c8-d876-449f-8518-e471ae3210a5","timestamp":"2016-03-18T15:54:21Z","intent":{"name":"Adam"}}}
+loaded------
+found session------
+loaded------
+{"version":"1.0","session":{"new":true,"sessionId":"amzn1.echo-api.session.e7fca3a9-999c-471a-924c-6d4d6821555d","application":{"applicationId":"amzn1.echo-sdk-ams.app.1c76ebe6-0788-4290-b12a-d9272876ed4a"},"user":{"userId":"amzn1.ask.account.AFP3ZWPOS2BGJR7OWJZ3DHPKMOMNWY4AY66FUR7ILBWANIHQN73QGCBF3ELPC5SVRNVH347TII3FLICDKUUVLU6GSUA6TKGERGVZOHSI7NJKAEMLVAHFITFW2GZZQGFEJHQXWLC4DLKGBQBPMT5MMOMW6E2U2DP6D7SIHEA3OZX2COIQZCFUBESEVL5S4EEPDCPUHB3RU5344PI"}},"request":{"type":"IntentRequest","requestId":"amzn1.echo-api.request.74329a7b-927a-4482-be33-e6f60efe964c","timestamp":"2016-03-18T15:55:13Z","intent":{"name":"Adam"}}}
+loaded------
+found session------
+loaded------
+{"version":"1.0","session":{"new":true,"sessionId":"SessionId.39785a2c-4d49-494c-b4fc-3565a194adde","application":{"applicationId":"amzn1.echo-sdk-ams.app.1c76ebe6-0788-4290-b12a-d9272876ed4a"},"attributes":null,"user":{"userId":"amzn1.ask.account.AFP3ZWPOS2BGJR7OWJZ3DHPKMOMNWY4AY66FUR7ILBWANIHQN73QGCBF3ELPC5SVRNVH347TII3FLICDKUUVLU6GSUA6TKGERGVZOHSI7NJKAEMLVAHFITFW2GZZQGFEJHQXWLC4DLKGBQBPMT5MMOMW6E2U2DP6D7SIHEA3OZX2COIQZCFUBESEVL5S4EEPDCPUHB3RU5344PI"}},"request":{"type":"IntentRequest","requestId":"EdwRequestId.982050ab-9812-4505-9933-80d7f61b7222","timestamp":"2016-03-18T15:57:56Z","intent":{"name":"register","slots":{"Number":{"name":"Number","value":"7"}}}}}
+loaded------
+found session------
+loaded------
+{"version":"1.0","session":{"new":true,"sessionId":"amzn1.echo-api.session.dc968c7f-dbf2-4f24-9e52-106029e3e765","application":{"applicationId":"amzn1.echo-sdk-ams.app.1c76ebe6-0788-4290-b12a-d9272876ed4a"},"user":{"userId":"amzn1.ask.account.AFP3ZWPOS2BGJR7OWJZ3DHPKMOMNWY4AY66FUR7ILBWANIHQN73QGCBF3ELPC5SVRNVH347TII3FLICDKUUVLU6GSUA6TKGERGVZOHSI7NJKAEMLVAHFITFW2GZZQGFEJHQXWLC4DLKGBQBPMT5MMOMW6E2U2DP6D7SIHEA3OZX2COIQZCFUBESEVL5S4EEPDCPUHB3RU5344PI"}},"request":{"type":"IntentRequest","requestId":"amzn1.echo-api.request.7fe0cc19-4b3f-48ea-90fa-44f1f860bcda","timestamp":"2016-03-18T18:18:25Z","intent":{"name":"register","slots":{"Number":{"name":"Number","value":"1995"}}}}}
+loaded------
+found session------
+loaded------
+{"version":"1.0","session":{"new":true,"sessionId":"amzn1.echo-api.session.d0dddb53-9ef8-4e37-bd64-fcb31fdda061","application":{"applicationId":"amzn1.echo-sdk-ams.app.1c76ebe6-0788-4290-b12a-d9272876ed4a"},"user":{"userId":"amzn1.ask.account.AFP3ZWPOS2BGJR7OWJZ3DHPKMOMNWY4AY66FUR7ILBWANIHQN73QGCBF3ELPC5SVRNVH347TII3FLICDKUUVLU6GSUA6TKGERGVZOHSI7NJKAEMLVAHFITFW2GZZQGFEJHQXWLC4DLKGBQBPMT5MMOMW6E2U2DP6D7SIHEA3OZX2COIQZCFUBESEVL5S4EEPDCPUHB3RU5344PI"}},"request":{"type":"IntentRequest","requestId":"amzn1.echo-api.request.1a22ceb4-8e63-4c22-8c81-ed0c29b098fc","timestamp":"2016-03-18T18:20:21Z","intent":{"name":"register","slots":{"Number":{"name":"Number","value":"?"}}}}}
+loaded------
+found session------
+register ing echo------
+hi------{u'Number': {u'name': u'Number', u'value': u'?'}}
+loop------Number
+{u'name': u'Number', u'value': u'?'}
+loop------{u'Number': u'?'}
+found echo------
+{"version":"1.0","session":{"new":false,"sessionId":"amzn1.echo-api.session.d0dddb53-9ef8-4e37-bd64-fcb31fdda061","application":{"applicationId":"amzn1.echo-sdk-ams.app.1c76ebe6-0788-4290-b12a-d9272876ed4a"},"user":{"userId":"amzn1.ask.account.AFP3ZWPOS2BGJR7OWJZ3DHPKMOMNWY4AY66FUR7ILBWANIHQN73QGCBF3ELPC5SVRNVH347TII3FLICDKUUVLU6GSUA6TKGERGVZOHSI7NJKAEMLVAHFITFW2GZZQGFEJHQXWLC4DLKGBQBPMT5MMOMW6E2U2DP6D7SIHEA3OZX2COIQZCFUBESEVL5S4EEPDCPUHB3RU5344PI"}},"request":{"type":"SessionEndedRequest","requestId":"amzn1.echo-api.request.511ea4f8-db04-46f5-a427-c6b5594dc606","timestamp":"2016-03-18T18:20:21Z","reason":"ERROR"}}
+loaded------
+found session------
+loaded------
