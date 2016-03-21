@@ -209,3 +209,25 @@ class RecipesModelsTestCases(TestCase):
         self.assertEqual(next_instruction,
                          self.general_action.instruction_number + 1)
         self.assertEqual(return_text, self.basic_return_text.return_statement)
+
+    def test_edit_basic_return_text(self):
+        c = Client()
+        c.login(username=self.user.email, password=self.password)
+        self.general_action.type = 'BT'
+        self.general_action.basic_return_text = self.basic_return_text
+        self.general_action.recipe = self.recipe
+        self.general_action.save()
+        resp = c.get(reverse('Recipes:edit_basic_return_text',
+                      kwargs={'pk': self.basic_return_text.pk}))
+        self.assertEqual(resp.status_code, 200)
+
+        new_return_statement = 'New statement hahahahahaha no copy'
+        resp = c.post(reverse('Recipes:edit_basic_return_text',
+                      kwargs={'pk': self.basic_return_text.pk}),
+                      {'new_return_statement': new_return_statement}
+                      )
+        self.basic_return_text = BasicReturnText.objects.get(
+            pk=self.basic_return_text.pk)
+        self.assertEqual(resp.status_code, 302)
+        self.assertEqual(self.basic_return_text.return_statement,
+                         new_return_statement)

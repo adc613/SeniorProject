@@ -55,13 +55,16 @@ class GeneralAction(models.Model):
     recipe = models.ForeignKey(Recipe, null=True, related_name='actions')
 
     choices = (
+        ('NS', 'Not Specified'),
         ('RT', 'Basic Return Text'),
         )
 
     instruction_number = models.IntegerField(default=-1)
     type = models.CharField(max_length=2, choices=choices)
 
-    basic_return_text = models.OneToOneField(BasicReturnText, null=True)
+    basic_return_text = models.OneToOneField(BasicReturnText,
+                                             null=True, 
+                                             related_name='general_action')
 
     def get_action(self):
         if self.type == 'RT':

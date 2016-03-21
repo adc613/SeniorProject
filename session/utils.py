@@ -47,7 +47,8 @@ class AlexaResponse():
         return output
 
     def init_outputSpeech(self, kwargs):
-        self._response['response']['outputSpeech'] = self.outputSpeech_dict(kwargs)
+        self._response['response']['outputSpeech'] = self.outputSpeech_dict(
+            kwargs)
 
     def init_reprompt(self, kwargs):
         self._response['response']['reprompt'] = self.outputSpeech_dict(kwargs)
@@ -168,25 +169,10 @@ class AlexaRequest():
             return None
         params = {}
 
-        with open('log', 'ab') as file:
-            file.write(str('hi------'))
-            file.write(str(self._request['request']['intent']['slots']))
-            file.write('\n')
-
-        for key, value in self._request['request']['intent']['slots'].iteritems():
-            with open('log', 'ab') as file:
-                file.write(str('loop------'))
-                file.write(str(key))
-                file.write('\n')
-                file.write(str(value))
-                file.write('\n')
-            dummy_type = object()
+        for key, value in \
+                self._request['request']['intent']['slots'].iteritems():
             params[value['name']] = value['value']
 
-        with open('log', 'ab') as file:
-            file.write(str('loop------'))
-            file.write(str(params))
-            file.write('\n')
         return params
 
     def get_session_ended_reason(self):

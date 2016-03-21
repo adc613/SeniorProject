@@ -7,7 +7,7 @@ from django.views.generic import View
 
 from .forms import CreateActionForm, CreateRecipeForm,\
     CreateBasicReturnTextForm
-from .models import Recipe
+from .models import Recipe, BasicReturnText
 
 
 class CreateActionView(View):
@@ -69,3 +69,22 @@ class CreateRecipeView(View):
 
         return HttpResponseRedirect(reverse('Recipes:create_action',
                                             kwargs={'recipe_pk': model.pk}))
+
+
+class EditBasicReturnTextView(View):
+    template_name = 'edit_basic_return_text.html'
+
+    @method_decorator(login_required)
+    def get(self, request, **kwargs):
+        context = {}
+        context['model'] = BasicReturnText.objects.get(pk=kwargs['pk'])
+        return render(request, self.template_name, context)
+
+    @method_decorator(login_required)
+    def post(self, request, *args, **kwargs):
+        model = BasicReturnText.objects.get(pk=kwargs['pk'])
+        if model.general_action.recipe.creator == request.user:
+            model.return_statement = request.POST['new_return_statement']
+            model.save()
+        return HttpResponseRedirect(reverse('Recipes:edit_basic_return_text',
+                                    kwargs=kwargs))

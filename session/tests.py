@@ -35,18 +35,17 @@ class CreateAlexaRequest():
             'timestamp': '2015-05-13T12:34:56Z',
             'intent': {
                 'name': kwargs.get('intent_name', 'passcode'),
-                'slots': []
+                'slots': {}
                 }
             }
 
     def create_param(self, **kwargs):
+        name = kwargs.get('type', 'AMAZON.STRING')
         param = {
-            kwargs.get('type', 'AMAZON.STRING'): {
-                'name': kwargs['name'],
-                'value': kwargs['value']
-                }
+            'name': kwargs['name'],
+            'value': kwargs['value']
             }
-        self._response['request']['intent']['slots'].append(param)
+        self._response['request']['intent']['slots'][name] = param
 
     def get_params(self):
         return self._response
@@ -133,7 +132,7 @@ class ResponseTestCases(TestCase):
         request = CreateAlexaRequest(type='IntentRequest',
                                      intent_name='register')
         request.create_param(type='AMAZON.FOUR_DIGIT_NUMBER',
-                             name='passcode',
+                             name='Number',
                              value=link.passcode)
         print('hello world')
         c = Client()
@@ -153,7 +152,7 @@ class ResponseTestCases(TestCase):
         request = CreateAlexaRequest(type='IntentRequest',
                                      intent_name='register')
         request.create_param(type='AMAZON.FOUR_DIGIT_NUMBER',
-                             name='passcode',
+                             name='Number',
                              value=link.passcode)
         c = Client()
         resp = c.post(reverse('session:echo_request'),
@@ -175,7 +174,7 @@ class ResponseTestCases(TestCase):
                           content_type='application/json',
                           HTTP_X_REQUESTED_WITH='XMLHttpRequest'
                           )
-            return_text = resp.json()['outputSpeech']['text']
+            return_text = resp.json()['response']['outputSpeech']['text']
             hacked_instruction_number = int(return_text[len(return_text) - 1])
             self.assertEqual(hacked_instruction_number, i)
 
@@ -185,7 +184,7 @@ class ResponseTestCases(TestCase):
         resp = c.get(reverse('session:load_app'))
         self.assertEqual(resp.status_code, 200)
 
-        resp = c.post(reverse('session:load_app', kwargs={'pk': 1}))
+        resp = c.get(reverse('session:load_app', kwargs={'pk': 1}))
         session = AppSession.objects.get(user=self.user)
         self.assertEqual(resp.status_code, 200)
         self.assertEqual(session.current_app, self.recipe)

@@ -5,8 +5,6 @@ from django.utils.decorators import method_decorator
 from django.views.decorators.csrf import csrf_exempt
 from django.views.generic import View
 
-from django.http import HttpResponse
-
 # import datetime
 import json
 
@@ -29,13 +27,7 @@ class ResponseView(View):
 
     def register_echo(self, request):
         passcode = request.get_intent_params()['Number']
-        with open('log', 'ab') as file:
-            file.write(str('found echo------'))
-            file.write('\n')
         link = LinkAccountToEcho.objects.get(passcode=passcode)
-        with open('log', 'ab') as file:
-            file.write(str('got link------'))
-            file.write('\n')
         if link and link.active:
             link.user.echo = request.get_user_id()
             link.user.save()
@@ -46,33 +38,15 @@ class ResponseView(View):
         return 'There has been an error please retry'
 
     def post(self, request):
-        with open('log', 'ab') as file:
-            file.write(str(request.body))
-            file.write('\n')
 
         echo_request = AlexaRequest(json.loads(request.body))
-
-        with open('log', 'ab') as file:
-            file.write(str('loaded------'))
-            file.write('\n')
-
         session = echo_request.get_session()
-
-        with open('log', 'ab') as file:
-            file.write(str('found session------'))
-            file.write('\n')
 
         if session is not None:
             # Echo is in a session
             return_text = session.next_action()
         elif echo_request.get_intent_type() == 'register':
-            with open('log', 'ab') as file:
-                file.write(str('register ing echo------'))
-                file.write('\n')
             return_text = self.register_echo(echo_request)
-            with open('log', 'ab') as file:
-                file.write(str('registered echo echo------'))
-                file.write('\n')
 
         elif echo_request.get_user():
             # There not in an app, but echo has been registered
@@ -84,9 +58,6 @@ class ResponseView(View):
                 "please login and begin registration process"
 
         response = AlexaResponse(return_statement=return_text).get_response()
-        with open('log', 'ab') as file:
-            file.write(str('loaded------'))
-            file.write('\n')
 
         return HttpResponse(json.dumps(response),
                             content_type="application/json")
@@ -101,6 +72,7 @@ class LoadApplicationView(View):
         context = {}
         context['apps'] = Recipe.objects.all()
         return render(request, self.template_name, context)
+
 
 class ApplicationIsLoadedView(View):
     template_name = 'app_is_loaded.html'
