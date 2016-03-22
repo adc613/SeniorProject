@@ -309,5 +309,16 @@ class RecipesModelsTestCases(TestCase):
                          self.general_action.instruction_number + 1)
         self.assertEqual(return_text, self.basic_return_text.return_statement)
 
-    def test_conditional_branch(self):
+
+class ConditionalBranchesTestCases(TestCase):
+    def setUp(self):
+        pass
+
+    def test_add_condition_to_recipe(self):
+        pass
+
+    def test_add_statement_to_branch(self):
+        pass
+
+    def test_added_nested_conditionals(self):
         pass

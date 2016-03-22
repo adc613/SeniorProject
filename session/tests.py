@@ -190,3 +190,17 @@ class ResponseTestCases(TestCase):
         self.assertEqual(session.current_app, self.recipe)
         print('hello world')
         print(resp.templates)
+
+
+def ConditionalStatmentTestCases(TestCase):
+    def setUp(self):
+        pass
+
+    def test_choosing_condition(self):
+        pass
+
+    def test_iterating_through_branch(self):
+        pass
+
+    def test_iterating_through_sub_branches(self):
+        pass
