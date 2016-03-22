@@ -73,6 +73,103 @@ class RecipesViewsTestCases(TestCase):
         self.assertEqual(action.basic_return_text.return_statement,
                          return_statement)
 
+    def test_add_api_call(self):
+        c = Client()
+        c.login(username=self.user.email, password=self.password)
+        recipe = Recipe.objects.create(
+            creator=self.user,
+            name='First App',
+            description='First Description'
+            )
+
+        basic_return_text = BasicReturnText.objects.create(
+            return_statement='Hello World!'
+            )
+
+        general_action = GeneralAction.objects.create(
+            type='RT',
+            basic_return_text=basic_return_text
+            )
+        general_action.recipe = recipe
+        general_action.save()
+
+        pk = general_action.pk
+        resp = c.get(reverse('Recipes:add_api_call', kwargs={'pk': pk}))
+        self.assertEqual(resp.status_code, 200)
+
+        json_string = {'title': 'foo', 'body': 'bar', 'userId': 1}
+
+        data = {'url': 'http://jsonplaceholder.typicode.com/posts/1',
+                'is_get': True,
+                'json_string': json.dumps(json_string)
+                }
+        resp = c.post(reverse('Recipes:add_api_call', kwargs={'pk': pk}),
+                      data)
+        api_call = APICall.objects.get(pk=1)
+        action = GeneralAction.objects.get(pk=pk)
+        self.assertEqual(api_call, action.api_call)
+        self.assertEqual(api_call.url, data['url'])
+        self.assertEqual(api_call.json_string, data['json_string'])
+        self.assertEqual(api_call.is_get, data['is_get'])
+        self.assertEqual(resp.status_code, 302)
+        api_call.action()
+
+        data = {'url': 'http://jsonplaceholder.typicode.com/posts',
+                'is_get': False,
+                'json_string': json.dumps(json_string)
+                }
+        resp = c.post(reverse('Recipes:add_api_call', kwargs={'pk': pk}),
+                      data)
+        print('-------hello-----')
+        print(api_call.url)
+        api_call = APICall.objects.get(pk=2)
+        print(api_call.url)
+        print(api_call.is_get)
+        print('-------goodbye-----')
+        action = GeneralAction.objects.get(pk=pk)
+        self.assertEqual(api_call, action.api_call)
+        self.assertEqual(api_call.url, data['url'])
+        self.assertEqual(api_call.json_string, data['json_string'])
+        self.assertEqual(api_call.is_get, data['is_get'])
+        self.assertEqual(resp.status_code, 302)
+
+    def test_edit_basic_return_text(self):
+        c = Client()
+        c.login(username=self.user.email, password=self.password)
+        recipe = Recipe.objects.create(
+            creator=self.user,
+            name='First App',
+            description='First Description'
+            )
+
+        basic_return_text = BasicReturnText.objects.create(
+            return_statement='Hello World!'
+            )
+
+        general_action = GeneralAction.objects.create(
+            type='RT',
+            basic_return_text=basic_return_text
+            )
+
+        general_action.type = 'BT'
+        general_action.basic_return_text = basic_return_text
+        general_action.recipe = recipe
+        general_action.save()
+        resp = c.get(reverse('Recipes:edit_basic_return_text',
+                     kwargs={'pk': basic_return_text.pk}))
+        self.assertEqual(resp.status_code, 200)
+
+        new_return_statement = 'New statement hahahahahaha no copy'
+        resp = c.post(reverse('Recipes:edit_basic_return_text',
+                      kwargs={'pk': basic_return_text.pk}),
+                      {'new_return_statement': new_return_statement}
+                      )
+        basic_return_text = BasicReturnText.objects.get(
+            pk=basic_return_text.pk)
+        self.assertEqual(resp.status_code, 302)
+        self.assertEqual(basic_return_text.return_statement,
+                         new_return_statement)
+
 
 class RecipesModelsTestCases(TestCase):
 
@@ -212,71 +309,5 @@ class RecipesModelsTestCases(TestCase):
                          self.general_action.instruction_number + 1)
         self.assertEqual(return_text, self.basic_return_text.return_statement)
 
-    def test_edit_basic_return_text(self):
-        c = Client()
-        c.login(username=self.user.email, password=self.password)
-        self.general_action.type = 'BT'
-        self.general_action.basic_return_text = self.basic_return_text
-        self.general_action.recipe = self.recipe
-        self.general_action.save()
-        resp = c.get(reverse('Recipes:edit_basic_return_text',
-                     kwargs={'pk': self.basic_return_text.pk}))
-        self.assertEqual(resp.status_code, 200)
-
-        new_return_statement = 'New statement hahahahahaha no copy'
-        resp = c.post(reverse('Recipes:edit_basic_return_text',
-                      kwargs={'pk': self.basic_return_text.pk}),
-                      {'new_return_statement': new_return_statement}
-                      )
-        self.basic_return_text = BasicReturnText.objects.get(
-            pk=self.basic_return_text.pk)
-        self.assertEqual(resp.status_code, 302)
-        self.assertEqual(self.basic_return_text.return_statement,
-                         new_return_statement)
-
-    def test_add_api_call(self):
-        c = Client()
-        c.login(username=self.user.email, password=self.password)
-        self.general_action.recipe = self.recipe
-        self.general_action.save()
-
-        pk = self.general_action.pk
-        resp = c.get(reverse('Recipes:add_api_call', kwargs={'pk': pk}))
-        self.assertEqual(resp.status_code, 200)
-
-        json_string = {'title': 'foo', 'body': 'bar', 'userId': 1}
-
-        data = {'url': 'http://jsonplaceholder.typicode.com/posts/1',
-                'is_get': True,
-                'json_string': json.dumps(json_string)
-                }
-        resp = c.post(reverse('Recipes:add_api_call', kwargs={'pk': pk}),
-                      data)
-        api_call = APICall.objects.get(pk=1)
-        action = GeneralAction.objects.get(pk=pk)
-        self.assertEqual(api_call, action.api_call)
-        self.assertEqual(api_call.url, data['url'])
-        self.assertEqual(api_call.json_string, data['json_string'])
-        self.assertEqual(api_call.is_get, data['is_get'])
-        self.assertEqual(resp.status_code, 302)
-        api_call.action()
-
-        data = {'url': 'http://jsonplaceholder.typicode.com/posts',
-                'is_get': False,
-                'json_string': json.dumps(json_string)
-                }
-        resp = c.post(reverse('Recipes:add_api_call', kwargs={'pk': pk}),
-                      data)
-        print('-------hello-----')
-        print(api_call.url)
-        api_call = APICall.objects.get(pk=2)
-        print(api_call.url)
-        print(api_call.is_get)
-        print('-------goodbye-----')
-        action = GeneralAction.objects.get(pk=pk)
-        self.assertEqual(api_call, action.api_call)
-        self.assertEqual(api_call.url, data['url'])
-        self.assertEqual(api_call.json_string, data['json_string'])
-        self.assertEqual(api_call.is_get, data['is_get'])
-        self.assertEqual(resp.status_code, 302)
-        api_call.action()
+    def test_conditional_branch(self):
+        pass

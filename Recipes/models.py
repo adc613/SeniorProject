@@ -43,12 +43,24 @@ class Recipe(models.Model):
         return self.insert_action(action, -1)
 
 
-class APICall(models.Model):
-    get_or_post_choice = (
-        ('G', 'get'),
-        ('P', 'post'),
-        )
+class ConditionalBranch(Recipe):
+    parent_header = models.ForeignKey('Recipes.ConditionalHeader',
+                                      related_name='branches')
+    branch_number = models.IntegerField()
+    creator = None
 
+
+class ConditionalHeader(models.Model):
+
+    def get_branches(self):
+        return self.branches.all()
+
+    def get_branch(self, branch_number):
+        return ConditionalBranch(parent_header=self,
+                                 branch_number=branch_number)
+
+
+class APICall(models.Model):
     url = models.CharField(max_length=2048)
     is_get = models.BooleanField(default=True)
     json_string = models.TextField()
@@ -69,34 +81,43 @@ class BasicReturnText(models.Model):
 
     def action(self, instruction_number):
         next_instruction = instruction_number + 1
-        return_statement = self.return_statement
-
-        return (next_instruction, return_statement)
+        return (next_instruction, self.return_statement)
 
 
 class GeneralAction(models.Model):
     recipe = models.ForeignKey(Recipe, null=True, related_name='actions')
+    NOT_SPECIFIED = 'NS'
+    BASIC_RETURN_TEXT = 'RT'
+    CONDITIONAL = 'C'
 
     choices = (
-        ('NS', 'Not Specified'),
-        ('RT', 'Basic Return Text'),
+        (NOT_SPECIFIED , 'Not Specified'),
+        (BASIC_RETURN_TEXT, 'Basic Return Text'),
+        (CONDITIONAL , 'Conditional'),
         )
 
     instruction_number = models.IntegerField(default=-1)
     type = models.CharField(max_length=2, choices=choices, default='RT')
     is_api_call = models.BooleanField(default=False)
 
+    # Actions
     basic_return_text = models.OneToOneField(BasicReturnText,
                                              null=True,
                                              related_name='general_action')
     api_call = models.OneToOneField(APICall,
                                     null=True,
                                     related_name='general_action')
+    conditional = models.OneToOneField(ConditionalHeader,
+                                    null=True,
+                                    related_name='general_action')
 
-    def get_action(self):
-        if self.is_api_call:
-            self.api_call.action()
-        if self.type == 'RT':
+    def get_action(self, **kwargs):
+        if self.type == self.CONDITIONAL:
+            action = conditional
+            return (-1, self.conditional.get_branch(kwargs['branch_number']))
+        elif self.type == self.BASIC_RETURN_TEXT:
+            if self.is_api_call:
+                self.api_call.action()
             action = self.basic_return_text
         instruction = self.instruction_number
 

@@ -2,6 +2,8 @@ from __future__ import unicode_literals
 
 from django.db import models
 
+from Recipes.models import ConditionalHeader
+
 
 class AppSession(models.Model):
     user = models.ForeignKey('accounts.User')
@@ -10,18 +12,59 @@ class AppSession(models.Model):
     program_counter = models.IntegerField(default=1)
     current_app = models.ForeignKey('Recipes.Recipe')
     end = models.BooleanField(default=False)
+    is_in_conditional = models.BooleanField(default=False)
+    conditional_session = models.OneToOneField('session.ConditionalSession',
+                                                null=True,
+                                                related_name='parent_session')
 
-    def next_action(self):
-        length = self.current_app.actions.count()
-        if length < self.program_counter:
-            self.end = True
-            self.save()
-            return 'You have reached the end of this application'
+    def get_current_app(self):
+        return self.current_app
 
-        action = self.current_app.actions.get(
-            instruction_number=self.program_counter)
-        (next_instruction, return_statement) = action.get_action()
-        self.program_counter = next_instruction
+    def enter_conditional_branch(self):
+        from session.models import ConditionalSession
+        self.conditional_session = ConditionalSession.objects.create(
+            user=self.user,
+            amazon_echo=self.amazon_echo,
+            current_branch=return_statement
+            )
+        (next_instruction, return_statement) = \
+                self.conditional_session.next_action()
+        self.is_in_conditional = True
         self.save()
 
+        return (next_instruction, return_statement)
+
+
+    def next_action(self):
+        current_app = self.get_current_app()
+        if not self.is_in_conditional:
+            length = current_app.actions.count()
+            if length < self.program_counter:
+                self.end = True
+                self.save()
+                return 'You have reached the end of this application'
+
+            action = current_app.actions.get(
+                instruction_number=self.program_counter)
+            (next_instruction, return_statement) = action.get_action()
+            if next_instruction != -1:
+                self.program_counter = next_instruction
+                self.save()
+            else:
+                (next_instruction, return_statement) = \
+                        self.enter_conditional_branch()
+        else:
+            (next_instruction, return_statement) = \
+                    self.conditional_session.next_action()
+            if conditional_session.end:
+                self.is_in_conditional = False
+                self.program_counter = self.program_counter + 1
+
         return return_statement
+
+
+class ConditionalSession(AppSession):
+    current_branch = models.ForeignKey(ConditionalHeader)
+
+    def get_current_app(self):
+        return self.current_branch
