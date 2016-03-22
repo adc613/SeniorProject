@@ -6,8 +6,8 @@ from django.contrib.auth.decorators import login_required
 from django.views.generic import View
 
 from .forms import CreateActionForm, CreateRecipeForm,\
-    CreateBasicReturnTextForm
-from .models import Recipe, BasicReturnText
+    CreateBasicReturnTextForm, CreateAPICallForm
+from .models import Recipe, BasicReturnText, GeneralAction
 
 
 class CreateActionView(View):
@@ -87,4 +87,34 @@ class EditBasicReturnTextView(View):
             model.return_statement = request.POST['new_return_statement']
             model.save()
         return HttpResponseRedirect(reverse('Recipes:edit_basic_return_text',
+                                    kwargs=kwargs))
+
+
+class AddAPICallView(View):
+    """
+    View for adding an api call to a general action
+    """
+    template_name = 'add_api_call.html'
+    form = CreateAPICallForm
+
+    @method_decorator(login_required)
+    def get(self, request, *args, **kwargs):
+        context = {}
+        model = GeneralAction.objects.get(pk=kwargs['pk'])
+        if model.recipe.creator == request.user:
+            context['model'] = model
+
+        return render(request, self.template_name, context)
+
+    @method_decorator(login_required)
+    def post(self, request, *args, **kwargs):
+        model = GeneralAction.objects.get(pk=kwargs['pk'])
+        if model.recipe.creator == request.user:
+            form = self.form(request.POST)
+            if form.is_valid():
+                api_call = form.save()
+                model.api_call = api_call
+                model.save()
+
+        return HttpResponseRedirect(reverse('Recipes:add_api_call',
                                     kwargs=kwargs))

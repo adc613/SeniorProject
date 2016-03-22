@@ -2,6 +2,8 @@ from __future__ import unicode_literals
 
 from django.db import models
 
+import requests
+
 
 class Recipe(models.Model):
     name = models.CharField(max_length=200)
@@ -41,6 +43,27 @@ class Recipe(models.Model):
         return self.insert_action(action, -1)
 
 
+class APICall(models.Model):
+    get_or_post_choice = (
+        ('G', 'get'),
+        ('P', 'post'),
+        )
+
+    url = models.CharField(max_length=2048)
+    is_get = models.BooleanField(default=True)
+    json_string = models.TextField()
+
+    def action(self):
+        try:
+            if self.is_get:
+                requests.get(self.url, data=self.json_string)
+            else:
+                requests.post(self.url, data=self.json_string)
+            return True
+        except:
+            return False
+
+
 class BasicReturnText(models.Model):
     return_statement = models.TextField()
 
@@ -60,14 +83,21 @@ class GeneralAction(models.Model):
         )
 
     instruction_number = models.IntegerField(default=-1)
-    type = models.CharField(max_length=2, choices=choices)
+    type = models.CharField(max_length=2, choices=choices, default='RT')
+    is_api_call = models.BooleanField(default=False)
 
     basic_return_text = models.OneToOneField(BasicReturnText,
-                                             null=True, 
+                                             null=True,
                                              related_name='general_action')
+    api_call = models.OneToOneField(APICall,
+                                    null=True,
+                                    related_name='general_action')
 
     def get_action(self):
+        if self.is_api_call:
+            self.api_call.action()
         if self.type == 'RT':
             action = self.basic_return_text
         instruction = self.instruction_number
+
         return action.action(instruction)
