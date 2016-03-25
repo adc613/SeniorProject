@@ -6,11 +6,16 @@ import requests
 
 
 class Recipe(models.Model):
-    name = models.CharField(max_length=200)
+    is_conditional_branch = models.BooleanField(default=False)
     creation_date = models.DateTimeField(auto_now_add=True)
     last_modified_date = models.DateTimeField(auto_now=True)
-    creator = models.ForeignKey('accounts.User')
-    description = models.TextField()
+    creator = models.ForeignKey('accounts.User', null=True)
+    name = models.CharField(max_length=200, blank=True)
+    description = models.TextField(blank=True)
+    parent_header = models.ForeignKey('Recipes.ConditionalHeader',
+                                      related_name='branches',
+                                      null=True)
+    branch_number = models.IntegerField(default=-1)
 
     def insert_action(self, action, position):
         if action.recipe != self and action.recipe is not None:
@@ -43,21 +48,18 @@ class Recipe(models.Model):
         return self.insert_action(action, -1)
 
 
-class ConditionalBranch(Recipe):
-    parent_header = models.ForeignKey('Recipes.ConditionalHeader',
-                                      related_name='branches')
-    branch_number = models.IntegerField()
-    creator = None
-
-
 class ConditionalHeader(models.Model):
 
     def get_branches(self):
         return self.branches.all()
 
     def get_branch(self, branch_number):
-        return ConditionalBranch(parent_header=self,
-                                 branch_number=branch_number)
+        return Recipe.objects.get(parent_header=self,
+                                  branch_number=branch_number)
+
+    def add_branch(self, branch):
+        branch.branch_number = self.branches.count()
+        branch.save()
 
 
 class APICall(models.Model):
@@ -91,9 +93,9 @@ class GeneralAction(models.Model):
     CONDITIONAL = 'C'
 
     choices = (
-        (NOT_SPECIFIED , 'Not Specified'),
+        (NOT_SPECIFIED, 'Not Specified'),
         (BASIC_RETURN_TEXT, 'Basic Return Text'),
-        (CONDITIONAL , 'Conditional'),
+        (CONDITIONAL, 'Conditional'),
         )
 
     instruction_number = models.IntegerField(default=-1)
@@ -108,12 +110,11 @@ class GeneralAction(models.Model):
                                     null=True,
                                     related_name='general_action')
     conditional = models.OneToOneField(ConditionalHeader,
-                                    null=True,
-                                    related_name='general_action')
+                                       null=True,
+                                       related_name='general_action')
 
     def get_action(self, **kwargs):
         if self.type == self.CONDITIONAL:
-            action = conditional
             return (-1, self.conditional.get_branch(kwargs['branch_number']))
         elif self.type == self.BASIC_RETURN_TEXT:
             if self.is_api_call:

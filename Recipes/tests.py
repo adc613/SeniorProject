@@ -3,7 +3,8 @@ from django.test import TestCase
 from django.test.client import Client
 
 from accounts.models import User
-from .models import Recipe, GeneralAction, BasicReturnText, APICall
+from .models import (Recipe, GeneralAction, BasicReturnText, APICall,
+                     ConditionalHeader)
 
 import json
 
@@ -312,10 +313,47 @@ class RecipesModelsTestCases(TestCase):
 
 class ConditionalBranchesTestCases(TestCase):
     def setUp(self):
-        pass
+        self.password = '$tr0ngPa$$w0rd'
+
+        self.user = User.objects.create_user(
+            first_name='Adam',
+            last_name='Collins',
+            email='adc82@case.edu',
+            password=self.password
+            )
+
+        self.recipe = Recipe.objects.create(
+            creator=self.user,
+            name='First App',
+            description='First Description'
+            )
+
+        self.basic_return_text = BasicReturnText.objects.create(
+            return_statement='Hello World!'
+            )
+
+        self.general_action = GeneralAction.objects.create(
+            type='RT',
+            basic_return_text=self.basic_return_text
+            )
+
+        self.recipe.add_action(self.general_action)
 
     def test_add_condition_to_recipe(self):
-        pass
+        conditional = ConditionalHeader.objects.create()
+        conditional_branch = Recipe.objects.create(
+            parent_header=conditional)
+        conditional.add_branch(conditional_branch)
+
+        self.assertEqual(conditional_branch,
+                         conditional.get_branch(1))
+
+        conditional_branch = Recipe.objects.create(
+            parent_header=conditional)
+        conditional.add_branch(conditional_branch)
+
+        self.assertEqual(conditional_branch,
+                         conditional.get_branch(2))
 
     def test_add_statement_to_branch(self):
         pass
