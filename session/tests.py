@@ -2,7 +2,8 @@ from django.core.urlresolvers import reverse
 from django.test import TestCase
 from django.test.client import Client
 
-from Recipes.models import Recipe, GeneralAction, BasicReturnText
+from Recipes.models import (Recipe, GeneralAction, BasicReturnText,
+                            ConditionalHeader)
 from accounts.models import User, LinkAccountToEcho
 from .models import AppSession
 
@@ -194,13 +195,80 @@ class ResponseTestCases(TestCase):
 
 def ConditionalStatmentTestCases(TestCase):
     def setUp(self):
-        pass
+        self.password = '$tr0ngPa$$w0rd'
 
-    def test_choosing_condition(self):
-        pass
+        self.user = User.objects.create_user(
+            first_name='Adam',
+            last_name='Collins',
+            email='adc82@case.edu',
+            password=self.password
+            )
 
-    def test_iterating_through_branch(self):
-        pass
+        self.recipe = Recipe.objects.create(
+            creator=self.user,
+            name='First App',
+            description='First Description'
+            )
+
+        self.basic_return_text = BasicReturnText.objects.create(
+            return_statement='Hello World!'
+            )
+
+        self.conditional = ConditionalHeader.objects.create(
+            return_statement='foo')
+
+        self.general_action = GeneralAction.objects.create(
+            type='C',
+            conditonal=self.conditonal
+            )
+        self.recipe.add_action(self.general_action)
+
+        self.basic_return_text_c1 = BasicReturnText.objects.create(
+            return_statement='Hello World!'
+            )
+
+        self.basic_return_text_c2 = BasicReturnText.objects.create(
+            return_statement='Hello World!'
+            )
+        self.general_action_c1 = GeneralAction.objects.create(
+            type='RT',
+            conditonal=self.basic_return_text_c1
+            )
+        self.general_action_c2 = GeneralAction.objects.create(
+            type='RT',
+            conditonal=self.basic_return_text_c2
+            )
+
+        conditional_branch = Recipe.objects.create(
+            parent_header=self.conditional)
+        conditional_branch.add_action(self.general_action_c1)
+
+        self.conditional.add_branch(conditional_branch)
+
+        conditional_branch = Recipe.objects.create(
+            parent_header=self.conditional)
+        conditional_branch.add_action(self.general_action_c2)
+
+        self.conditional.add_branch(conditional_branch)
+
+        self.session = AppSession.objects.create(user=self.user,
+                                                 current_app=self.Recipe)
+
+    def test_choosing_condition_number_1(self):
+        return_statement = self.session.next_action()
+        self.assertEqual(return_statement, self.conditonal.return_statement)
+
+        return_statement = self.session.next_action(branch_number=1)
+        self.assertEqual(return_statement,
+                         self.basic_return_text_c1.return_statement)
+
+    def test_choosing_condition_number_2(self):
+        return_statement = self.session.next_action()
+        self.assertEqual(return_statement, self.conditonal.return_statement)
+
+        return_statement = self.session.next_action(branch_number=2)
+        self.assertEqual(return_statement,
+                         self.basic_return_text_c2.return_statement)
 
     def test_iterating_through_sub_branches(self):
         pass
