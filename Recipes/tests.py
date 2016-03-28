@@ -354,9 +354,3 @@ class ConditionalBranchesTestCases(TestCase):
 
         self.assertEqual(conditional_branch,
                          conditional.get_branch(2))
-
-    def test_add_statement_to_branch(self):
-        pass
-
-    def test_added_nested_conditionals(self):
-        pass
