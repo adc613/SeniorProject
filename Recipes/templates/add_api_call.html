@@ -1,4 +1,4 @@
-<form method="post" action="{% url 'Recipes:add_api_call' %}">
+<form method="post" action="{% url 'Recipes:add_api_call' pk=model.pk %}">
   {% csrf_token %}
   <input type="text" name="url" placeholder="http://www.example.com">
   <textarea name="json_string"></textarea>

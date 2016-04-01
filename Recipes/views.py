@@ -114,6 +114,7 @@ class AddAPICallView(View):
             if form.is_valid():
                 api_call = form.save()
                 model.api_call = api_call
+                model.is_api_call = True
                 model.save()
 
         return HttpResponseRedirect(reverse('Recipes:add_api_call',
