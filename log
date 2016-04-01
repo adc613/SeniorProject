@@ -427,3 +427,145 @@ found echo------
 loaded------
 found session------
 loaded------
+{"session": {"new": false, "sessionId": "amzn1.echo-api.session.000000-0000-0000-0000000000", "attributes": {}, "user": {"userId": "amzn1.account.AM3B000000000000000000000000000"}, "application": {"applicationId": "amzn1.echo-sdk-ams.app.0000-000-000"}}, "version": "1.0", "request": {"timestamp": "2015-05-13T12:34:56Z", "type": "IntentRequest", "requestId": "amzn1.echo-api.request.0000-00000-000-00000-00000", "intent": {"slots": [{"AMAZON.FOUR_DIGIT_NUMBER": {"name": "passcode", "value": 9028}}], "name": "register"}}}
+loaded------
+found session------
+register ing echo------
+hi------[{u'AMAZON.FOUR_DIGIT_NUMBER': {u'name': u'passcode', u'value': 9028}}]
+{"session": {"new": false, "sessionId": "amzn1.echo-api.session.000000-0000-0000-0000000000", "attributes": {}, "user": {"userId": "amzn1.account.AM3B000000000000000000000000000"}, "application": {"applicationId": "amzn1.echo-sdk-ams.app.0000-000-000"}}, "version": "1.0", "request": {"timestamp": "2015-05-13T12:34:56Z", "type": "IntentRequest", "requestId": "amzn1.echo-api.request.0000-00000-000-00000-00000", "intent": {"slots": [{"AMAZON.FOUR_DIGIT_NUMBER": {"name": "passcode", "value": 8168}}], "name": "register"}}}
+loaded------
+found session------
+register ing echo------
+hi------[{u'AMAZON.FOUR_DIGIT_NUMBER': {u'name': u'passcode', u'value': 8168}}]
+{"session": {"new": false, "sessionId": "amzn1.echo-api.session.000000-0000-0000-0000000000", "attributes": {}, "user": {"userId": "amzn1.account.AM3B000000000000000000000000000"}, "application": {"applicationId": "amzn1.echo-sdk-ams.app.0000-000-000"}}, "version": "1.0", "request": {"timestamp": "2015-05-13T12:34:56Z", "type": "IntentRequest", "requestId": "amzn1.echo-api.request.0000-00000-000-00000-00000", "intent": {"slots": [{"AMAZON.FOUR_DIGIT_NUMBER": {"name": "passcode", "value": 4160}}], "name": "register"}}}
+loaded------
+found session------
+register ing echo------
+{"session": {"new": false, "sessionId": "amzn1.echo-api.session.000000-0000-0000-0000000000", "attributes": {}, "user": {"userId": "amzn1.account.AM3B000000000000000000000000000"}, "application": {"applicationId": "amzn1.echo-sdk-ams.app.0000-000-000"}}, "version": "1.0", "request": {"timestamp": "2015-05-13T12:34:56Z", "type": "IntentRequest", "requestId": "amzn1.echo-api.request.0000-00000-000-00000-00000", "intent": {"slots": [{"AMAZON.FOUR_DIGIT_NUMBER": {"name": "passcode", "value": 8044}}], "name": "register"}}}
+loaded------
+found session------
+register ing echo------
+{"session": {"new": false, "sessionId": "amzn1.echo-api.session.000000-0000-0000-0000000000", "attributes": {}, "user": {"userId": "amzn1.account.AM3B000000000000000000000000000"}, "application": {"applicationId": "amzn1.echo-sdk-ams.app.0000-000-000"}}, "version": "1.0", "request": {"timestamp": "2015-05-13T12:34:56Z", "type": "IntentRequest", "requestId": "amzn1.echo-api.request.0000-00000-000-00000-00000", "intent": {"slots": [{"AMAZON.FOUR_DIGIT_NUMBER": {"name": "passcode", "value": 7605}}], "name": "register"}}}
+loaded------
+found session------
+register ing echo------
+{"session": {"new": false, "sessionId": "amzn1.echo-api.session.000000-0000-0000-0000000000", "attributes": {}, "user": {"userId": "amzn1.account.AM3B000000000000000000000000000"}, "application": {"applicationId": "amzn1.echo-sdk-ams.app.0000-000-000"}}, "version": "1.0", "request": {"timestamp": "2015-05-13T12:34:56Z", "type": "IntentRequest", "requestId": "amzn1.echo-api.request.0000-00000-000-00000-00000", "intent": {"slots": [{"AMAZON.FOUR_DIGIT_NUMBER": {"name": "passcode", "value": 9327}}], "name": "register"}}}
+loaded------
+found session------
+register ing echo------
+{"session": {"new": false, "sessionId": "amzn1.echo-api.session.000000-0000-0000-0000000000", "attributes": {}, "user": {"userId": "amzn1.account.AM3B000000000000000000000000000"}, "application": {"applicationId": "amzn1.echo-sdk-ams.app.0000-000-000"}}, "version": "1.0", "request": {"timestamp": "2015-05-13T12:34:56Z", "type": "IntentRequest", "requestId": "amzn1.echo-api.request.0000-00000-000-00000-00000", "intent": {"slots": {"AMAZON.FOUR_DIGIT_NUMBER": {"name": "passcode", "value": 7053}}, "name": "register"}}}
+loaded------
+found session------
+register ing echo------
+{"session": {"new": false, "sessionId": "amzn1.echo-api.session.000000-0000-0000-0000000000", "attributes": {}, "user": {"userId": "amzn1.account.AM3B000000000000000000000000000"}, "application": {"applicationId": "amzn1.echo-sdk-ams.app.0000-000-000"}}, "version": "1.0", "request": {"timestamp": "2015-05-13T12:34:56Z", "type": "IntentRequest", "requestId": "amzn1.echo-api.request.0000-00000-000-00000-00000", "intent": {"slots": {"AMAZON.FOUR_DIGIT_NUMBER": {"name": "passcode", "value": 7676}}, "name": "register"}}}
+loaded------
+found session------
+register ing echo------
+{"session": {"new": false, "sessionId": "amzn1.echo-api.session.000000-0000-0000-0000000000", "attributes": {}, "user": {"userId": "amzn1.account.AM3B000000000000000000000000000"}, "application": {"applicationId": "amzn1.echo-sdk-ams.app.0000-000-000"}}, "version": "1.0", "request": {"timestamp": "2015-05-13T12:34:56Z", "type": "IntentRequest", "requestId": "amzn1.echo-api.request.0000-00000-000-00000-00000", "intent": {"slots": {"AMAZON.FOUR_DIGIT_NUMBER": {"name": "Number", "value": 7101}}, "name": "register"}}}
+loaded------
+found session------
+register ing echo------
+found echo------
+got link------
+registered echo echo------
+loaded------
+{"session": {"new": false, "sessionId": "amzn1.echo-api.session.000000-0000-0000-0000000000", "attributes": {}, "user": {"userId": "amzn1.account.AM3B000000000000000000000000000"}, "application": {"applicationId": "amzn1.echo-sdk-ams.app.0000-000-000"}}, "version": "1.0", "request": {"timestamp": "2015-05-13T12:34:56Z", "type": "IntentRequest", "requestId": "amzn1.echo-api.request.0000-00000-000-00000-00000", "intent": {"slots": {"AMAZON.FOUR_DIGIT_NUMBER": {"name": "passcode", "value": 9235}}, "name": "register"}}}
+loaded------
+found session------
+register ing echo------
+{"session": {"new": false, "sessionId": "amzn1.echo-api.session.000000-0000-0000-0000000000", "attributes": {}, "user": {"userId": "amzn1.account.AM3B000000000000000000000000000"}, "application": {"applicationId": "amzn1.echo-sdk-ams.app.0000-000-000"}}, "version": "1.0", "request": {"timestamp": "2015-05-13T12:34:56Z", "type": "IntentRequest", "requestId": "amzn1.echo-api.request.0000-00000-000-00000-00000", "intent": {"slots": {"AMAZON.FOUR_DIGIT_NUMBER": {"name": "Number", "value": 9824}}, "name": "register"}}}
+loaded------
+found session------
+register ing echo------
+found echo------
+got link------
+registered echo echo------
+loaded------
+{"session": {"new": false, "sessionId": "amzn1.echo-api.session.000000-0000-0000-0000000000", "attributes": {}, "user": {"userId": "amzn1.account.AM3B000000000000000000000000000"}, "application": {"applicationId": "amzn1.echo-sdk-ams.app.0000-000-000"}}, "version": "1.0", "request": {"timestamp": "2015-05-13T12:34:56Z", "type": "IntentRequest", "requestId": "amzn1.echo-api.request.0000-00000-000-00000-00000", "intent": {"slots": {"AMAZON.FOUR_DIGIT_NUMBER": {"name": "Number", "value": 4014}}, "name": "register"}}}
+loaded------
+found session------
+register ing echo------
+found echo------
+got link------
+registered echo echo------
+loaded------
+{"session": {"new": false, "sessionId": "amzn1.echo-api.session.000000-0000-0000-0000000000", "attributes": {}, "user": {"userId": "amzn1.account.AM3B000000000000000000000000000"}, "application": {"applicationId": "amzn1.echo-sdk-ams.app.0000-000-000"}}, "version": "1.0", "request": {"timestamp": "2015-05-13T12:34:56Z", "type": "IntentRequest", "requestId": "amzn1.echo-api.request.0000-00000-000-00000-00000", "intent": {"slots": {}, "name": "not registering"}}}
+loaded------
+found session------
+loaded------
+{"session": {"new": false, "sessionId": "amzn1.echo-api.session.000000-0000-0000-0000000000", "attributes": {}, "user": {"userId": "amzn1.account.AM3B000000000000000000000000000"}, "application": {"applicationId": "amzn1.echo-sdk-ams.app.0000-000-000"}}, "version": "1.0", "request": {"timestamp": "2015-05-13T12:34:56Z", "type": "IntentRequest", "requestId": "amzn1.echo-api.request.0000-00000-000-00000-00000", "intent": {"slots": {"AMAZON.FOUR_DIGIT_NUMBER": {"name": "Number", "value": 7138}}, "name": "register"}}}
+loaded------
+found session------
+register ing echo------
+found echo------
+got link------
+registered echo echo------
+loaded------
+{"session": {"new": false, "sessionId": "amzn1.echo-api.session.000000-0000-0000-0000000000", "attributes": {}, "user": {"userId": "amzn1.account.AM3B000000000000000000000000000"}, "application": {"applicationId": "amzn1.echo-sdk-ams.app.0000-000-000"}}, "version": "1.0", "request": {"timestamp": "2015-05-13T12:34:56Z", "type": "IntentRequest", "requestId": "amzn1.echo-api.request.0000-00000-000-00000-00000", "intent": {"slots": {"AMAZON.FOUR_DIGIT_NUMBER": {"name": "Number", "value": 8901}}, "name": "register"}}}
+loaded------
+found session------
+register ing echo------
+found echo------
+got link------
+registered echo echo------
+loaded------
+{"session": {"new": false, "sessionId": "amzn1.echo-api.session.000000-0000-0000-0000000000", "attributes": {}, "user": {"userId": "amzn1.account.AM3B000000000000000000000000000"}, "application": {"applicationId": "amzn1.echo-sdk-ams.app.0000-000-000"}}, "version": "1.0", "request": {"timestamp": "2015-05-13T12:34:56Z", "type": "IntentRequest", "requestId": "amzn1.echo-api.request.0000-00000-000-00000-00000", "intent": {"slots": {}, "name": "not registering"}}}
+loaded------
+found session------
+loaded------
+{"session": {"new": false, "sessionId": "amzn1.echo-api.session.000000-0000-0000-0000000000", "attributes": {}, "user": {"userId": "amzn1.account.AM3B000000000000000000000000000"}, "application": {"applicationId": "amzn1.echo-sdk-ams.app.0000-000-000"}}, "version": "1.0", "request": {"timestamp": "2015-05-13T12:34:56Z", "type": "IntentRequest", "requestId": "amzn1.echo-api.request.0000-00000-000-00000-00000", "intent": {"slots": {"AMAZON.FOUR_DIGIT_NUMBER": {"name": "Number", "value": 2920}}, "name": "register"}}}
+loaded------
+found session------
+register ing echo------
+found echo------
+got link------
+registered echo echo------
+loaded------
+{"session": {"new": false, "sessionId": "amzn1.echo-api.session.000000-0000-0000-0000000000", "attributes": {}, "user": {"userId": "amzn1.account.AM3B000000000000000000000000000"}, "application": {"applicationId": "amzn1.echo-sdk-ams.app.0000-000-000"}}, "version": "1.0", "request": {"timestamp": "2015-05-13T12:34:56Z", "type": "IntentRequest", "requestId": "amzn1.echo-api.request.0000-00000-000-00000-00000", "intent": {"slots": {"AMAZON.FOUR_DIGIT_NUMBER": {"name": "Number", "value": 4858}}, "name": "register"}}}
+loaded------
+found session------
+register ing echo------
+found echo------
+got link------
+registered echo echo------
+loaded------
+{"session": {"new": false, "sessionId": "amzn1.echo-api.session.000000-0000-0000-0000000000", "attributes": {}, "user": {"userId": "amzn1.account.AM3B000000000000000000000000000"}, "application": {"applicationId": "amzn1.echo-sdk-ams.app.0000-000-000"}}, "version": "1.0", "request": {"timestamp": "2015-05-13T12:34:56Z", "type": "IntentRequest", "requestId": "amzn1.echo-api.request.0000-00000-000-00000-00000", "intent": {"slots": {}, "name": "not registering"}}}
+loaded------
+found session------
+loaded------
+{"session": {"new": false, "sessionId": "amzn1.echo-api.session.000000-0000-0000-0000000000", "attributes": {}, "user": {"userId": "amzn1.account.AM3B000000000000000000000000000"}, "application": {"applicationId": "amzn1.echo-sdk-ams.app.0000-000-000"}}, "version": "1.0", "request": {"timestamp": "2015-05-13T12:34:56Z", "type": "IntentRequest", "requestId": "amzn1.echo-api.request.0000-00000-000-00000-00000", "intent": {"slots": {"AMAZON.FOUR_DIGIT_NUMBER": {"name": "Number", "value": 5263}}, "name": "register"}}}
+loaded------
+found session------
+register ing echo------
+found echo------
+got link------
+registered echo echo------
+loaded------
+{"session": {"new": false, "sessionId": "amzn1.echo-api.session.000000-0000-0000-0000000000", "attributes": {}, "user": {"userId": "amzn1.account.AM3B000000000000000000000000000"}, "application": {"applicationId": "amzn1.echo-sdk-ams.app.0000-000-000"}}, "version": "1.0", "request": {"timestamp": "2015-05-13T12:34:56Z", "type": "IntentRequest", "requestId": "amzn1.echo-api.request.0000-00000-000-00000-00000", "intent": {"slots": {"AMAZON.FOUR_DIGIT_NUMBER": {"name": "Number", "value": 6145}}, "name": "register"}}}
+loaded------
+found session------
+register ing echo------
+found echo------
+got link------
+registered echo echo------
+loaded------
+{"session": {"new": false, "sessionId": "amzn1.echo-api.session.000000-0000-0000-0000000000", "attributes": {}, "user": {"userId": "amzn1.account.AM3B000000000000000000000000000"}, "application": {"applicationId": "amzn1.echo-sdk-ams.app.0000-000-000"}}, "version": "1.0", "request": {"timestamp": "2015-05-13T12:34:56Z", "type": "IntentRequest", "requestId": "amzn1.echo-api.request.0000-00000-000-00000-00000", "intent": {"slots": {}, "name": "not registering"}}}
+loaded------
+found session------
+loaded------
+{"session": {"new": false, "sessionId": "amzn1.echo-api.session.000000-0000-0000-0000000000", "attributes": {}, "user": {"userId": "amzn1.account.AM3B000000000000000000000000000"}, "application": {"applicationId": "amzn1.echo-sdk-ams.app.0000-000-000"}}, "version": "1.0", "request": {"timestamp": "2015-05-13T12:34:56Z", "type": "IntentRequest", "requestId": "amzn1.echo-api.request.0000-00000-000-00000-00000", "intent": {"slots": {}, "name": "not registering"}}}
+loaded------
+found session------
+loaded------
+{"session": {"new": false, "sessionId": "amzn1.echo-api.session.000000-0000-0000-0000000000", "attributes": {}, "user": {"userId": "amzn1.account.AM3B000000000000000000000000000"}, "application": {"applicationId": "amzn1.echo-sdk-ams.app.0000-000-000"}}, "version": "1.0", "request": {"timestamp": "2015-05-13T12:34:56Z", "type": "IntentRequest", "requestId": "amzn1.echo-api.request.0000-00000-000-00000-00000", "intent": {"slots": {}, "name": "not registering"}}}
+loaded------
+found session------
+loaded------
+{"session": {"new": false, "sessionId": "amzn1.echo-api.session.000000-0000-0000-0000000000", "attributes": {}, "user": {"userId": "amzn1.account.AM3B000000000000000000000000000"}, "application": {"applicationId": "amzn1.echo-sdk-ams.app.0000-000-000"}}, "version": "1.0", "request": {"timestamp": "2015-05-13T12:34:56Z", "type": "IntentRequest", "requestId": "amzn1.echo-api.request.0000-00000-000-00000-00000", "intent": {"slots": {}, "name": "not registering"}}}
+loaded------
+found session------
+loaded------
+{"session": {"new": false, "sessionId": "amzn1.echo-api.session.000000-0000-0000-0000000000", "attributes": {}, "user": {"userId": "amzn1.account.AM3B000000000000000000000000000"}, "application": {"applicationId": "amzn1.echo-sdk-ams.app.0000-000-000"}}, "version": "1.0", "request": {"timestamp": "2015-05-13T12:34:56Z", "type": "IntentRequest", "requestId": "amzn1.echo-api.request.0000-00000-000-00000-00000", "intent": {"slots": {}, "name": "not registering"}}}
+loaded------
+found session------
+loaded------
