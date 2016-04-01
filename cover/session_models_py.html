@@ -178,7 +178,7 @@
 <p id="t19" class="pln">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; <span class="nam">null</span><span class="op">=</span><span class="nam">True</span><span class="op">,</span><span class="strut">&nbsp;</span></p>
 <p id="t20" class="pln">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; <span class="nam">related_name</span><span class="op">=</span><span class="str">&#39;parent_session&#39;</span><span class="op">)</span><span class="strut">&nbsp;</span></p>
 <p id="t21" class="pln"><span class="strut">&nbsp;</span></p>
-<p id="t22" class="stm run hide_run">&nbsp; &nbsp; <span class="key">def</span> <span class="nam">get_current_app</span><span class="op">(</span><span class="nam">self</span><span class="op">)</span><span class="op">:</span><span class="strut">&nbsp;</span></p>
+<p id="t22" class="stm run hide_run">&nbsp; &nbsp; <span class="key">def</span> <span class="nam">get_current_branch</span><span class="op">(</span><span class="nam">self</span><span class="op">)</span><span class="op">:</span><span class="strut">&nbsp;</span></p>
 <p id="t23" class="stm run hide_run">&nbsp; &nbsp; &nbsp; &nbsp; <span class="key">return</span> <span class="nam">self</span><span class="op">.</span><span class="nam">current_app</span><span class="strut">&nbsp;</span></p>
 <p id="t24" class="pln"><span class="strut">&nbsp;</span></p>
 <p id="t25" class="stm run hide_run">&nbsp; &nbsp; <span class="key">def</span> <span class="nam">enter_conditional_branch</span><span class="op">(</span><span class="nam">self</span><span class="op">,</span> <span class="nam">branch</span><span class="op">)</span><span class="op">:</span><span class="strut">&nbsp;</span></p>
@@ -197,7 +197,7 @@
 <p id="t38" class="stm run hide_run">&nbsp; &nbsp; &nbsp; &nbsp; <span class="key">return</span> <span class="op">(</span><span class="nam">next_instruction</span><span class="op">,</span> <span class="nam">return_statement</span><span class="op">)</span><span class="strut">&nbsp;</span></p>
 <p id="t39" class="pln"><span class="strut">&nbsp;</span></p>
 <p id="t40" class="stm run hide_run">&nbsp; &nbsp; <span class="key">def</span> <span class="nam">next_action</span><span class="op">(</span><span class="nam">self</span><span class="op">,</span> <span class="op">**</span><span class="nam">kwargs</span><span class="op">)</span><span class="op">:</span><span class="strut">&nbsp;</span></p>
-<p id="t41" class="stm run hide_run">&nbsp; &nbsp; &nbsp; &nbsp; <span class="nam">current_app</span> <span class="op">=</span> <span class="nam">self</span><span class="op">.</span><span class="nam">get_current_app</span><span class="op">(</span><span class="op">)</span><span class="strut">&nbsp;</span></p>
+<p id="t41" class="stm run hide_run">&nbsp; &nbsp; &nbsp; &nbsp; <span class="nam">current_app</span> <span class="op">=</span> <span class="nam">self</span><span class="op">.</span><span class="nam">get_current_branch</span><span class="op">(</span><span class="op">)</span><span class="strut">&nbsp;</span></p>
 <p id="t42" class="stm run hide_run">&nbsp; &nbsp; &nbsp; &nbsp; <span class="key">if</span> <span class="key">not</span> <span class="nam">self</span><span class="op">.</span><span class="nam">is_in_conditional</span><span class="op">:</span><span class="strut">&nbsp;</span></p>
 <p id="t43" class="stm run hide_run">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span class="nam">length</span> <span class="op">=</span> <span class="nam">current_app</span><span class="op">.</span><span class="nam">actions</span><span class="op">.</span><span class="nam">count</span><span class="op">(</span><span class="op">)</span><span class="strut">&nbsp;</span></p>
 <p id="t44" class="stm run hide_run">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span class="key">if</span> <span class="nam">length</span> <span class="op">&lt;</span> <span class="nam">self</span><span class="op">.</span><span class="nam">program_counter</span><span class="op">:</span><span class="strut">&nbsp;</span></p>
@@ -242,7 +242,7 @@
 <p id="t83" class="stm mis"><span class="key">class</span> <span class="nam">ConditionalSession</span><span class="op">(</span><span class="nam">AppSession</span><span class="op">)</span><span class="op">:</span><span class="strut">&nbsp;</span></p>
 <p id="t84" class="stm mis">&nbsp; &nbsp; <span class="nam">current_branch</span> <span class="op">=</span> <span class="nam">models</span><span class="op">.</span><span class="nam">ForeignKey</span><span class="op">(</span><span class="nam">ConditionalHeader</span><span class="op">)</span><span class="strut">&nbsp;</span></p>
 <p id="t85" class="pln"><span class="strut">&nbsp;</span></p>
-<p id="t86" class="stm mis">&nbsp; &nbsp; <span class="key">def</span> <span class="nam">get_current_app</span><span class="op">(</span><span class="nam">self</span><span class="op">)</span><span class="op">:</span><span class="strut">&nbsp;</span></p>
+<p id="t86" class="stm mis">&nbsp; &nbsp; <span class="key">def</span> <span class="nam">get_current_branch</span><span class="op">(</span><span class="nam">self</span><span class="op">)</span><span class="op">:</span><span class="strut">&nbsp;</span></p>
 <p id="t87" class="stm mis">&nbsp; &nbsp; &nbsp; &nbsp; <span class="key">return</span> <span class="nam">self</span><span class="op">.</span><span class="nam">current_branch</span><span class="strut">&nbsp;</span></p>
                 
             </td>
@@ -254,7 +254,7 @@
     <div class="content">
         <p>
             <a class="nav" href="index.html">&#xab; index</a> &nbsp; &nbsp; <a class="nav" href="https://coverage.readthedocs.org">coverage.py v4.0.3</a>,
-            created at 2016-03-28 16:14
+            created at 2016-04-01 00:39
         </p>
     </div>
 </div>

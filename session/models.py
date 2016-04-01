@@ -38,7 +38,7 @@ class AppSession(models.Model):
         return (next_instruction, return_statement)
 
     def next_action(self, **kwargs):
-        current_app = self.get_current_app()
+        current_app = self.get_current_branch()
         if not self.is_in_conditional:
             length = current_app.actions.count()
             if length < self.program_counter:
