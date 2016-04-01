@@ -114,11 +114,11 @@ class GeneralAction(models.Model):
                                        related_name='general_action')
 
     def get_action(self, **kwargs):
+        if self.is_api_call:
+            self.api_call.action()
         if self.type == self.CONDITIONAL:
             return (-1, self.conditional.get_branch(kwargs['branch_number']))
         elif self.type == self.BASIC_RETURN_TEXT:
-            if self.is_api_call:
-                self.api_call.action()
             action = self.basic_return_text
         instruction = self.instruction_number
 
