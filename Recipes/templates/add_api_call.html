@@ -1,0 +1,7 @@
+<form method="post" action="{% url 'Recipes:add_api_call' %}">
+  {% csrf_token %}
+  <input type="text" name="url" placeholder="http://www.example.com">
+  <textarea name="json_string"></textarea>
+  Check off if method your doing a get method call<input type="checkbox" name="is_get">
+  <button type="submit"></button>
+</form>
