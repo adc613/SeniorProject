@@ -323,5 +323,3 @@ it'll probably be one of the first links.
 
 Ok that covers most of the basics, if you have any questions feel free to ask,
 and I'll try to add things here.
-
-$x^2$
