@@ -52,7 +52,7 @@
            <li><a href="IoT.html">IoT</a></li>
           </ul>
           <form class="navbar-form navbar-right" method="post" action="{% url 'accounts:login' %}">
-	   {% csrf_token %}
+           {% csrf_token %}
             <div class="form-group">
               <input type="text" name="username" placeholder="Email" class="form-control">
             </div>
