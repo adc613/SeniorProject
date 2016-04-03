@@ -22,6 +22,19 @@ class HomePageView(View):
         context = {}
         return render(request, self.template_name, context)
 
+class AboutUsView(View):
+    template_name = 'aboutus.html'
+
+    def get(self, request):
+        context = {}
+        return render(request, self.template_name, context)
+
+class HowItWorksView(View):
+    template_name = 'howitworks.html'
+
+    def get(self, request):
+        context = {}
+        return render(request, self.template_name, context)
 
 class ItWorkedView(View):
     template_name = 'itworked.html'
