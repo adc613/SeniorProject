@@ -16,6 +16,7 @@
       {% if action.type == 'RT' %}
       <p>instruction number: {{ action.instruction_number }}</p>
       <p>{{ action.basic_return_text.return_statement }}</p>
+      <a href="{% url 'Recipes:add_api_call' pk=action.pk %}">Add API Call</a>
       {% endif %}
     </div>
     {% endfor %}

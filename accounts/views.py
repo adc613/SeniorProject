@@ -8,6 +8,7 @@ from django.views.generic import View
 
 from .forms import UserCreationForm
 from .models import LinkAccountToEcho
+from Recipes.models import Recipe
 
 
 def logout_view(request):
@@ -57,7 +58,7 @@ class CreateAccountView(View):
         form = UserCreationForm(request.POST)
         if form.is_valid():
             form.save()
-            return HttpResponseRedirect(reverse('accounts:it_worked'))
+            return HttpResponseRedirect(reverse('accounts:link_echo_to_user'))
 
         context = {}
         context['form'] = self.form
@@ -77,7 +78,7 @@ class LoginView(View):
         user = authenticate(username=username, password=password)
         if user is not None and user.is_active:
             login(request, user)
-            return HttpResponseRedirect(reverse('accounts:it_worked'))
+            return HttpResponseRedirect(reverse('accounts:dashboard'))
 
         return render(request, self.template_name, {})
 
@@ -91,4 +92,19 @@ class LinkEchoToUserView(View):
         context = {}
         context['active'] = link.active
         context['passcode'] = link.passcode
+        return render(request, self.template_name, context)
+
+
+class DashboardView(View):
+    """
+    User dashboard page
+    """
+    template_name = 'dashboard.html'
+
+    @method_decorator(login_required)
+    def get(self, request, *args, **kwargs):
+        context = {}
+        context['recipes'] = Recipe.objects.all()
+        context['my_recipes'] = Recipe.objects.filter(creator=request.user)
+
         return render(request, self.template_name, context)
