@@ -16,12 +16,13 @@ Including another URLconf
 from django.conf.urls import url, include
 from django.contrib import admin
 
-from accounts.views import HomePageView, HowItWorksView, AboutUsView
+from accounts.views import HomePageView, HowItWorksView, AboutUsView, IOTView
 
 urlpatterns = [
     url(r'^$', HomePageView.as_view(), name='home'),
     url(r'^aboutus/$', AboutUsView.as_view(), name='aboutus'),
-    url(r'^howitworks/$', HowItWorksView.as_view(), name='howitworks'), 
+    url(r'^howitworks/$', HowItWorksView.as_view(), name='howitworks'),
+    url(r'^iot/$', IOTView.as_view(), name='iot'),
     url(r'^dev/', include('echo-dev.urls', namespace='dev')),
     url(r'^accounts/', include('accounts.urls', namespace='accounts')),
     url(r'^recipes/', include('Recipes.urls', namespace='Recipes')),

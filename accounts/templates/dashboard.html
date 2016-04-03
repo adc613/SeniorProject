@@ -1,13 +1,2 @@
-<h1> click recipe to start app </h1>
-<ul>
-  {% for recipe in recipes %}
-  <li><a href="{% url 'session:load_app' pk=recipe.pk %}">{{ recipe.name }}</a></li>
-  {% endfor %}
-</ul>
+{% extends 'base.html' %}
 
-<h1> Add to my recipes </h1>
-<ul>
-  {% for recipe in my_recipes %}
-  <li><a href="{% url 'Recipes:create_action' recipe_pk=recipe.pk  %}">{{ recipe.name }}</a></li>
-  {% endfor %}
-</ul>

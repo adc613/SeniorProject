@@ -23,12 +23,14 @@ class HomePageView(View):
         context = {}
         return render(request, self.template_name, context)
 
+
 class AboutUsView(View):
     template_name = 'aboutus.html'
 
     def get(self, request):
         context = {}
         return render(request, self.template_name, context)
+
 
 class HowItWorksView(View):
     template_name = 'howitworks.html'
@@ -37,8 +39,17 @@ class HowItWorksView(View):
         context = {}
         return render(request, self.template_name, context)
 
+
 class ItWorkedView(View):
     template_name = 'itworked.html'
+
+    def get(self, request):
+        context = {}
+        return render(request, self.template_name, context)
+
+
+class IOTView(View):
+    template_name = 'iot.html'
 
     def get(self, request):
         context = {}
@@ -58,6 +69,11 @@ class CreateAccountView(View):
         form = UserCreationForm(request.POST)
         if form.is_valid():
             form.save()
+            username = request.POST['email']
+            password = request.POST['password1']
+            user = authenticate(username=username, password=password)
+            if user is not None and user.is_active:
+                login(request, user)
             return HttpResponseRedirect(reverse('accounts:link_echo_to_user'))
 
         context = {}
