@@ -62,6 +62,11 @@
       {% if action.type == 'RT' %}
       <p class="bg-primary" style="padding: 15px 15px 15px 15px">Return Statement: "{{ action.basic_return_text.return_statement }}"</p>
       {% endif %}
+      {% if action.is_api_call %}
+    
+      <p class="bg-primary" style="padding: 15px 15px 15px 15px; margin-left: 15px">URL: {{ action.api_call.url }}</p>
+      <p class="bg-primary" style="padding: 15px 15px 15px 15px; margin-left: 15px">Data: {{ action.api_call.json_string }}</p>
+      {% endif %}
     </div>
     <div class="col-xs-2">
       <a style="width: 100%; height:100%" class="btn btn-success" href="{% url 'Recipes:add_api_call' pk=action.pk %}">Add API Call</a>
