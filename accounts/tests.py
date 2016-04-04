@@ -25,9 +25,11 @@ class AccountsViewsTestCases(TestCase):
             'last_name': 'Collins',
             'password1': '$tr0ngPa$$worD',
             'password2': '$tr0ngPa$$worD'
-            })
+            }, follow=True)
 
-        self.assertEqual(resp.status_code, 302)
+        url, status_code = resp.redirect_chain[0]
+        self.assertEqual(status_code, 302)
+        self.assertEqual(url, reverse('accounts:link_echo_to_user'))
         user = User.objects.get(pk=1)
         self.assertEqual(user.first_name, first_name)
 

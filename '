@@ -1,21 +1,16 @@
 {% extends 'base.html' %}
 
 {% block content %}
-{% include 'includes/navbar.html' %}
-<div class="jumbotron">
-  <div class="container">
-    <div class="row">
-      <div class="col-md-12">
-        <h2>Add an Action to your Voice Application</h2>
-      </div>
-    </div>
-  </div>
-</div> 
-
 <div class="container">
   <div class="row">
     <div class="col-md-12">
-      <form class="row" method="post" action="{% url 'Recipes:create_action' recipe_pk=recipe.pk %} ">
+      <h1>Add an Action to the Application</h1>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-12">
+      <form class="row" method="post" action="">
         {% csrf_token %}
         <div class="form-group col-md-2">
           <label for="type">Type</label>
@@ -35,32 +30,14 @@
       </form>
     </div>
   </div>
-  <br/>
-  <br/>
-
-  <div class="row">
-    <h3>Title: {{ recipe.name }}</h3>
-  </div>
-
-  <div class="row">
-    <div class="col-xs-1">
-      <h3>#</h3>
-    </div>
-    <div class="col-xs-9">
-      <h3>Action</h3>
-    </div>
-    <div class="col-xs-2">
-    </div>
-  </div>
-
   <div class="row">
     {% for action in actions %}
-    <div class="col-xs-1">
+    <div class="col-xs-2">
       <h1>{{ action.instruction_number }}</h1>
     </div>
-    <div class="col-xs-9">
+    <div class="col-xs-8">
       {% if action.type == 'RT' %}
-      <p class="bg-primary" style="padding: 15px 15px 15px 15px">Return Statement: "{{ action.basic_return_text.return_statement }}"</p>
+      <p class="bg-primary" style="padding: 15px 15px 15px 15px">Return Statement: {{ action.basic_return_text.return_statement }}</p>
       {% endif %}
     </div>
     <div class="col-xs-2">
