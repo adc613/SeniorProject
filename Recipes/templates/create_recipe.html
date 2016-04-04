@@ -1,3 +1,32 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <h1>Create a New Voice Application</h1>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-12">
+      <form method="post" action="{% url 'Recipes:create_recipe' %}">
+        {% csrf_token %}
+        <div class="form-group">
+          <label for="title">Title</label>
+          <input type="text" class="form-control" placeholder="Title" id="title" id="title">
+        </div>
+        <div class="form-group">
+          <label for="description">Description</label>
+          <textarea class="form-control" id="description" placeholder="description" name="descrprtion"></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary btn-lg">Submit</button>
+      </form>
+    </div>
+  </div>
+</div>
+
+{% endblock %}
 <html>
   <head>
     <title>Create Recipe</title>
