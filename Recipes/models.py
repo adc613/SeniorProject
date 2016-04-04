@@ -4,6 +4,8 @@ from django.db import models
 
 import requests
 
+import json
+
 
 class Recipe(models.Model):
     is_conditional_branch = models.BooleanField(default=False)
@@ -70,9 +72,9 @@ class APICall(models.Model):
     def action(self):
         try:
             if self.is_get:
-                requests.get(self.url, data=self.json_string)
+                requests.get(self.url, params=json.loads(self.json_string))
             else:
-                requests.post(self.url, data=self.json_string)
+                requests.post(self.url, params=json.loads(self.json_string))
             return True
         except:
             return False
