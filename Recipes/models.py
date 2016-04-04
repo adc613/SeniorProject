@@ -1,6 +1,7 @@
 from __future__ import unicode_literals
 
 from django.db import models
+from django.utils.encoding import python_2_unicode_compatible
 
 # import requests
 
@@ -8,6 +9,7 @@ import json
 import subprocess
 
 
+@python_2_unicode_compatible
 class Recipe(models.Model):
     is_conditional_branch = models.BooleanField(default=False)
     creation_date = models.DateTimeField(auto_now_add=True)
@@ -49,6 +51,9 @@ class Recipe(models.Model):
 
     def add_action(self, action):
         return self.insert_action(action, -1)
+
+    def __str__(self):
+        return '{}: {}'.format(self.creator.email, self.name)
 
 
 class ConditionalHeader(models.Model):
