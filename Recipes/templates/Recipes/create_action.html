@@ -53,8 +53,8 @@
     </div>
   </div>
 
+  {% for action in actions %}
   <div class="row">
-    {% for action in actions %}
     <div class="col-xs-1">
       <h1>{{ action.instruction_number }}</h1>
     </div>
@@ -66,8 +66,8 @@
     <div class="col-xs-2">
       <a style="width: 100%; height:100%" class="btn btn-success" href="{% url 'Recipes:add_api_call' pk=action.pk %}">Add API Call</a>
     </div>
-    {% endfor %}
   </div>
+{% endfor %}
 </div>
 
 {% endblock %}
