@@ -82,8 +82,9 @@ class ApplicationIsLoadedView(View):
         print('hey')
 
         app = Recipe.objects.get(pk=pk)
-        session = AppSession.objects.get_or_create(user=request.user,
-                                                   current_app=app)[0]
+        session = AppSession.objects.get_or_create(user=request.user)[0]
+        session.current_app = app
+        session.program_counter = 1
         session.end = False
         session.save()
 
