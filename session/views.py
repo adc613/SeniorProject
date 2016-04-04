@@ -15,7 +15,7 @@ from utils import AlexaResponse, AlexaRequest
 
 
 class ResponseView(View):
-    template_name = 'load_app.html'
+    template_name = 'session/load_app.html'
 
     @method_decorator(csrf_exempt)
     def dispatch(self, request, *args, **kwargs):
@@ -64,8 +64,8 @@ class ResponseView(View):
 
 
 class LoadApplicationView(View):
-    template_name = 'load_app.html'
-    post_template_name = 'app_is_loaded.html'
+    template_name = 'session/load_app.html'
+    post_template_name = 'session/app_is_loaded.html'
 
     @method_decorator(login_required)
     def get(self, request):
@@ -75,7 +75,7 @@ class LoadApplicationView(View):
 
 
 class ApplicationIsLoadedView(View):
-    template_name = 'app_is_loaded.html'
+    template_name = 'session/app_is_loaded.html'
 
     @method_decorator(login_required)
     def get(self, request, pk, **kwargs):
