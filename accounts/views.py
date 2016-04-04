@@ -17,7 +17,7 @@ def logout_view(request):
 
 
 class HomePageView(View):
-    template_name = 'home.html'
+    template_name = 'accounts/home.html'
 
     def get(self, request):
         context = {}
@@ -25,7 +25,7 @@ class HomePageView(View):
 
 
 class AboutUsView(View):
-    template_name = 'aboutus.html'
+    template_name = 'accounts/aboutus.html'
 
     def get(self, request):
         context = {}
@@ -33,7 +33,7 @@ class AboutUsView(View):
 
 
 class HowItWorksView(View):
-    template_name = 'howitworks.html'
+    template_name = 'accounts/howitworks.html'
 
     def get(self, request):
         context = {}
@@ -41,7 +41,7 @@ class HowItWorksView(View):
 
 
 class ItWorkedView(View):
-    template_name = 'itworked.html'
+    template_name = 'accounts/itworked.html'
 
     def get(self, request):
         context = {}
@@ -49,7 +49,7 @@ class ItWorkedView(View):
 
 
 class IOTView(View):
-    template_name = 'iot.html'
+    template_name = 'accounts/iot.html'
 
     def get(self, request):
         context = {}
@@ -57,7 +57,7 @@ class IOTView(View):
 
 
 class CreateAccountView(View):
-    template_name = 'create_account.html'
+    template_name = 'accounts/create_account.html'
     form = UserCreationForm
 
     def get(self, request):
@@ -82,7 +82,7 @@ class CreateAccountView(View):
 
 
 class LoginView(View):
-    template_name = 'login.html'
+    template_name = 'accounts/login.html'
 
     def get(self, request):
         return render(request, self.template_name, {})
@@ -100,7 +100,7 @@ class LoginView(View):
 
 
 class LinkEchoToUserView(View):
-    template_name = 'link_account.html'
+    template_name = 'accounts/link_account.html'
 
     @method_decorator(login_required)
     def get(self, request):
@@ -115,7 +115,7 @@ class DashboardView(View):
     """
     User dashboard page
     """
-    template_name = 'dashboard.html'
+    template_name = 'accounts/dashboard.html'
 
     @method_decorator(login_required)
     def get(self, request, *args, **kwargs):

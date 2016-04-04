@@ -11,7 +11,7 @@ from .models import Recipe, BasicReturnText, GeneralAction
 
 
 class CreateActionView(View):
-    template_name = 'create_action.html'
+    template_name = 'Recipes/create_action.html'
     form = CreateActionForm
 
     @method_decorator(login_required)
@@ -49,7 +49,7 @@ class CreateActionView(View):
 
 
 class CreateRecipeView(View):
-    template_name = 'create_recipe.html'
+    template_name = 'Recipes/create_recipe.html'
     form = CreateRecipeForm
 
     @method_decorator(login_required)
@@ -72,7 +72,7 @@ class CreateRecipeView(View):
 
 
 class EditBasicReturnTextView(View):
-    template_name = 'edit_basic_return_text.html'
+    template_name = 'Recipes/edit_basic_return_text.html'
 
     @method_decorator(login_required)
     def get(self, request, **kwargs):
@@ -94,7 +94,7 @@ class AddAPICallView(View):
     """
     View for adding an api call to a general action
     """
-    template_name = 'add_api_call.html'
+    template_name = 'Recipes/add_api_call.html'
     form = CreateAPICallForm
 
     @method_decorator(login_required)
