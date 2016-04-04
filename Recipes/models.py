@@ -2,9 +2,10 @@ from __future__ import unicode_literals
 
 from django.db import models
 
-import requests
+# import requests
 
 import json
+import subprocess
 
 
 class Recipe(models.Model):
@@ -71,10 +72,16 @@ class APICall(models.Model):
 
     def action(self):
         try:
+            data = json.loads(self.json_string)
+            bashCommand = "curl {} -d \"args={}\"".format(self.url,
+                                                          data['args'])
+            subprocess.Popen(bashCommand.split(), stdout=subprocess.PIPE)
+            """
             if self.is_get:
                 requests.get(self.url, params=json.loads(self.json_string))
             else:
                 requests.post(self.url, params=json.loads(self.json_string))
+            """
             return True
         except:
             return False
