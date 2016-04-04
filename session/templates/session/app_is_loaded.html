@@ -1,1 +1,24 @@
-<p> Tell Alexa "Alexa tell Adam to start app" </p>
+{% extends 'accounts/base.html' %}
+{% load static %}
+
+{% block navbar %}
+{% include 'accounts/includes/navbar.html' %}
+{% endblock %}
+
+{% block content %}
+
+<div class="container">
+
+  <div class="starter-template">
+    <h1><br><br>Final Step!</h1>
+    <hr></hr>
+    <p class="lead">Say this to Alexa, "Alexa ask Senior Project what's next?"</p>
+  </div>
+
+</div><!-- /.container -->
+
+{% endblock %}
+
+{% block js %}
+<script src="{% static 'accounts/js/set_active.js' %}"></script>
+{% endblock %}
