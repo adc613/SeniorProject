@@ -1,4 +1,5 @@
 {% extends 'Recipes/base.html' %}
+{% load static %}
 
 {% block content %}
 {% include 'Recipes/includes/navbar.html' %}
@@ -11,7 +12,6 @@
     </div>
   </div>
 </div> 
-
 <div class="container">
   <div class="row">
     <div class="col-md-12">
@@ -25,9 +25,13 @@
             <option value="C">Conditional</option>
           </select>
         </div>
-        <div class="form-group col-md-10">
+        <div class="form-group col-md-10 basic_return_text">
           <label for="return_statement">Return Statement</label>
           <input type="text" class="form-control" placeholder="Return Statement" name="return_statement" id="return_statement">
+        </div>
+        <div class="form-group col-md-10 conditional" style="visibility:hidden; height:0px;">
+          <label for="question">Question</label>
+          <input type="text" class="form-control" placeholder="Question" name="question" id="question">
         </div>
         <div class="form-group col-md-12">
           <button type="submit" class="btn btn-primary btn-lg" style="width:100%">Submit</button>
@@ -75,4 +79,8 @@
 {% endfor %}
 </div>
 
+{% endblock %}
+
+{% block js %}
+<script src="{% static 'Recipes/js/create_action.js' %}"></script>
 {% endblock %}

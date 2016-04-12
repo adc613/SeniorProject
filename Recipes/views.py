@@ -119,3 +119,14 @@ class AddAPICallView(View):
 
         return HttpResponseRedirect(reverse('Recipes:add_api_call',
                                     kwargs=kwargs))
+
+class AddConditionalView(View):
+    """
+    This is a view for adding conditional statements to recipes
+    """
+
+    def post(self, request, *args, **kwargs):
+        context = {}
+
+        return HttpResponseRedirect(reverse('Recipes:create_action',
+                                            kwargs=kwargs['recipe_pk']))
