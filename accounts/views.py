@@ -120,7 +120,9 @@ class DashboardView(View):
     @method_decorator(login_required)
     def get(self, request, *args, **kwargs):
         context = {}
-        context['recipes'] = Recipe.objects.all()
-        context['my_recipes'] = Recipe.objects.filter(creator=request.user)
+        context['recipes'] = Recipe.objects.filter(
+            is_conditional_branch=False).exclude(
+            name="")
+        context['my_recipes'] = context['recipes'].filter(creator=request.user)
 
         return render(request, self.template_name, context)

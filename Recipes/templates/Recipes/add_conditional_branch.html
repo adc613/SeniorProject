@@ -1,0 +1,48 @@
+{% extends 'Recipes/base.html' %}
+{% load static %}
+
+{% block content %}
+{% include 'Recipes/includes/navbar.html' %}
+
+<div class="jumbotron"> <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <h2>Add a Branch to your Voice Application</h2>
+        <p>Current Branch Question: {{ conditional_header.question }}</p>
+      </div>
+    </div>
+  </div>
+</div> 
+
+<div class="container">
+  {% for branch in branches %}
+
+    <div class="row">
+      <div class="col-xs-1">
+        <h1>{{branch.branch_number }}</h1>
+      </div>
+      <div class="col-xs-9">
+        <p class="bg-primary" style="padding: 15px 15px 15px 15px">Branch option number {{ branch.branch_number }}</p>
+      </div>
+      <div class="col-xs-2">
+        <a style="width: 100%; height:100%" class="btn btn-success" href="{% url 'Recipes:create_action' recipe_pk=branch.pk %}">Edit Branch</a>
+      </div>
+    </div>
+
+  {% endfor %}
+
+  <form class="row" method="post" action="{% url 'Recipes:add_conditional_branch' pk=conditional_header.pk %} ">
+    {% csrf_token %}
+    <h1>Add a branch</h1>
+    <div class="form-group col-md-12 conditional">
+      <label for="description">Description</label>
+      <input type="text" class="form-control" placeholder="Description" name="description" id="description">
+    </div>
+    <div class="form-group col-md-12">
+      <button type="submit" class="btn btn-primary btn-lg" style="width:100%">Submit</button>
+    </div>
+  </form>
+
+</div>
+
+{% endblock %}

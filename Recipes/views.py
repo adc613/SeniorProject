@@ -6,7 +6,8 @@ from django.contrib.auth.decorators import login_required
 from django.views.generic import View
 
 from .forms import CreateActionForm, CreateRecipeForm,\
-    CreateBasicReturnTextForm, CreateAPICallForm
+    CreateBasicReturnTextForm, CreateAPICallForm, CreateConditonalForm, \
+    ConditionalHeader, CreateBranchForm
 from .models import Recipe, BasicReturnText, GeneralAction
 
 
@@ -43,9 +44,16 @@ class CreateActionView(View):
                     model.basic_return_text = action
                     model = recipe.add_action(model)
                     model.save()
+            elif model.type == 'C':
+                form = CreateConditonalForm(request.POST)
+                if form.is_valid():
+                    action = form.save()
+                    model.conditiional = action
+                    model = recipe.add_action(model)
+                    model.save()
 
-        return HttpResponseRedirect(reverse('Recipes:create_action',
-                                            kwargs=kwargs))
+        url = reverse('Recipes:create_action', kwargs=kwargs)
+        return HttpResponseRedirect(url)
 
 
 class CreateRecipeView(View):
@@ -120,13 +128,37 @@ class AddAPICallView(View):
         return HttpResponseRedirect(reverse('Recipes:add_api_call',
                                     kwargs=kwargs))
 
-class AddConditionalView(View):
-    """
-    This is a view for adding conditional statements to recipes
-    """
 
-    def post(self, request, *args, **kwargs):
+class AddConditionalBranchView(View):
+    """
+    View for adding a conditional
+    """
+    template_name = 'Recipes/add_conditional_branch.html'
+    form = CreateBranchForm
+
+    @method_decorator(login_required)
+    def get(self, request, *args, **kwargs):
         context = {}
+        conditional_header = ConditionalHeader.objects.get(pk=kwargs['pk'])
+        if not (conditional_header.get_user() == request.user):
+            return HttpResponseRedirect(reverse('accounts:login'))
+        context['conditional_header'] = conditional_header
+        context['branches'] = conditional_header.get_branches()
+        return render(request, self.template_name, context)
 
-        return HttpResponseRedirect(reverse('Recipes:create_action',
-                                            kwargs=kwargs['recipe_pk']))
+    @method_decorator(login_required)
+    def post(self, request, *args, **kwargs):
+        form = self.form(request.POST)
+        conditional_header = ConditionalHeader.objects.get(pk=kwargs['pk'])
+        if not (conditional_header.get_user() == request.user):
+            return HttpResponseRedirect(reverse('accounts:login'))
+
+        if form.is_valid():
+            branch = form.save(commit=False)
+            branch.parent_header = conditional_header
+            conditional_header.add_branch(branch)
+            conditional_header.save()
+            branch.save()
+
+        return HttpResponseRedirect(reverse('Recipes:add_conditional_branch',
+                                            kwargs=kwargs))

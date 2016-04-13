@@ -19,7 +19,6 @@ class ResponseView(View):
 
     @method_decorator(csrf_exempt)
     def dispatch(self, request, *args, **kwargs):
-        print('hello')
         return super(ResponseView, self).dispatch(request, *args, **kwargs)
 
     def get(self, request):
@@ -37,6 +36,19 @@ class ResponseView(View):
 
         return 'There has been an error please retry'
 
+    def echo_is_not_in_application():
+        return 'Please go online and chose your application'
+
+    def echo_has_not_been_registered(self):
+        return_text = "This echo has not been registered, " +\
+            "please login and begin registration process"
+        return return_text
+
+    def echo_is_answering_conditional(self, echo_request, session):
+        params = echo_request.get_intent_params()
+        branch_number = params['branchNumber']
+        return session.next_action(branch_number=branch_number)
+
     def post(self, request):
 
         echo_request = AlexaRequest(json.loads(request.body))
@@ -48,14 +60,16 @@ class ResponseView(View):
         elif echo_request.get_intent_type() == 'register':
             return_text = self.register_echo(echo_request)
 
+        elif echo_request.get_intent_type() == 'conditional':
+            return_text = self.echo_is_answering_conditional(echo_request,
+                                                             session)
         elif echo_request.get_user():
             # There not in an app, but echo has been registered
-            return_text = 'Please go online and chose your application'
+            return_text = self.echo_is_not_in_application()
 
         else:
             # Echo has not been registered
-            return_text = "This echo has not been registered, " +\
-                "please login and begin registration process"
+            return_text = self.echo_has_not_been_registered()
 
         response = AlexaResponse(return_statement=return_text).get_response()
 
@@ -82,7 +96,8 @@ class ApplicationIsLoadedView(View):
         print('hey')
 
         app = Recipe.objects.get(pk=pk)
-        session = AppSession.objects.get_or_create(user=request.user)[0]
+        session = AppSession.objects.get_or_create(
+            user=request.user, current_app=app)[0]
         session.current_app = app
         session.program_counter = 1
         session.end = False

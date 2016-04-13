@@ -40,6 +40,7 @@ class AppSession(models.Model):
     def next_action(self, **kwargs):
         current_app = self.get_current_branch()
         if not self.is_in_conditional:
+            # Regularrly iterate through actions
             length = current_app.actions.count()
             if length < self.program_counter:
                 self.end = True
@@ -51,12 +52,14 @@ class AppSession(models.Model):
                 instruction_number=self.program_counter)
             (next_instruction, return_statement) = action.get_action()
             if next_instruction >= 0:
+                # next_instruction >= 0 means that we are not in a conditional
                 self.program_counter = next_instruction
                 self.save()
 
                 return return_statement
 
             elif next_instruction == -1:
+                # next_instruciton == -1 means we're entering a conditional
                 self.is_entering_conditional = True
 
                 return return_statement

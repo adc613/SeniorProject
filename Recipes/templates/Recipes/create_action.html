@@ -3,6 +3,7 @@
 
 {% block content %}
 {% include 'Recipes/includes/navbar.html' %}
+
 <div class="jumbotron">
   <div class="container">
     <div class="row">
@@ -29,7 +30,7 @@
           <label for="return_statement">Return Statement</label>
           <input type="text" class="form-control" placeholder="Return Statement" name="return_statement" id="return_statement">
         </div>
-        <div class="form-group col-md-10 conditional" style="visibility:hidden; height:0px;">
+        <div class="form-group col-md-10 conditional">
           <label for="question">Question</label>
           <input type="text" class="form-control" placeholder="Question" name="question" id="question">
         </div>
@@ -58,26 +59,29 @@
   </div>
 
   {% for action in actions %}
-  <div class="row">
-    <div class="col-xs-1">
-      <h1>{{ action.instruction_number }}</h1>
+    <div class="row">
+      <div class="col-xs-1">
+        <h1>{{ action.instruction_number }}</h1>
+      </div>
+      <div class="col-xs-9">
+        {% if action.type == 'RT' %}
+          <p class="bg-primary" style="padding: 15px 15px 15px 15px">Return Statement: "{{ action.basic_return_text.return_statement }}"</p>
+        {% elif action.type == 'C' %}
+          <div class="row">
+            <div class="col-xs-9">
+              <p class="bg-primary" style="padding: 15px 15px 15px 15px">Question: "{{ action.conditional.question }}"</p>
+            </div>
+            <div class="col-xs-3">
+              <a style="width: 100%; height:100%" class="btn btn-success" href="{% url 'Recipes:add_conditional_branch' pk=action.conditional.pk %}">Add branches</a>
+            </div>
+          </div>
+        {% endif %}
+      </div>
+      <div class="col-xs-2">
+        <a style="width: 100%; height:100%" class="btn btn-success" href="{% url 'Recipes:add_api_call' pk=action.pk %}">Add API Call</a>
+      </div>
     </div>
-    <div class="col-xs-9">
-      {% if action.type == 'RT' %}
-      <p class="bg-primary" style="padding: 15px 15px 15px 15px">Return Statement: "{{ action.basic_return_text.return_statement }}"</p>
-      {% endif %}
-      {% if action.is_api_call %}
-    
-      <p class="bg-primary" style="padding: 15px 15px 15px 15px; margin-left: 15px">URL: {{ action.api_call.url }}</p>
-      <p class="bg-primary" style="padding: 15px 15px 15px 15px; margin-left: 15px">Data: {{ action.api_call.json_string }}</p>
-      {% endif %}
-    </div>
-    <div class="col-xs-2">
-      <a style="width: 100%; height:100%" class="btn btn-success" href="{% url 'Recipes:add_api_call' pk=action.pk %}">Add API Call</a>
-    </div>
-  </div>
-{% endfor %}
-</div>
+  {% endfor %}
 
 {% endblock %}
 

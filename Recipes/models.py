@@ -53,10 +53,20 @@ class Recipe(models.Model):
         return self.insert_action(action, -1)
 
     def __str__(self):
-        return '{}: {}'.format(self.creator.email, self.name)
+        if self.is_conditional_branch:
+            return 'Branch {}'.format(self.branch_number)
+        else:
+            return 'App {}'.format(self.name)
+
+    def get_user(self):
+        if self.is_conditional_branch:
+            return self.parent_header.get_user()
+        else:
+            return self.creator
 
 
 class ConditionalHeader(models.Model):
+    question = models.TextField()
 
     def get_branches(self):
         return self.branches.all()
@@ -68,6 +78,9 @@ class ConditionalHeader(models.Model):
     def add_branch(self, branch):
         branch.branch_number = self.branches.count()
         branch.save()
+
+    def get_user(self):
+        return self.general_action.get_user()
 
 
 class APICall(models.Model):
@@ -137,3 +150,16 @@ class GeneralAction(models.Model):
         instruction = self.instruction_number
 
         return action.action(instruction)
+
+    def get_question(self):
+        return self.conditional.question
+
+    def __str__(self):
+        return "Type:{} App:{} Instruction Number:{} ".format(
+            self.type, self.recipe, self.instruction_number)
+
+    def get_user(self):
+        if self.recipe.is_conditional_branch:
+            return self.recipe.parent_header.get_user()
+        else:
+            return self.recipe.creator

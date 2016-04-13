@@ -11,4 +11,6 @@ urlpatterns = [
         name='edit_basic_return_text'),
     url(r'addapit/(?P<pk>\d+)/$', views.AddAPICallView.as_view(),
         name='add_api_call'),
+    url(r'addbranch/(?P<pk>\d+)/$', views.AddConditionalBranchView.as_view(),
+        name='add_conditional_branch'),
 ]
