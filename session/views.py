@@ -93,7 +93,6 @@ class ApplicationIsLoadedView(View):
 
     @method_decorator(login_required)
     def get(self, request, pk, **kwargs):
-        print('hey')
 
         app = Recipe.objects.get(pk=pk)
         session = AppSession.objects.get_or_create(
