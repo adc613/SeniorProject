@@ -36,7 +36,7 @@ class ResponseView(View):
 
         return 'There has been an error please retry'
 
-    def echo_is_not_in_application():
+    def echo_is_not_in_application(self):
         return 'Please go online and chose your application'
 
     def echo_has_not_been_registered(self):
@@ -46,23 +46,25 @@ class ResponseView(View):
 
     def echo_is_answering_conditional(self, echo_request, session):
         params = echo_request.get_intent_params()
-        branch_number = params['branchNumber']
+        branch_number = int(params['branchNumber'])
         return session.next_action(branch_number=branch_number)
 
     def post(self, request):
 
         echo_request = AlexaRequest(json.loads(request.body))
         session = echo_request.get_session()
+        print('request')
 
-        if session is not None:
+        if echo_request.get_intent_type() == 'conditional':
+            return_text = self.echo_is_answering_conditional(echo_request,
+                                                             session)
+        elif session is not None:
             # Echo is in a session
             return_text = session.next_action()
+
         elif echo_request.get_intent_type() == 'register':
             return_text = self.register_echo(echo_request)
 
-        elif echo_request.get_intent_type() == 'conditional':
-            return_text = self.echo_is_answering_conditional(echo_request,
-                                                             session)
         elif echo_request.get_user():
             # There not in an app, but echo has been registered
             return_text = self.echo_is_not_in_application()
@@ -97,7 +99,6 @@ class ApplicationIsLoadedView(View):
         app = Recipe.objects.get(pk=pk)
         session = AppSession.objects.get_or_create(
             user=request.user, current_app=app)[0]
-        session.current_app = app
         session.program_counter = 1
         session.end = False
         session.save()

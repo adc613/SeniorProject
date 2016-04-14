@@ -134,7 +134,7 @@ class AlexaRequest():
 
     def get_session(self):
         try:
-            return AppSession.objects.get(user=self.get_user(), end=False)
+            return AppSession.objects.get(user=self.get_user(), is_conditional_branch=False, end=False)
         except ObjectDoesNotExist:
             return None
 
