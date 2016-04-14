@@ -32,7 +32,7 @@ class CreateActionView(View):
             model = form.save(commit=False)
             recipe = Recipe.objects.get(pk=kwargs['recipe_pk'])
 
-            if recipe.creator == request.user:
+            if recipe.get_user() == request.user:
                 model.recipe = recipe
             else:
                 return HttpResponseRedirect(reverse('accounts:login'))
@@ -47,10 +47,11 @@ class CreateActionView(View):
             elif model.type == 'C':
                 form = CreateConditonalForm(request.POST)
                 if form.is_valid():
-                    action = form.save()
-                    model.conditiional = action
-                    model = recipe.add_action(model)
+                    conditional = form.save()
+                    model.conditional = conditional
+                    conditional.save()
                     model.save()
+                    model = recipe.add_action(model)
 
         url = reverse('Recipes:create_action', kwargs=kwargs)
         return HttpResponseRedirect(url)
@@ -156,6 +157,7 @@ class AddConditionalBranchView(View):
         if form.is_valid():
             branch = form.save(commit=False)
             branch.parent_header = conditional_header
+            branch.is_conditional_branch = True
             conditional_header.add_branch(branch)
             conditional_header.save()
             branch.save()

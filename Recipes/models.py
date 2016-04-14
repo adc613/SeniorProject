@@ -159,7 +159,4 @@ class GeneralAction(models.Model):
             self.type, self.recipe, self.instruction_number)
 
     def get_user(self):
-        if self.recipe.is_conditional_branch:
-            return self.recipe.parent_header.get_user()
-        else:
-            return self.recipe.creator
+        return self.recipe.get_user()
