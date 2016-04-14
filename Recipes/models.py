@@ -144,6 +144,9 @@ class GeneralAction(models.Model):
         if self.is_api_call:
             self.api_call.action()
         if self.type == self.CONDITIONAL:
+            branch_number = kwargs.get('branch_number', False)
+            if branch_number is False:
+                return (-1, self.conditional.question)
             return (-1, self.conditional.get_branch(kwargs['branch_number']))
         elif self.type == self.BASIC_RETURN_TEXT:
             action = self.basic_return_text
